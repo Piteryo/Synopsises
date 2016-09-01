@@ -121,5 +121,417 @@ algorithm2e
 
 \end_layout
 
+\begin_layout Author
+Лепихин Тимур Андреевич
+\end_layout
+
+\begin_layout Standard
+Части курса:
+\end_layout
+
+\begin_layout Enumerate
+Основная теория
+\end_layout
+
+\begin_layout Enumerate
+Практика по настройке сети
+\end_layout
+
+\begin_layout Enumerate
+Клиент-серверное приложение
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Литература:
+\series default
+ Таненбаум 
+\begin_inset Quotes fld
+\end_inset
+
+Компьютерные сети
+\begin_inset Quotes frd
+\end_inset
+
+; Олифер, Олифер 
+\begin_inset Quotes fld
+\end_inset
+
+Компьютерные сети
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Будет 2-3 тестирования, без них не будет допуска к экзамену
+\end_layout
+
+\begin_layout Section
+История развития компьютерных сетей
+\end_layout
+
+\begin_layout Standard
+Прародитель компьютерных сетей — телефонные сети (MAN).
+ Сети, с которыми привыкли взаимодействовать, называются LAN.
+ 
+\end_layout
+
+\begin_layout Standard
+DARPA — оборонная компания USA, создатель сети Internet.
+\end_layout
+
+\begin_layout Standard
+Типы компьютерных сетей:
+\end_layout
+
+\begin_layout Enumerate
+По территориальному признаку;
+\end_layout
+
+\begin_layout Enumerate
+По типу среды передачи данных;
+\end_layout
+
+\begin_layout Enumerate
+По архитектуре сети;
+\end_layout
+
+\begin_layout Standard
+Рассмотрим эти пункты подробнее:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Территориальный признак
+\series default
+: 
+\end_layout
+
+\begin_layout Enumerate
+Глобальные сети (страны, интернет);
+\end_layout
+
+\begin_layout Enumerate
+Локальные сети (несколько городов);
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Тип среды передачи данных:
+\end_layout
+
+\begin_layout Enumerate
+Проводные сети;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Телефон: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Витая пара (4 проводка);
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes fld
+\end_inset
+
+Лапша
+\begin_inset Quotes frd
+\end_inset
+
+ (2 проводка) и это не витая пара.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Витая пара:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+4-8 проводков
+\end_layout
+
+\begin_layout Enumerate
+Экранированная/неэкранированная/дважды экранированная витая пара;
+\end_layout
+
+\begin_layout Enumerate
+Экранированная витая пара представляет собой заключенную в проводящий материал
+ витую пару.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Дважды экранированная витая пара имеет дополнительный экран, который покрывает
+ все витые пары.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Оптоволокно:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Трубка из гнущегося стекла, покрытого отражающим материалом.
+ Свет отражается от стенок.
+\end_layout
+
+\begin_layout Enumerate
+Скорости передачи - гигабайты в секунду.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Коаксиал
+\end_layout
+
+\begin_layout Enumerate
+pass
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Беспроводные сети;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+WiFi (2,4 ГГц, 5 ГГц);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Максимальное расстояние, заявленное в спецификации — 300 метров.
+ В условиях зданий - 10-20 метров.
+\end_layout
+
+\begin_layout Enumerate
+Скорость данных (300 Мбит для 5 ГГц).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+LiFi;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Световые волны (световая передача данных).
+\end_layout
+
+\begin_layout Enumerate
+Скорости до 1 Гбит.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Спутниковая связь;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Примеры технологий: GPS, спутниковый телефон.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Инфракрасный порт;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Передача данных в прямой видимости.
+\end_layout
+
+\begin_layout Enumerate
+Скорость достаточно низкая (Килобиты).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Bluetooth;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Средняя скорость.
+\end_layout
+
+\begin_layout Enumerate
+Дальность до 30 метров.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Сотовая связь;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Дальность 
+\begin_inset Formula $\thickapprox20-30$
+\end_inset
+
+ км.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Радиосвязь;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Требуется приемник и передатчик.
+\end_layout
+
+\begin_layout Enumerate
+Влияют длина волны, частота.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Фотоэлемент;
+\end_layout
+
+\begin_layout Enumerate
+NFC;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Магнитное поле.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Архитектура сети: 
+\end_layout
+
+\begin_layout Enumerate
+Топология сети (способ организации узлов);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Полносвязные топологии (каждый-с-каждым).
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Полносвязная топология
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Плюсы: нет посредников (высокая скорость), надежность.
+\end_layout
+
+\begin_layout Enumerate
+Минусы: себестоимость, сложность настройки.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Ячеистые (неполносвязные).
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Топология 
+\begin_inset Quotes fld
+\end_inset
+
+Кольцо
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Плюсы: стоимость, простота;
+\end_layout
+
+\begin_layout Enumerate
+Минусы: средняя надежность, средняя сложность.
+\end_layout
+
+\begin_layout Enumerate
+Технологии (Token Ring и FDDI).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Топология 
+\begin_inset Quotes fld
+\end_inset
+
+Звезда
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Топология 
+\begin_inset Quotes fld
+\end_inset
+
+Дерево
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Топология 
+\begin_inset Quotes fld
+\end_inset
+
+Общая шина
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Технология Ethernet работает по этой топологии.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Смешанные топологии.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Протокол;
+\end_layout
+
+\begin_layout Problem*
+Узнать о скоростях передачи данных через все проводные соединения.
+\end_layout
+
 \end_body
 \end_document
