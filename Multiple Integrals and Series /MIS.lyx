@@ -1,0 +1,808 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\usepackage{indentfirst}
+\end_preamble
+\use_default_options true
+\begin_removed_modules
+theorems-ams
+\end_removed_modules
+\begin_modules
+eqs-within-sections
+figs-within-sections
+theorems-ams-bytype
+theorems-sec-bytype
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1.5cm
+\rightmargin 2.5cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0.7cm
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\RR}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZZ}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\NN}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\QQ}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Дифференциальное исчисление.
+ Функции нескольких переменных
+\end_layout
+
+\begin_layout Subsection
+Метрические пространства
+\end_layout
+
+\begin_layout Standard
+Пусть имеется пространство неких элементов 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Пространство 
+\begin_inset Formula $X$
+\end_inset
+
+ называется метрическим, если 
+\begin_inset Formula $\forall x,y\in X,\ \exists$
+\end_inset
+
+ вещественное число 
+\begin_inset Formula $\rho(x,y)$
+\end_inset
+
+, удовлетворяющее аксиомам:
+\end_layout
+
+\begin_layout Definition
+1) 
+\begin_inset Formula $\rho(x,y)\geq0$
+\end_inset
+
+; 
+\begin_inset Formula $\rho(x,y)=0\Leftrightarrow x=y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+2) 
+\begin_inset Formula $\rho(x,y)=\rho(y,x)$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Definition
+3) 
+\begin_inset Formula $\rho(x,y)\leq\rho(x,z)+\rho(z,y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\forall x,y,z\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Тогда величина 
+\begin_inset Formula $\rho(x,y)$
+\end_inset
+
+ можно назвать метрикой или расстоянием между элементами.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $X=\RR$
+\end_inset
+
+.
+ Здесь 
+\begin_inset Formula $\rho(x,y)=\left|x-y\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $X=C[a,b]$
+\end_inset
+
+ — непрерывные функции, заданные на отрезке 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\rho_{1}(f(x),g(x))=\max_{[a,b]}\left|f(x)-g(x)\right|$
+\end_inset
+
+, где 
+\begin_inset Formula $x\in[a,b]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\rho_{2}(f(x),g(x))=\int_{a}^{b}\left|f(x)-g(x)\right|dx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+и так далее.
+\end_layout
+
+\begin_layout Example
+Если 
+\begin_inset Formula $\rho_{1}(f(x),g(x))$
+\end_inset
+
+ мало, то 
+\begin_inset Formula $\rho_{2}(f(x),g(x))$
+\end_inset
+
+ — мало.
+ Обратное вообще говоря неверно.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+\begin_inset Formula $V_{\varepsilon}(x)=\{y\in X:\ \rho(x,y)<\varepsilon\}$
+\end_inset
+
+ — эпсилон-окрестность 
+\begin_inset Formula $x$
+\end_inset
+
+; шар с центром в 
+\begin_inset Formula $x$
+\end_inset
+
+ и радиусом 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $X=\RR$
+\end_inset
+
+ 
+\begin_inset Formula $\rho(x,y)=|x-y|$
+\end_inset
+
+.
+ 
+\begin_inset Formula $V_{\varepsilon}(x)=(x-\varepsilon,x+\varepsilon)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $X=C([a,b])$
+\end_inset
+
+, 
+\begin_inset Formula $\rho_{1}(f(x),g(x))=\max_{[a,b]}\left|f(x)-g(x)\right|$
+\end_inset
+
+.
+ Отступаем 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ от каждого 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ вверх и вниз.
+ Любая функция, лежащая в получившемся участке пространства, принадлежит
+ эпсилон-окрестности функции.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+Далее элементы пространства будем называть точками.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Formula $x\in X$
+\end_inset
+
+ — внутренняя точка 
+\begin_inset Formula $X$
+\end_inset
+
+, если 
+\begin_inset Formula $\exists\varepsilon>0:\ V_{\varepsilon}(x)\subset X$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Множество 
+\begin_inset Formula $X$
+\end_inset
+
+ открыто, если все его точки внутренние.
+ (Привет, топология.
+ Я скучал).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Example
+\begin_inset Formula $x^{2}+y^{2}<1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $x$
+\end_inset
+
+ — предельная точка 
+\begin_inset Formula $X$
+\end_inset
+
+, если 
+\begin_inset Formula $\forall\varepsilon>0\ \exists y\in X\ (y\neq x):\ y\in V_{\varepsilon}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Предельная точка может как входить во множество, так и не входить.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $X$
+\end_inset
+
+ замкнуто, если оно содержит все свои предельные точки.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x^{2}+y^{2}<1$
+\end_inset
+
+ не замкнуто.
+ А вот 
+\begin_inset Formula $x^{2}+y^{2}\leq1$
+\end_inset
+
+ замкнуто.
+\end_layout
+
+\begin_layout Definition
+Замыкание множества — процедура присоединения к множеству всех его предельных
+ точек.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\QQ$
+\end_inset
+
+ не открыто и не замкнуто.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\overline{\QQ}$
+\end_inset
+
+ — замыкание.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\overline{\QQ}=\RR$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $x\in X$
+\end_inset
+
+ — изолированная точка 
+\begin_inset Formula $X$
+\end_inset
+
+, если 
+\begin_inset Formula $\exists\varepsilon>0:\ \not\exists y\in X:\ y\neq x,\ y\in V_{\varepsilon}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Formula $x\in X$
+\end_inset
+
+ — граничная точка 
+\begin_inset Formula $X$
+\end_inset
+
+, если 
+\begin_inset Formula $\forall\varepsilon>0,\ \exists y_{1}\in X,\ \exists y_{2}\notin X:\ y_{1},y_{2}\in V_{\varepsilon}(x)$
+\end_inset
+
+.
+ При этом граничная точка может как принадлежать множеству, так и не принадлежат
+ь.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Пространство 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Под пространством 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+ будем понимать множество упорядоченных наборов из 
+\begin_inset Formula $n$
+\end_inset
+
+ вещественных чисел.
+ (Пространство 
+\begin_inset Formula $n$
+\end_inset
+
+-мерных векторов).
+\end_layout
+
+\begin_layout Standard
+Введем в пространстве 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+ метрику:
+\end_layout
+
+\begin_layout Standard
+1) Сферическая (евклидова) метрика:
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $x=\left(\begin{array}{c}
+x_{1}\\
+...\\
+x_{n}
+\end{array}\right),\ y=\left(\begin{array}{c}
+y_{1}\\
+...\\
+y_{n}
+\end{array}\right)$
+\end_inset
+
+, то 
+\begin_inset Formula 
+\[
+\rho(x,y)=\sqrt{\sum_{i=1}^{n}\left(x_{i}-y_{1}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Докажем неравенство треугольника (неотрицательность и симметричность очевидны):
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\forall a_{i},b_{i},\ i=1,...,n.\ \forall t\ \sum_{i=1}^{n}(a_{i}t+b_{i})^{2}\geq0$
+\end_inset
+
+.
+ Раскроем скобки: 
+\begin_inset Formula $\underbrace{t^{2}\sum a_{i}^{2}}_{A}+\underbrace{2t\sum a_{i}b_{i}}_{B}+\underbrace{\sum b_{i}^{2}}_{C}\geq0$
+\end_inset
+
+.
+ Чтобы это неравенство выполнялось, должно выполняться 
+\begin_inset Formula $B^{2}-AC\leq0$
+\end_inset
+
+.
+ Отсюда 
+\begin_inset Formula $\left(\sum_{i=1}^{n}a_{i}b_{i}\right)^{2}\leq\left(\sum a_{i}^{2}\right)\left(\sum b_{i}^{2}\right).$
+\end_inset
+
+ Извлечем корень: 
+\begin_inset Formula $\left|\sum a_{i}b_{i}\right|\leq\sqrt{\sum a_{i}^{2}}\sqrt{\sum b_{i}^{2}}$
+\end_inset
+
+.
+ Умножим на 2 и прибавим ...
+ : 
+\begin_inset Formula $\sum a_{i}^{2}+\sum b_{i}^{2}+2\sum a_{i}b_{i}\leq\sum a_{i}^{2}+\sum b_{i}^{2}+2\sqrt{\sum a_{i}^{2}}\sqrt{\sum b_{i}^{2}}$
+\end_inset
+
+.
+ Вынесем полные квадраты: 
+\begin_inset Formula $\sum(a_{i}+b_{i})^{2}\leq\left(\sqrt{\sum a_{i}^{2}}+\sqrt{\sum b_{i}^{2}}\right)^{2}$
+\end_inset
+
+.
+ Извлекаем корень, получаем 
+\begin_inset Formula $\sqrt{\sum(a_{i}+b_{i})^{2}}\leq\left(\sqrt{\sum a_{i}^{2}}+\sqrt{\sum b_{i}^{2}}\right)$
+\end_inset
+
+ (*).
+ 
+\end_layout
+
+\begin_layout Proof
+В неравенстве (*) 
+\begin_inset Formula $a_{i}=x_{i}-z_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{i}=z_{i}-y_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $i=\overline{1,n}$
+\end_inset
+
+, где 
+\begin_inset Formula $x,y,z\in\overline{\RR^{n}}$
+\end_inset
+
+.
+ Отсюда 
+\begin_inset Formula 
+\[
+\sqrt{\sum_{i=1}^{n}\left(x_{i}-y_{1}\right)^{2}}\leq\sqrt{\sum_{i=1}^{n}\left(x_{i}-z_{i}\right)^{2}}+\sqrt{\sum_{i=1}^{n}\left(z_{i}-y_{i}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $V_{\varepsilon}(x)=\{y\in\RR^{n}:\ \rho(x,y)<\varepsilon\}=\{y\in\RR^{n}:\ \sum_{i=1}^{n}(x_{i}-y_{i})^{2}<\varepsilon^{2}\}$
+\end_inset
+
+ — эпсилон-окрестность, шар.
+\end_layout
+
+\begin_layout Standard
+2) Параллелепипедальная метрика:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x,y\in\RR^{n}\ \rho(x,y)=\max_{i=\overline{1,n}}\left|x_{i}-y_{i}\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Аксиомы очевидны.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $V_{\varepsilon}(x)=\{y\in\RR^{n}:\ \rho(x,y)<\varepsilon\}=\{y\in\RR^{n}:\ |x_{i}-y_{i}|<\varepsilon,\ i=\overline{1,n}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Formula $\forall x\in\RR^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Formula $\forall\varepsilon>0\ \exists\varepsilon_{1}>0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Lemma
+1) 
+\begin_inset Formula $V_{\varepsilon_{1}}^{(1)}(x)<V_{\varepsilon}^{(2)}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+2) 
+\begin_inset Formula $V_{\varepsilon_{1}}^{(2)}(x)<V_{\varepsilon}^{(1)}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+где 
+\begin_inset Formula $V^{(1)}$
+\end_inset
+
+ — сферическая окрестность, а 
+\begin_inset Formula $V^{(2)}$
+\end_inset
+
+ — параллелепипедальная.
+\end_layout
+
+\begin_layout Proof
+Очевидно.
+\end_layout
+
+\begin_layout Proof
+Из леммы вытекает, что сферическая и параллелепипедальная метрики эквивалентны
+ в плане близости.
+\end_layout
+
+\begin_layout Proof
+Поэтому далее можно использовать любую из этих метрик и теоремы, доказанные
+ в одной метрике, верны и для другой.
+\end_layout
+
+\begin_layout Proof
+Далее, если не оговорено противное, под расстоянием в пространстве 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+ будем понимать сферическую метрику.
+\end_layout
+
+\begin_layout Standard
+В различных задачах могут быть использованы и другие метрики пространства
+ 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Последовательности в пространстве 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\forall k\in\NN\ \exists x^{(k)}=\left(\begin{array}{c}
+x_{1}^{(k)}\\
+...\\
+x_{n}^{(k)}
+\end{array}\right)\in\RR^{n}$
+\end_inset
+
+ — последовательность в пространстве 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Пусть 
+\begin_inset Formula $a\in\RR^{n}$
+\end_inset
+
+.
+ Точка 
+\begin_inset Formula $a$
+\end_inset
+
+ называется пределом последовательности 
+\begin_inset Formula $\{x^{(k)}\}$
+\end_inset
+
+ при 
+\begin_inset Formula $k\to\infty$
+\end_inset
+
+, если 
+\begin_inset Formula $\forall\varepsilon>0\ \exists N>0,\ \forall k>N\Rightarrow\rho(x^{(k)},a)<\varepsilon$
+\end_inset
+
+.
+ Запись: 
+\begin_inset Formula $\lim_{k\to\infty}x^{(k)}=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $a=\left(\begin{array}{c}
+a_{1}\\
+...\\
+a_{n}
+\end{array}\right),\ x^{(k)}=\left(\begin{array}{c}
+x_{1}^{(k)}\\
+...\\
+x_{n}^{(k)}
+\end{array}\right)$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $a=\lim_{k\to\infty}x^{(k)}\Leftrightarrow a_{i}=\lim_{k\to\infty}x_{i}^{(k)}$
+\end_inset
+
+, где 
+\begin_inset Formula $i=\overline{1,n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\lim_{k\to\infty}x^{(k)}=a\Leftrightarrow\rho(x^{(k)},a)\to_{k\to\infty}0\Leftrightarrow\max_{i=\overline{1,n}}\left|x_{i}^{(k)}-a_{i}\right|\to_{k\to\infty}0\Leftrightarrow\lim_{k\to\infty}x_{i}^{(k)}=a_{i}$
+\end_inset
+
+ (по лемме из прошлого параграфа).
+\end_layout
+
+\begin_layout Remark
+Последовательность 
+\begin_inset Formula $\{x_{i}^{(k)}\}$
+\end_inset
+
+ — одномерные числовые последовательности.
+ В результате по теореме исследование многомерного предела сводится к исследован
+ию одномерных пределов и теоремы, доказанные для одномерного случая в той
+ или иной степени переносятся на многомерный случай.
+\end_layout
+
+\begin_layout Theorem
+(Коши)
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\exists$
+\end_inset
+
+ конечный 
+\begin_inset Formula $\lim_{k\to\infty}x^{(k)}\Leftrightarrow\forall\varepsilon>0\ \exists N>0\ \forall k\geq N\ \forall p>0\Rightarrow\rho(x^{(k+p)},x^{(k)})<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
