@@ -451,5 +451,321 @@ algorithm2e
  в зависимости от комбинации которых автомат меняет свое состояние.
 \end_layout
 
+\begin_deeper
+\begin_layout Definition
+(формальное определение детерминированного конечного автомата)
+\end_layout
+
+\begin_layout Definition
+Детерминированный конечный автомат 
+\begin_inset Formula $A$
+\end_inset
+
+ представляет собой пятерку компонентов 
+\begin_inset Formula $A=(Q,\Sigma,\delta,q_{0},F)$
+\end_inset
+
+, где:
+\end_layout
+
+\begin_layout Definition
+- 
+\begin_inset Formula $Q$
+\end_inset
+
+ — конечное множество состояний.
+\end_layout
+
+\begin_layout Definition
+- 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ — конечное множество входных символов.
+\end_layout
+
+\begin_layout Definition
+- 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ — функция перехода 
+\begin_inset Formula $\sigma(q,a)=p$
+\end_inset
+
+, где 
+\begin_inset Formula $p,q\in Q,\ a\in\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+- 
+\begin_inset Formula $q_{0}$
+\end_inset
+
+ — начальное состояние из 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+- 
+\begin_inset Formula $F$
+\end_inset
+
+ — множество финальных (завершающих) состояний 
+\begin_inset Formula $F\in Q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Example
+ДКА, допускающий битовые цепочки, содержащие подцепочку 
+\begin_inset Formula $01$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+
+\series bold
+Состояния: 
+\end_layout
+
+\begin_layout Example
+- 
+\begin_inset Formula $01$
+\end_inset
+
+ не прочитана и либо автомат на предыдущем шаге ничего не читал, либо прочитан
+ символ 
+\begin_inset Formula $1$
+\end_inset
+
+ (состояние 
+\begin_inset Formula $q_{0}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Example
+- 
+\begin_inset Formula $01$
+\end_inset
+
+ еще не прочитана, но автомат на предыдущем шаге прочитал 
+\begin_inset Formula $0$
+\end_inset
+
+ (состояние 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ ).
+\end_layout
+
+\begin_layout Example
+- 
+\begin_inset Formula $01$
+\end_inset
+
+ прочитана.
+\end_layout
+
+\begin_layout Example
+
+\series bold
+Функции перехода:
+\end_layout
+
+\begin_layout Example
+- 
+\begin_inset Formula $\delta(q_{0},1)=q_{0}$
+\end_inset
+
+; 
+\begin_inset Formula $\delta(q_{0},0)=q_{1}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Example
+- 
+\begin_inset Formula $\delta(q_{1},1)=q_{2}$
+\end_inset
+
+; 
+\begin_inset Formula $\delta(q_{1},0)=q_{1}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Example
+- 
+\begin_inset Formula $\delta(q_{2},1)=q_{2}$
+\end_inset
+
+; 
+\begin_inset Formula $\delta(q_{2},0)=q_{2}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $Q=\{q_{0},q_{1},q_{2}\},\ \Sigma=\{0,1\},\ F=(\text{что-то там})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Мы можем задать автомат с помощью диаграммы переходов.
+\end_layout
+
+\begin_layout Itemize
+Всякому состоянию соответствует вершина графа.
+\end_layout
+
+\begin_layout Itemize
+Для любого перехода ДКА 
+\begin_inset Formula $\delta(q,a)=p$
+\end_inset
+
+, определяемого его функцией перехода, в графе существует дуга из вершины
+ состояния 
+\begin_inset Formula $q$
+\end_inset
+
+ в вершину состояния 
+\begin_inset Formula $p$
+\end_inset
+
+ размеченная символом 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Существует стрелка в начальное состояни, не выходящая ни из одного состояния.
+\end_layout
+
+\begin_layout Itemize
+Вершина из множества допускаемых состояний обозначается двойным кружком.
+\end_layout
+
+\begin_layout Standard
+Или мы можем задать ДКА с помощью таблицы переходов.
+\end_layout
+
+\begin_layout Itemize
+Таблица переходов представляет собой табличное представление функции перехода
+ 
+\begin_inset Formula $\delta(q,a)$
+\end_inset
+
+ (в левом столбце — состояния, в первой строке — символы алфавита).
+\end_layout
+
+\begin_layout Definition
+Расширенная функция переходов 
+\begin_inset Formula $\widehat{\delta}(q,w)$
+\end_inset
+
+ ставит в соответствие состоянию 
+\begin_inset Formula $q$
+\end_inset
+
+ и цепочке 
+\begin_inset Formula $w$
+\end_inset
+
+ состояние 
+\begin_inset Formula $p$
+\end_inset
+
+, в которое попадает автомат из состояния 
+\begin_inset Formula $q$
+\end_inset
+
+, обработав цепочку 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Языком ДКА 
+\begin_inset Formula $A=(Q,\Sigma,\delta,q_{0},F)$
+\end_inset
+
+ называются цепочки...
+ ну блин.
+ В жопу такие конспекты
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Недетерминированный конечный автомат — 
+\begin_inset Formula $A(Q,\Sigma,\delta,q_{0},F)$
+\end_inset
+
+, где все, кроме 
+\begin_inset Formula $\delta$
+\end_inset
+
+ имеют те же значения, а 
+\begin_inset Formula $\delta$
+\end_inset
+
+ —функция, аргументами которой являются состояние из 
+\begin_inset Formula $Q$
+\end_inset
+
+ и входной символ из 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+, а значением — подмножество множества 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ Различие между ДКА и НКА состоит в типе функции 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Может в каждый момент времени может находиться в нескольких состояниях.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document

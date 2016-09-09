@@ -4,14 +4,11 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass amsart
+\textclass extarticle
 \begin_preamble
 \usepackage{indentfirst}
 \end_preamble
 \use_default_options true
-\begin_removed_modules
-theorems-ams
-\end_removed_modules
 \begin_modules
 eqs-within-sections
 figs-within-sections
@@ -787,6 +784,1332 @@ x_{n}^{(k)}
  В результате по теореме исследование многомерного предела сводится к исследован
 ию одномерных пределов и теоремы, доказанные для одномерного случая в той
  или иной степени переносятся на многомерный случай.
+\end_layout
+
+\begin_layout Theorem
+(Коши)
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\exists$
+\end_inset
+
+ конечный 
+\begin_inset Formula $\lim_{k\to\infty}x^{(k)}\Leftrightarrow\forall\varepsilon>0\ \exists N>0\ \forall k\geq N\ \forall p>0\Rightarrow\rho(x^{(k+p)},x^{(k)})<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\{x_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+ ограничена в 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+, если 
+\begin_inset Formula $\exists M>0:\ \rho(x^{(k)},\phi)\leq M\ \forall k=1,2,...$
+\end_inset
+
+, где 
+\begin_inset Formula $\phi$
+\end_inset
+
+ обычно является началом координат.
+\end_layout
+
+\begin_layout Theorem
+(Больцано-Вейерштрасса для многомерного случая) Если последовательность
+ ограничена, то из нее можно выделить сходящуюся подпоследовательность.
+\end_layout
+
+\begin_layout Proof
+Пусть 
+\begin_inset Formula $\{x^{(k)}\}$
+\end_inset
+
+ ограничена в 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+.
+ Распишем: 
+\begin_inset Formula $x^{(k)}=\left(\begin{array}{c}
+x_{1}^{(k)}\\
+...\\
+x_{n}^{(k)}
+\end{array}\right)$
+\end_inset
+
+.
+ Если ограничены вектора, то следует, что последовательность первых координат
+ 
+\begin_inset Formula $\{x_{1}^{(k)}\}$
+\end_inset
+
+ ограничена.
+ По теореме Больцано-Вейерштрасса для одномерного случая из этой последовательно
+сти можно выделить сходящуюся подпоследовательность: 
+\begin_inset Formula $\exists\{x_{1}^{(m_{k})}\}$
+\end_inset
+
+.
+ Теперь возьмем эту последовательность для всех векторов (рассматриваем
+ многомерную подпоследовательность): 
+\begin_inset Formula $x^{(m_{k})}=\left(\begin{array}{c}
+x_{1}^{(m_{k})}\\
+...\\
+x_{n}^{(m_{k})}
+\end{array}\right)$
+\end_inset
+
+.
+ Рассмотрим последовательность вторых координат 
+\begin_inset Formula $\{x_{2}^{(m_{k})}\}$
+\end_inset
+
+.
+ Она ограничена, а значит, существует сходящаяся подпоследовательность 
+\begin_inset Formula $\{x_{2}^{(p_{m_{k}})}\}$
+\end_inset
+
+.
+ Теперь рассматриваем 
+\begin_inset Formula $x^{(p_{m_{k}})}=\left(\begin{array}{c}
+x_{1}^{(p_{m_{k}})}\\
+...\\
+x_{n}^{(p_{m_{k}})}
+\end{array}\right)$
+\end_inset
+
+.
+ Полученная последовательность векторов сходится по первым двум координатам.
+ По индукции распространяем правило на оставшиеся координаты.
+\end_layout
+
+\begin_layout Subsection
+Функции нескольких переменных.
+\end_layout
+
+\begin_layout Definition
+Пусть 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+.
+ И пусть 
+\begin_inset Formula $\forall x=\left(\begin{array}{c}
+x_{1}\\
+...\\
+x_{n}
+\end{array}\right)\in E\ \exists$
+\end_inset
+
+ некоторое вещественное число, которое будем обозначать 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ или 
+\begin_inset Formula $f(x_{1},...,x_{n})$
+\end_inset
+
+.
+ Тогда говорят, что на множестве 
+\begin_inset Formula $E$
+\end_inset
+
+ задана функция от нескольких переменных.
+\end_layout
+
+\begin_layout Definition
+Обозначения: Если будем доказывать теоремы для 
+\begin_inset Formula $n$
+\end_inset
+
+-мерного случая, то будем обозначать несколько переменных как 
+\begin_inset Formula $f(x_{1},...x_{n})$
+\end_inset
+
+.
+ В трехмерном/двухмерном будем писать 
+\begin_inset Formula $f(x,y,z)/f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Formula $E$
+\end_inset
+
+ — область определения функции.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Диаметр области 
+\begin_inset Formula $diamE=$
+\end_inset
+
+
+\begin_inset Formula $\sup_{x^{(1)},x^{(2)}\in E}\rho(x^{(1)},x^{(2)})$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $diamE$
+\end_inset
+
+ конечен, то область 
+\begin_inset Formula $E$
+\end_inset
+
+ ограничена.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Область 
+\begin_inset Formula $E$
+\end_inset
+
+ — связная, если любые две точки из этой области можно соединить непрерывной
+ кривой, целиком лежащей в этой области.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Example
+\begin_inset Formula $f(x,y)=\ln xy$
+\end_inset
+
+.
+ Область определения 
+\begin_inset Formula $E=\{(x,y)\in\RR^{2}:\ xy>0\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ — неограничена, несвязна.
+\end_layout
+
+\begin_layout Remark
+Функция от двух переменных задает поверхность в трехмерном пространстве.
+ 
+\end_layout
+
+\begin_layout Remark
+В общем случае получаем 
+\begin_inset Formula $n$
+\end_inset
+
+-мерную поверхность в 
+\begin_inset Formula $n+1$
+\end_inset
+
+-мерном пространстве.
+\end_layout
+
+\begin_layout Definition
+(предел функции по Гейне)
+\end_layout
+
+\begin_layout Definition
+Пусть 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ определена на 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+ — предельная точка 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $\forall\{x^{(k)}\}\in E$
+\end_inset
+
+ верно, что 
+\begin_inset Formula $\rho(x^{(k)},a)\to_{k\to\infty}0\Rightarrow|f(x^{(k)})-g|\to_{k\to\infty}0$
+\end_inset
+
+, то 
+\begin_inset Formula $g=\lim_{x\to a}f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $a=\left(\begin{array}{c}
+a_{1}\\
+...\\
+a_{n}
+\end{array}\right),\ x=\left(\begin{array}{c}
+x_{1}\\
+...\\
+x_{n}
+\end{array}\right)$
+\end_inset
+
+.
+ Зафиксируем все координаты кроме 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ Предположим 
+\begin_inset Formula $\exists\lim_{x_{1}\to a_{1}}f(x_{1},...,x_{n})=f^{(1)}(x_{2},...,x_{n})$
+\end_inset
+
+.
+ Проведем эту операцию для оставшихся координат.
+ В результате приходим к так называемому повторному пределу 
+\begin_inset Formula $\lim_{x_{n}\to a_{n}}...\lim_{x_{1}\to a_{1}}f(x_{1},...,x_{n})$
+\end_inset
+
+.
+ Если перебирать аргументы 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ в другом порядке, то получим другой повторный предел.
+ Всего получится 
+\begin_inset Formula $n!$
+\end_inset
+
+ повторных пределов.
+ Если существуют оба предела (повторный и Гейне), то они равны.
+ Может оказаться, что какой-то повторный предел существует, а многомерного
+ предела нет.
+ И наоборот.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)\in\RR^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f(x,y)=x\sin\frac{1}{y}+y\sin\frac{1}{x}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $a=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)$
+\end_inset
+
+.
+ Здесь 
+\begin_inset Formula $\lim_{x\to0,y\to0}f(x,y)=0$
+\end_inset
+
+.
+ То есть многомерный предел существует и равен нулю, так как 
+\begin_inset Formula $0\leq|f(x,y)|\leq|x|+|y|$
+\end_inset
+
+.
+ Вычислим повторный предел: 
+\begin_inset Formula $\lim_{y\to0}\lim_{x\to0}f(x,y)$
+\end_inset
+
+.
+ Внутреннего предела не существует.
+ Если поменять пределы местами, то тоже ничего хорошего не получится.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+Все то же самое, только 
+\begin_inset Formula $f(x,y)=x\sin\frac{1}{y}+y$
+\end_inset
+
+.
+ Опять-таки многомерный предел есть.
+ Повторный предел 
+\begin_inset Formula $\lim_{y\to0}\lim_{x\to0}f(x,y)=\lim_{y\to0}y=0$
+\end_inset
+
+.
+ А вот наоборот не выйдет по той же причине, по которой мы не смогли вывести
+ в предыдущем примере.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+Опять-таки все то же самое, но 
+\begin_inset Formula $f(x,y)=\frac{xy}{x^{2}+y^{2}}$
+\end_inset
+
+.
+ Повторные пределы существуют и 
+\begin_inset Formula $\lim_{y\to0}\lim_{x\to0}f(x,y)=0;\ \lim_{x\to0}\lim_{y\to0}f(x,y)=0$
+\end_inset
+
+.
+ Покажем, что многомерного предела не существует.
+ Будем стремиться к нулю по лучам.
+ То есть 
+\begin_inset Formula $y=px,\ p=const$
+\end_inset
+
+.
+ Вычисляем: 
+\begin_inset Formula $\lim_{x\to0}f(x,px)=\lim_{x\to0}\frac{px^{2}}{x^{2}+p^{2}x^{2}}=\frac{p}{1+p^{2}}$
+\end_inset
+
+.
+ То есть для каждого луча значение предела свое.
+ Тогда по Гейне получается, что предела нет.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+Все то же самое, но 
+\begin_inset Formula $f(x,y)=\frac{x^{2}y}{x^{4}+y^{2}}$
+\end_inset
+
+.
+ Попытаемся идти вдоль лучей.
+ 
+\begin_inset Formula $\lim_{x\to0}f(x,px)=\lim_{x\to0}\frac{px^{3}}{x^{4}+p^{2}x^{2}}=\lim_{x\to0}\frac{px}{x^{2}+p^{2}}=0\ \forall p$
+\end_inset
+
+.
+ То есть вдоль любого луча получаем ноль.
+ Но не факт, что предел существует, так как мы не обязаны идти по лучам.
+ Пойдем по параболам: 
+\begin_inset Formula $y=px^{2}$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\lim_{x\to0}f(x,px^{2})=\frac{p}{1+p^{2}}$
+\end_inset
+
+.
+ Опять зависимость от 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Значит, этот предел не существует.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Remark
+Таким образом определение предела по Гейне отлично подходит для того, чтобы
+ доказать, что предела нет.
+\end_layout
+
+\begin_layout Definition
+(предел по Коши)
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $f(x)$
+\end_inset
+
+ определена на 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ — предел 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ при 
+\begin_inset Formula $x\to a$
+\end_inset
+
+, если 
+\begin_inset Formula $\forall\varepsilon>0,\exists\delta>0\ \forall x\in E:\ \rho(x,a)<\delta\Rightarrow|f(x)-g|<\varepsilon$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Remark
+Определения предела по Коши и Гейне эквивалентны.
+\end_layout
+
+\begin_layout Theorem
+(Критерий сходимости Коши)
+\end_layout
+
+\begin_layout Theorem
+Чтобы 
+\begin_inset Formula $\exists\lim_{x\to a}f(x)\Leftrightarrow\forall\varepsilon>0,\ \exists\delta>0$
+\end_inset
+
+, такое, что 
+\begin_inset Formula $\forall x^{(1)},x^{(2)}\in E:\ x^{(1)},x^{(2)}\in U_{\delta}(a)\Rightarrow|f(x^{(1)})-f(x^{(2)})|<\varepsilon$
+\end_inset
+
+.
+ Доказательство аналогично одномерному случаю.
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+(арифметические свойства)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $\exists\lim_{x\to a}f(x)=g$
+\end_inset
+
+ и 
+\begin_inset Formula $\exists\lim_{x\to a}h(x)=l$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists\lim_{x\to a}(f(x)+h(x))=g+l$
+\end_inset
+
+, аналогично с произведением и частным.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+Пусть 
+\begin_inset Formula $y=f(x):\ \RR^{n}\to\RR^{m}$
+\end_inset
+
+.
+ А 
+\begin_inset Formula $z=g(y):\ \RR^{m}\to\RR$
+\end_inset
+
+.
+ Здесь 
+\begin_inset Formula $y_{k}=f_{k}(x_{1},...,x_{n})$
+\end_inset
+
+, где 
+\begin_inset Formula $k=\overline{1,n}$
+\end_inset
+
+; 
+\begin_inset Formula $z=g(y_{1},...,y_{m})$
+\end_inset
+
+ Тогда 
+\begin_inset Formula $z=g(f(x)):\ \RR^{n}\to\RR$
+\end_inset
+
+ — суперпозиция функций 
+\begin_inset Formula $f,g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $\exists\lim_{x\to a}f(x)=b$
+\end_inset
+
+ и при этом 
+\begin_inset Formula $\exists\lim_{y\to b}=l$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists\lim_{y\to b}g(f(x))=l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Непрерывные функции
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $f(x)$
+\end_inset
+
+ определена на 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $a\in E$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ непрерывна в точке 
+\begin_inset Formula $a$
+\end_inset
+
+, если 
+\begin_inset Formula $\exists\lim_{x\to a}f(x)=f(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(арифметические свойства)
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $f,g$
+\end_inset
+
+ — непрерывны в 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Тогда непрерывны сумма, произведение и отношение (если 
+\begin_inset Formula $g(a)$
+\end_inset
+
+ не равно нулю).
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset Formula $y=f(x):\ \RR^{n}\to\RR^{m}$
+\end_inset
+
+ и она непрерывна в 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $z=g(y):\ \RR^{m}\to\RR$
+\end_inset
+
+ и она тоже непрерывна в 
+\begin_inset Formula $f(a)$
+\end_inset
+
+.
+ Тогда их суперпозиция будет непрерывна в точке 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+Если функция непрерывна в каждой точке 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+, то она называется непрерывной на множестве 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(Больцано-Коши о нуле функции)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ определена и непрерывна на 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+ и множество 
+\begin_inset Formula $E$
+\end_inset
+
+ связно.
+ И пусть 
+\begin_inset Formula $\exists a,b\in E:\ f(a)f(b)<0$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists c\in E$
+\end_inset
+
+, такая, что 
+\begin_inset Formula $f(c)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+здесь что-то неважное (дописать начало лекции).
+\end_layout
+
+\begin_layout Proof
+По условию 
+\begin_inset Formula $E$
+\end_inset
+
+ — связное, следовательно, 
+\begin_inset Formula $\exists$
+\end_inset
+
+ кривая 
+\begin_inset Formula $L:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+1) 
+\begin_inset Formula $L$
+\end_inset
+
+ соединяет точки 
+\begin_inset Formula $a,b$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Proof
+2) 
+\begin_inset Formula $L:\begin{cases}
+x_{1}=x_{1}(t)\\
+...\\
+x_{n}=x_{n}(t)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $t\in[\alpha,\beta]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Введем функцию 
+\begin_inset Formula $F(t)=f(x_{1}(t),...,x_{n}(t))$
+\end_inset
+
+, где 
+\begin_inset Formula $F(\alpha)=f(a),\ F(\beta)=f(b)$
+\end_inset
+
+.......
+\end_layout
+
+\begin_layout Theorem
+(Коши-Больцано о промежуточном значении)
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $f(x)$
+\end_inset
+
+ определена и непрерывна на 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $E$
+\end_inset
+
+ связно.
+ 
+\begin_inset Formula $\exists a,b\in E:\ f(a)=A,\ f(b)=B$
+\end_inset
+
+ и 
+\begin_inset Formula $A<B$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\forall C:\ A<C<B:\ \exists c\in E:\ f(c)=C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Введем функцию 
+\begin_inset Formula $\varphi(x)=f(x)-C$
+\end_inset
+
+.
+ Эта функция по-прежнему непрерывна.
+ Тогда 
+\begin_inset Formula $\varphi(a)=f(a)-C<0$
+\end_inset
+
+, и 
+\begin_inset Formula $\varphi(b)=f(b)-C>0$
+\end_inset
+
+.
+ Сведено к предыдущей теореме.
+ Тогда 
+\begin_inset Formula $\exists c\in E:\ \varphi(c)=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\varphi(c)=f(c)-C$
+\end_inset
+
+, теорема доказана.
+\end_layout
+
+\begin_layout Theorem
+(первая Вейерштрасса)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ непрерывна на 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+ и 
+\begin_inset Formula $E$
+\end_inset
+
+ замкнута и ограничена.
+ Тогда 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ будет ограничена в области 
+\begin_inset Formula $E$
+\end_inset
+
+ и достигает там своего максимума и минимума.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+1) Покажем, что функция является ограниченной:
+\end_layout
+
+\begin_layout Proof
+От противного.
+ Пусть это не так.
+ Тогда: 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ ...
+ на 
+\begin_inset Formula $E\ \forall k=1,2,...,\ \exists x^{(k)}\in E:\ |f(x^{(k_{1})})|\geq K\Rightarrow|f(x^{(k)})|\to_{k\to\infty}\infty(*)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\{x^{(n)}\}\in E$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ ограничена 
+\begin_inset Formula $\Rightarrow\{x^{(k)}\}$
+\end_inset
+
+ — ограничена.
+ А раз она ограничена, то по теореме Больцано-Вейерштрасса 
+\begin_inset Formula $\exists$
+\end_inset
+
+ сходящаяся подпоследовательность 
+\begin_inset Formula $\{x^{(m_{k})}\}\Rightarrow\exists x^{*}:\ x^{(m_{k})}\to x^{*}$
+\end_inset
+
+, из определения непрерывности по Гейне следует, что 
+\begin_inset Formula $f(x^{(m_{k})})\to_{k\to\infty}f(x^{*})$
+\end_inset
+
+.
+ С другой стороны, из 
+\begin_inset Formula $(*)$
+\end_inset
+
+ следует, что подпоследовательность уходит на бесконечность.
+ Противоречие.
+\end_layout
+
+\begin_layout Proof
+2) Покажем, что 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ достигает максимума (для минимума доказательство аналогично).
+\end_layout
+
+\begin_layout Proof
+Обозначим 
+\begin_inset Formula $M=\sup_{E}f(x)$
+\end_inset
+
+.
+ Функция ограничена, значит, супремум конечен.
+ От противного.
+ Предположим, что 
+\begin_inset Formula $f(x)<M,\ \forall x\in E$
+\end_inset
+
+.
+ Рассмотрим 
+\begin_inset Formula $g(x)=\frac{1}{M-f(x)}$
+\end_inset
+
+.
+ Знаменатель не обращается в ноль, значит, она непрерывна на 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ По уже доказанной первой части 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ ограничена на 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ То есть 
+\begin_inset Formula $g(x)\leq L$
+\end_inset
+
+.
+ Подставим значение 
+\begin_inset Formula $g(x):\ \frac{1}{M-f(x)}\leq L\ \forall x\in E\Rightarrow f(x)\leq M-\frac{1}{L}$
+\end_inset
+
+.
+ Получаем противоречие с определением супремума.
+\end_layout
+
+\begin_layout Definition
+(равномерная непрерывность)
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $f(x)$
+\end_inset
+
+ равномерно непрерывна на 
+\begin_inset Formula $E\in\RR^{n}$
+\end_inset
+
+ если 
+\begin_inset Formula $\forall\varepsilon>0,\ \exists\delta(\varepsilon)>0:\ \forall x^{(1)},x^{(2)}\in E$
+\end_inset
+
+, таких, что 
+\begin_inset Formula $\rho(x^{(1)},x^{(2)})<\delta\Rightarrow|f(x{}^{(1)})-f(x{}^{(2)})|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(Кантора)
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $f(x)$
+\end_inset
+
+ непрерывна на 
+\begin_inset Formula $E\in\RR^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ замкнуто и ограничено.
+ Тогда 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ равномерно непрерывна.
+\end_layout
+
+\begin_layout Proof
+От противного.
+ Положим, функция непрерывна, но не равномерно непрерывна на 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists\varepsilon>0:\ \forall\delta>0:\ \exists x^{(1)},x^{(2)}\in E:\ \rho(x{}^{(1)},x^{(2)})<\delta\Rightarrow|f(x^{(1)})-f(x^{(2)})|\geq\varepsilon$
+\end_inset
+
+.
+ Возьмем 
+\begin_inset Formula $\delta_{k}=\frac{1}{k},\ k=1,2,...\Rightarrow\exists x^{(1k)},x^{(2k)}\in E:\ \rho(x^{(1k)},x^{(2k)})<\frac{1}{k},\ |f(x^{(1k)})-f(x^{(2k)})|\geq\varepsilon$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\{x^{(1k)}\}\in E$
+\end_inset
+
+ — ограничена, следовательно, по теореме Больцано-Вейерштрасса 
+\begin_inset Formula $\exists$
+\end_inset
+
+ сходящаяся подпоследовательность 
+\begin_inset Formula $\{x^{(1m_{k})}\}\to_{k\to\infty}x^{*}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ замкнуто, следовательно, 
+\begin_inset Formula $x^{*}\in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Рассмотрим те же номера для второй последовательности: 
+\begin_inset Formula $\{x^{(2m_{k})}\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $0\leq\rho(x^{(2m_{k})},x^{*})\leq\underbrace{\rho(x^{(2m_{k})},x^{(1m_{k})})}_{<\frac{1}{m_{k}}\to0}+\underbrace{\rho(x^{(1m_{k})},x^{*})}_{\to0}\to0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $f(x)$
+\end_inset
+
+ непрерывна в точке 
+\begin_inset Formula $x^{*}$
+\end_inset
+
+, тогда, по Гейне, 
+\begin_inset Formula $f(x^{(1m_{k})})\to f(x^{*})$
+\end_inset
+
+ и 
+\begin_inset Formula $f(x^{(2m_{k})})\to f(x^{*})$
+\end_inset
+
+.
+ Следовательно, 
+\begin_inset Formula $|f(x^{(1m_{k})})-f(x^{(2mk)})|\to0$
+\end_inset
+
+.
+ Противоречие с предположением.
+\end_layout
+
+\begin_layout Subsection
+Дифференцируемость функций нескольких переменных
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E\subset\RR^{3}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f(x,y,z)$
+\end_inset
+
+ определена на 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\forall M=(x,y,z)\in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Будем считать 
+\begin_inset Formula $y,z$
+\end_inset
+
+ фиксированными, а 
+\begin_inset Formula $x$
+\end_inset
+
+ зададим приращение 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+.
+ То есть мы сдвинемся вдоль оси 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Посмотрим, как изменятся значения функции:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Delta_{x}f=f(x+\Delta x,y,z)-f(x,y,z)$
+\end_inset
+
+ — частичное приращение 
+\begin_inset Formula $f$
+\end_inset
+
+ по 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Если существует 
+\begin_inset Formula 
+\[
+\lim_{\Delta x\to0}\frac{\Delta_{x}f}{\Delta x}=f'_{x}=\frac{\partial f}{\partial x}
+\]
+
+\end_inset
+
+, то он называется частной производной.
+ Аналогично можно ввести определения частной производной для остальных координат
+: 
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial y}=\lim_{\Delta y\to0}\frac{\Delta_{y}f}{\Delta y}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial z}=\lim_{\Delta z\to0}\frac{\Delta_{z}f}{\Delta z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+При вычислении частной производной все переменные, кроме одной, фиксируются,
+ то есть нахождение частных производных сводится к одномерному дифференцированию.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f(x,y,z)=xe^{yz^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'_{x}=e^{yz^{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $f'_{y}=x^{yz^{2}}\cdot z^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $f'_{z}=xe^{yz^{2}}\cdot2yz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Зададим приращение сразу всем трем переменным.
+ 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\Delta f=f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y,z)$
+\end_inset
+
+.
+ Такая величина называется полным приращением функции точки 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Formula $f(x,y,z)$
+\end_inset
+
+ называется дифференцируемой в точке 
+\begin_inset Formula $M$
+\end_inset
+
+, если ее полное приращение может быть представлено в виде 
+\begin_inset Formula $\Delta f=A\Delta x+B\Delta y+C\Delta z+o(\rho)$
+\end_inset
+
+, где 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ — константы, а 
+\begin_inset Formula $\rho=\sqrt{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+(необходимое условие дифференцируемости)
+\end_layout
+
+\begin_layout Theorem
+Для того, чтобы 
+\begin_inset Formula $f(x,y,z)$
+\end_inset
+
+ была дифференциреумой в точке, необходимо, чтобы в этой точке существовали
+ ее частные производные.
+ (условие не является достаточным!)
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $f(x,y,z)$
+\end_inset
+
+ — дифференцируема, отсюда существует 
+\begin_inset Formula $\Delta f=A\Delta x+B\Delta y+C\Delta z+o(\rho)$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $\Delta x\neq0,\ \Delta y=\Delta z=0$
+\end_inset
+
+.
+ То есть полное приращение равно частному по 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Отсюда 
+\begin_inset Formula $\frac{\Delta_{x}f}{\Delta x}=A+\frac{o(\Delta x)}{\Delta x}$
+\end_inset
+
+.
+ При 
+\begin_inset Formula $x\to0$
+\end_inset
+
+ 
+\begin_inset Formula $\exists\lim_{\Delta x\to0}\frac{\Delta_{x}f}{\Delta x}=A$
+\end_inset
+
+.
+ Аналогично доказываются остальные координаты.
+\end_layout
+
+\begin_layout Proof
+Из доказанной теоремы следует, что если функция дифференцируема, то ее производн
+ая представима в виде 
+\begin_inset Formula $\Delta f=f_{x}'\Delta x+f'_{y}\Delta y+f'_{z}\Delta z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(достаточное условие дифференцируемости)
+\end_layout
+
+\begin_layout Theorem
+Для того, чтобы функция была дифференцируема в точке, достаточно, чтобы
+ существовали непрерывные частные производные (
+\begin_inset Formula $\frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z}$
+\end_inset
+
+).
 \end_layout
 
 \end_body

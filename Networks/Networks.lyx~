@@ -121,10 +121,6 @@ algorithm2e
 
 \end_layout
 
-\begin_layout Author
-Лепихин Тимур Андреевич
-\end_layout
-
 \begin_layout Standard
 Части курса:
 \end_layout
@@ -531,6 +527,193 @@ NFC;
 
 \begin_layout Problem*
 Узнать о скоростях передачи данных через все проводные соединения.
+\end_layout
+
+\begin_layout Section
+Адресация в компьютерных сетях
+\end_layout
+
+\begin_layout Standard
+Типы адресов:
+\end_layout
+
+\begin_layout Enumerate
+unicast (192.168.0.1);
+\end_layout
+
+\begin_layout Enumerate
+multicast (192.168.0.255);
+\end_layout
+
+\begin_layout Enumerate
+broadcast (255.255.255.255);
+\end_layout
+
+\begin_layout Standard
+Виды глобальных адресов:
+\end_layout
+
+\begin_layout Itemize
+IP-адрес;
+\end_layout
+
+\begin_layout Itemize
+MAC-адрес (6F.1A.48.21.40.FE) — адрес сетевой карты; первые несколько бит — код
+ производителя.
+\end_layout
+
+\begin_layout Standard
+Адресация:
+\end_layout
+
+\begin_layout Itemize
+Классовая.
+ Вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{cccc}
+A & 0 & \text{адрес сети 7 бит} & \text{адрес узла 24 бит}\\
+B & 10 & \text{адрес сети 14 бит} & \text{адрес узла 16 бит}\\
+C & 110 & \text{адрес сети 21 бит} & \text{адрес узла 8 бит}\\
+D & 1110 & \text{многоадресная } & \text{рассылка}\\
+E & 1111 & \text{зарезервировано}
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Безклассовая
+\end_layout
+
+\begin_layout Standard
+Для примера возьмем адрес 192.168.131.15;
+\end_layout
+
+\begin_layout Standard
+Чтобы выделить 16 компьютеров нам требуется выделить 4 бита.
+ Введем для этого маску 11...1.11...1.11...1.11110000 (количество нулей равно количеству
+ выделенных байтов).
+ Применив поразрядную конъюнкцию к IP и маске получим адрес сети.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Виды IP-адресации:
+\end_layout
+
+\begin_layout Itemize
+IP v4 (4 байта адреса);
+\end_layout
+
+\begin_layout Itemize
+IP v6 (6 байт адреса)
+\end_layout
+
+\begin_layout Section
+Коммутация
+\end_layout
+
+\begin_layout Standard
+Коммутация:
+\end_layout
+
+\begin_layout Itemize
+Каналов
+\end_layout
+
+\begin_layout Itemize
+Пакетов
+\end_layout
+
+\begin_layout Standard
+Мультиплексирование/демультиплексирование (Mux/Demux).
+\end_layout
+
+\begin_layout Standard
+Мультиплексирование — 
+\begin_inset Quotes fld
+\end_inset
+
+уплотнение
+\begin_inset Quotes frd
+\end_inset
+
+ каналов в один.
+ Демультиплексирование - обратная операция.
+ Аналогично с пакетами.
+\end_layout
+
+\begin_layout Section
+Маршрутизация
+\end_layout
+
+\begin_layout Standard
+Маршрутизация:
+\end_layout
+
+\begin_layout Enumerate
+Статическая;
+\end_layout
+
+\begin_layout Enumerate
+Динамическая;
+\end_layout
+
+\begin_layout Standard
+Таблица маршрутизации применяется для статической маршрутизации и составляется
+ вручную.
+\end_layout
+
+\begin_layout Standard
+Динамическая маршрутизация автоматически определяет хороший путь для связи.
+\end_layout
+
+\begin_layout Standard
+Маршрутизатор — устройство, осуществляющее маршрутизации.
+\end_layout
+
+\begin_layout Section
+Сетевые устройства
+\end_layout
+
+\begin_layout Enumerate
+Сетевая карта/сетевой интерфейс.
+\end_layout
+
+\begin_layout Enumerate
+Коммутатор/swith/hub.
+\end_layout
+
+\begin_layout Enumerate
+Машрутизатор.
+\end_layout
+
+\begin_layout Enumerate
+Хаб/концентратор.
+\end_layout
+
+\begin_layout Enumerate
+Mux/Demux.
+\end_layout
+
+\begin_layout Enumerate
+Модем.
+\end_layout
+
+\begin_layout Enumerate
+Повторитель.
+\end_layout
+
+\begin_layout Enumerate
+Точка доступа.
+\end_layout
+
+\begin_layout Enumerate
+
 \end_layout
 
 \end_body
