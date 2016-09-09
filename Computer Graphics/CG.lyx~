@@ -192,5 +192,11 @@ algorithm2e
 Точка белого — цвет, который счетается белым в данных условиях.
 \end_layout
 
+\begin_deeper
+\begin_layout Definition
+Цветовая температура — какая-то фигня :(
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
