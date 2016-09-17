@@ -90,24 +90,35 @@ algorithm2e
 \begin_body
 
 \begin_layout Standard
-Преподаватель: Севрюков Сергей Юрьевич
+\begin_inset FormulaMacro
+\newcommand{\RR}{\mathbb{R}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Сайт: www.sevryukov.su
+\begin_inset FormulaMacro
+\newcommand{\ZZ}{\mathbb{Z}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-E-mail: s.sevryukov@spbu.ru
+\begin_inset FormulaMacro
+\newcommand{\NN}{\mathbb{N}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Первое дз: перейти по ссылке и заполнить гугл-форму на этом сайте.
-\end_layout
+\begin_inset FormulaMacro
+\newcommand{\QQ}{\mathbb{Q}}
+\end_inset
 
-\begin_layout Standard
-Прочитать про непрерывную интеграцию.
- Про виртуализацию тоже.
+
 \end_layout
 
 \end_body

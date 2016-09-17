@@ -712,8 +712,96 @@ Mux/Demux.
 Точка доступа.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Section
+Стандартизация сетей
+\end_layout
 
+\begin_layout Itemize
+ISO;
+\end_layout
+
+\begin_layout Itemize
+IEEE;
+\end_layout
+
+\begin_layout Itemize
+Модель OSI;
+\end_layout
+
+\begin_layout Itemize
+Эталонная модель OSI (7 уровней);
+\end_layout
+
+\begin_layout Itemize
+Стандартная модель OSI (4 уровня).
+\end_layout
+
+\begin_layout Standard
+Рассмотрим эталонную модель.
+ Уровни:
+\end_layout
+
+\begin_layout Enumerate
+Физический;
+\end_layout
+
+\begin_layout Enumerate
+Канальный;
+\end_layout
+
+\begin_layout Enumerate
+Сетевой;
+\end_layout
+
+\begin_layout Enumerate
+Транспортный;
+\end_layout
+
+\begin_layout Enumerate
+Сеансовый;
+\end_layout
+
+\begin_layout Enumerate
+Представительский;
+\end_layout
+
+\begin_layout Enumerate
+Прикладной.
+\end_layout
+
+\begin_layout Standard
+Имеется связь (интерфейс) между соседними уровнями.
+ Каждый уровень имеет протокол.
+\end_layout
+
+\begin_layout Standard
+Обработка и передача сообщений.
+\end_layout
+
+\begin_layout Standard
+Имеется некоторое сообщение.
+ При переходе на следующий (нижний) уровень перед ним записывают заголовок,
+ который содержит IP-адреса отправителя и получателя, порты, информацию
+ о протоколах, интерфейсах, типе сообщения и тому подобно.
+ После сообщения добавляется концевик, который содержит служебную информацию
+ для проверки правильности доставки сообщения (контрольные суммы).
+ Для каждого уровня заголовки и концевики свои.
+ Таким образом, физический уровень передает уже гораздо больший пакет.
+ После передачи данных пакет проходит обратную 
+\begin_inset Quotes fld
+\end_inset
+
+распаковку
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Если целостность пакета нарушена, то то он будет отброшен.
+\end_layout
+
+\begin_layout Standard
+Порт — идентификатор ID процесса или приложения, для которого предназначается
+ этот пакет.
 \end_layout
 
 \end_body

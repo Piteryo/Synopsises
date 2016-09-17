@@ -4,14 +4,11 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass amsart
+\textclass extarticle
 \begin_preamble
 \usepackage{indentfirst}
 \end_preamble
 \use_default_options true
-\begin_removed_modules
-theorems-ams
-\end_removed_modules
 \begin_modules
 eqs-within-sections
 figs-within-sections

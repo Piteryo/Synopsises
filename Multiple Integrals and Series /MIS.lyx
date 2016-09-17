@@ -7,6 +7,8 @@
 \textclass extarticle
 \begin_preamble
 \usepackage{indentfirst}
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\const}{\operatorname{const}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -2119,6 +2121,1361 @@ x_{n}=x_{n}(t)
 \end_inset
 
 ).
+\end_layout
+
+\begin_layout Proof
+Пусть существует непрерывные 
+\begin_inset Formula $\frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z}$
+\end_inset
+
+.
+ Рассматриваем полное приращение функции в точке: 
+\begin_inset Formula 
+\begin{multline*}
+\Delta f=f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y,z)=\left[f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y+\Delta y,z+\Delta z)\right]+\left[f(x,y+\Delta y,z+\Delta z)-f(x,y,z+\Delta z)\right]+\\
++\left[f(x,y,z+\Delta z)-f(x,y,z)\right]=*=\frac{\partial f}{\partial x}(x+\Theta_{1}\Delta x_{1},y+\Delta y,z+\Delta z)\Delta x+\frac{\partial f}{\partial y}(x,y+\Theta_{2}\Delta y,z+\Delta z)\Delta y+\frac{\partial f}{\partial z}(x,y,z+\Theta_{3}\Delta z)\Delta z=\\
+=\left(\frac{\partial f}{\partial x}(x,y,z)+\alpha\right)\Delta x+\left(\frac{\partial f}{\partial y}(x,y,z)+\beta\right)\Delta y+\left(\frac{\partial f}{\partial z}(x,y,z)+\gamma\right)\Delta z
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+*по одномерной теореме Лагранжа 
+\begin_inset Formula $(\exists\Theta_{1},\Theta_{2},\Theta_{3}\in(0,1))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+где: 
+\begin_inset Formula $\alpha=\frac{\partial f}{\partial x}(x+\Theta_{1}\Delta x,y+\Delta y,z+\Delta z)-\frac{\partial f}{\partial x}(x,y,z)$
+\end_inset
+
+, 
+\begin_inset Formula $\beta=\frac{\partial f}{\partial y}(x,y+\Theta_{2}\Delta y,z+\Delta z)-\frac{\partial f}{\partial y}(x,y,z)$
+\end_inset
+
+, 
+\begin_inset Formula $\gamma=\frac{\partial f}{\partial z}(x,y,z+\Theta_{3}\Delta z)-\frac{\partial f}{\partial z}(x,y,z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+В силу непрерывности частных производных 
+\begin_inset Formula $\alpha,\beta,\gamma\longrightarrow_{\Delta x,\Delta y\Delta z\to0}0$
+\end_inset
+
+, откуда
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\Delta f=\frac{\partial f}{\partial x}(x,y,z)\Delta x+\frac{\partial f}{\partial y}(x,y,z)\Delta y+\frac{\partial f}{\partial z}(x,y,z)\Delta z+(\alpha\Delta x+\beta\Delta y+\gamma\Delta z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Мы представили приращение в виде 
+\begin_inset Formula $\Delta f=A\Delta x+B\Delta y+C\Delta z+o(\rho)$
+\end_inset
+
+, что по определению дает дифференцируемость функции.
+\end_layout
+
+\begin_layout Remark
+Непрерывность частных производных — достаточное условие дифференцируемости,
+ но не необходимое.
+\end_layout
+
+\begin_layout Theorem
+Если 
+\begin_inset Formula $f(x,y,z)$
+\end_inset
+
+ дифференцируема в точке 
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+, то она непрерывна в этой точке.
+\end_layout
+
+\begin_layout Proof
+Если 
+\begin_inset Formula $f$
+\end_inset
+
+ дифференцируема, то ее приращение имеет вид 
+\begin_inset Formula $\Delta f=\frac{\partial f}{\partial x}\Delta x+\frac{\partial f}{\partial y}\Delta y+\frac{\partial f}{\partial z}\Delta z+o(\rho)$
+\end_inset
+
+.
+ Если приращения аргументов стремятся к нулю, то и приращение функции будет
+ стремиться к нулю.
+ Следовательно, 
+\begin_inset Formula $f$
+\end_inset
+
+ непрерывна.
+\end_layout
+
+\begin_layout Definition
+Линейная часть полного приращения функции называется первым дифференциалом.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\Delta f=\underbrace{\frac{\partial f}{\partial x}\Delta x+\frac{\partial f}{\partial y}\Delta y+\frac{\partial f}{\partial z}\Delta z}_{=df}+o(\rho)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Отсюда формула первого дифференциала 
+\begin_inset Formula 
+\[
+df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Аналогичное определение можно ввести для функции от 
+\begin_inset Formula $n$
+\end_inset
+
+ переменных: 
+\begin_inset Formula $f(x_{1},...,x_{n})$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial x_{1}}=\lim_{x_{1}\to0}\frac{\Delta x_{i}f}{\Delta x_{i}}=\lim_{x_{i}\to0}\frac{f(x_{1},...,x_{i}-\Delta x_{i},...,x_{n})-f(x_{1},...,x_{i},...,x_{n})}{\Delta x_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $f$
+\end_inset
+
+ называется дифференцируемой, если ее полное приращение представимо в виде
+ 
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\frac{\partial f}{\partial x}\Delta x_{i}+o(\rho)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+где 
+\begin_inset Formula $\rho=\sqrt{\sum_{i=1}^{n}\Delta x_{i}^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Свойства дифференциала:
+\end_layout
+
+\begin_layout Standard
+1) 
+\begin_inset Formula $d(f+g)=df+dg$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+2) 
+\begin_inset Formula $d(fg)=gdf+fdg$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+3) 
+\begin_inset Formula $d(\frac{f}{g})=\frac{gdf-fdg}{g^{2}}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+Понятие дифференциала может быть использовано для численных расчетов.
+\end_layout
+
+\begin_layout Example
+Пусть требуется приближенно вычислить 
+\begin_inset Formula $\sqrt{1,02^{3}+1,97^{3}}$
+\end_inset
+
+.
+ Для этого введем функцию вида 
+\begin_inset Formula $f(x,y)=\sqrt{x^{3}+y^{3}}$
+\end_inset
+
+.
+ Введем точки: 
+\begin_inset Formula $x_{0}=1,y_{0}=2$
+\end_inset
+
+.
+ Напомним, 
+\begin_inset Formula $x=1,02,\ y=1,97$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\Delta x=0,02$
+\end_inset
+
+, 
+\begin_inset Formula $\Delta y=-0.03$
+\end_inset
+
+.
+ Считаем:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\Delta f=f(1,02;1,97)-f(1,2)\thickapprox df(1,2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+df(1,2)=\frac{\partial f}{\partial x}(1,2)\Delta x+\frac{\partial f}{\partial y}(1,2)\Delta y=\frac{3x^{2}}{2\sqrt{x^{3}+y^{3}}}\cdot0,02+\frac{3y^{2}}{2\sqrt{x^{3}+y^{3}}}\cdot(-0,03)=\frac{1}{2}\cdot0,02+2\cdot(-0,03)=-0,05
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Отсюда 
+\begin_inset Formula $\sqrt{1,02^{3}+1,97^{2}}\thickapprox3+(-0,05)=2,95$
+\end_inset
+
+.
+ Если полученная точность не устраивает, нужно выписывать слагаемые более
+ высокого порядка малости (см.
+ далее формулу Тейлора).
+\end_layout
+
+\begin_layout Subsection
+Производные сложных функций
+\end_layout
+
+\begin_layout Standard
+Пусть, для определенности, дана функция от трех переменных, и при этом каждая
+ из этих переменных является функцией от двух переменных: 
+\begin_inset Formula 
+\[
+f(x,y,z),\ \begin{cases}
+x=\varphi(u,v)\\
+y=\psi(u,v)\\
+z=\chi(u,v)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(u,v)=f(\varphi(u,v),\psi(u,v),\chi(u,v))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+предположим, что существуют непрерывные частные производные 
+\begin_inset Formula $f'_{x},\ f'_{y},\ f'_{z}$
+\end_inset
+
+ и существуют 
+\begin_inset Formula $\varphi'_{u}\varphi'_{v},\psi_{u}',\psi'_{v},\chi_{u}',\chi_{v}'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Зададим приращение аргументов 
+\begin_inset Formula $\Delta u$
+\end_inset
+
+, и зафиксируем 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Delta x=\varphi(u+\Delta u,v)-\varphi(u,v),\ \Delta y=\psi(u+\Delta u,v)-\psi(u,v),\ \Delta z=\chi(u+\Delta u,v)-\chi(u,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial F}{\partial u}=\lim_{\Delta u\to0}\frac{\Delta_{u}F}{\Delta u}=\lim_{\Delta u\to0}\frac{\Delta f}{\Delta u}=\lim_{\Delta u\to0}\frac{f'_{x}\Delta x+f'_{y}\Delta y+f'_{z}\Delta z+o(\rho)}{\Delta u}=\lim_{\Delta u\to0}\left(f'_{x}\frac{\Delta x}{\Delta u}+f'_{y}\frac{\Delta y}{\Delta u}+f'_{z}\frac{\Delta z}{\Delta u}+\underbrace{\frac{o(\rho)}{\rho}}_{\to0}\cdot\frac{\rho}{\Delta u}\right)=\frac{\partial f}{\partial x}\cdot\frac{\partial\varphi}{\partial u}+\frac{\partial f}{\partial y}\cdot\frac{\partial x}{\partial u}+\frac{\partial f}{\partial z}\cdot\frac{\partial x}{\partial u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $z=z(x_{1},...,x_{n})$
+\end_inset
+
+ и 
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{1}=x_{1}(y_{1},...,y_{m})\\
+............................\\
+x_{n}=x_{n}(y_{1},...,y_{m})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\frac{\partial z}{\partial y_{i}}=\frac{\partial z}{\partial x_{1}}\frac{\partial x}{\partial y_{i}}+....+\frac{\partial z}{\partial x_{n}}\frac{\partial x_{n}}{\partial y_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+где 
+\begin_inset Formula $y=\overline{1,m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $z=x^{2}+y^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+x=\sqrt{u}-\ln v\\
+y=u^{2}\cdot v
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{\partial z}{\partial u}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial u}=2x\frac{1}{2\sqrt{u}}+3y^{2}\cdot2uv=\frac{\sqrt{u}-\ln v}{\sqrt{u}}+6u^{5}v^{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Для 
+\begin_inset Formula $\frac{\partial z}{\partial v}$
+\end_inset
+
+ аналогично.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $z=x^{2}+y^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+x=t^{2}\\
+y=\ln t
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Используем дифференциалы, так как если подставить в исходную формулу, функция
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ будет зависеть от одной переменной.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{dz}{dt}=\frac{\partial z}{\partial x}\frac{dx}{dt}+\frac{\partial z}{\partial y}\frac{dy}{dt}=2x\cdot2t+2y\frac{1}{t}=4t^{3}+\frac{2\ln t}{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+(Лагранжа для многомерных)
+\end_layout
+
+\begin_layout Theorem
+Обозначим 
+\begin_inset Formula $M_{0}=(x_{0},y_{0},z_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\Delta x,\Delta y,\Delta z$
+\end_inset
+
+ — приращение аргументов.
+\end_layout
+
+\begin_layout Theorem
+Получили точку 
+\begin_inset Formula $M=(x_{0}+\Delta x,y_{0}+\Delta y,z_{0}+\Delta z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Пусть существуют непрерывные частные производные 
+\begin_inset Formula $f'_{x},f'_{y},f'_{z}$
+\end_inset
+
+ в окрестности точки 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+ Тогда найдется такое 
+\begin_inset Formula $\Theta\in(0,1)$
+\end_inset
+
+, что 
+\begin_inset Formula 
+\[
+\Delta f=\frac{\partial f}{\partial x}(\widetilde{M})\Delta x+\frac{\partial f}{\partial y}(\widetilde{M})\Delta y+\frac{\partial f}{\partial z}(\widetilde{M})\Delta z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+— формула конечных приращений.
+\end_layout
+
+\begin_layout Proof
+Рассмотрим значения функции вдоль отрезка 
+\begin_inset Formula $MM_{0}$
+\end_inset
+
+.
+ Обозначим 
+\begin_inset Formula $F(t)=f(x_{0}+t\Delta x,y_{0}+t\Delta y,z_{0}+t\Delta z)$
+\end_inset
+
+, 
+\begin_inset Formula $t\in[0,1]$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula 
+\[
+\Delta f=f(M)-f(M_{0})=F(1)-F(0)=(\exists\Theta\in(0,1))=F'(\Theta)=\frac{\partial f}{\partial x}(\widetilde{M})\Delta x+\frac{\partial f}{\partial y}(\widetilde{M})\Delta y+\frac{\partial f}{\partial z}(\widetilde{M})\Delta z
+\]
+
+\end_inset
+
+ (по одномерной теореме Лагранжа)
+\end_layout
+
+\begin_layout Remark
+(для многомерного случая)
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $f(x_{1},...,x_{n}),\ M_{0}=(x_{1}^{(0)},...,x_{n}^{(0)})$
+\end_inset
+
+, 
+\begin_inset Formula $M=(\text{соответственно предыдущему})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Delta f=f(M)-f(M_{0})=\sum...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset FormulaMacro
+\newcommand{\dfx}{\frac{\partial f}{\partial x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dfy}{\frac{\partial f}{\partial y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dfz}{\frac{\partial f}{\partial z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Conjecture
+\begin_inset Formula $f(x,y,z)\ \exists f'_{x},f'_{y},f'_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Conjecture
+a) 
+\begin_inset Formula $x,y,z$
+\end_inset
+
+ — независимые переменные, тогда 
+\begin_inset Formula $\partial f=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz\ (*)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Conjecture
+б) 
+\begin_inset Formula $x,y,z$
+\end_inset
+
+ зависят от 
+\begin_inset Formula $u,v$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Conjecture
+\begin_inset Formula $\begin{cases}
+x=x(u,v)\\
+y=y(u,v)\\
+z=z(u,v)
+\end{cases}$
+\end_inset
+
+ и 
+\begin_inset Formula $\exists x'_{u},x_{v}'$
+\end_inset
+
+ и так далее.
+\end_layout
+
+\begin_layout Conjecture
+Выпишем дифференциал функции 
+\begin_inset Formula 
+\begin{multline*}
+df=\frac{\partial f}{\partial u}du+\frac{\partial f}{\partial v}dv=\left(\frac{\partial f}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial u}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial u}\right)du+\left(\frac{\partial f}{\partial x}\frac{\partial x}{\partial v}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial v}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial v}\right)dv=\\
+=\frac{\partial f}{\partial x}\left(\frac{\partial x}{\partial u}du+\frac{\partial x}{\partial v}dv\right)+\frac{\partial f}{\partial y}\left(\frac{\partial y}{\partial u}du+\frac{\partial y}{\partial v}dv\right)+\frac{\partial f}{\partial z}\left(\frac{\partial z}{\partial u}du+\frac{\partial z}{\partial v}dv\right)=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partial f}{\partial z}dz\ (**)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Conjecture
+Формулы 
+\begin_inset Formula $(*)$
+\end_inset
+
+ и 
+\begin_inset Formula $(**)$
+\end_inset
+
+ имеют одинаковый вид, то есть при вычислении первого дифференциала не важно,
+ имеем мы дело с зависимыми или независимыми переменными.
+ Это называется инвариантностью первого дифференциала.
+\end_layout
+
+\begin_layout Subsection
+Производные по направлениям
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dfl}{\frac{\partial f}{\partial l}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $f(x,y,z),\ M_{0}=(x_{0},y_{0},z_{0})$
+\end_inset
+
+.
+ И пусть 
+\begin_inset Formula $\exists f'_{x},f'_{y},f'_{z}$
+\end_inset
+
+ в окрестности точки 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+ И зададим направление в 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ с помощью направляющих косинусов: 
+\begin_inset Formula $\vec{e}=(\cos\alpha,\cos\beta,\cos\gamma)$
+\end_inset
+
+ (Сие есть косинусы углов, которые образует задаваемый вектор с осями координат).
+ 
+\begin_inset Formula $L$
+\end_inset
+
+ — луч, выходящий из 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ в направлении 
+\begin_inset Formula $\vec{e}$
+\end_inset
+
+.
+ Запишем его уравнение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+x=x_{0}+t\cos\alpha\\
+y=y_{0}+t\cos\beta\\
+z=z_{0}+t\cos\gamma
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $t\geq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M=(x,y,z)$
+\end_inset
+
+, 
+\begin_inset Formula $\rho$
+\end_inset
+
+ — расстояние между 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ и 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ Тогда:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho=\sqrt{(x-x_{0})^{2}+(y-y_{0})^{2}+(z-z_{0})^{2}}=\pm t\sqrt{\cos^{2}\alpha+\cos^{2}\beta+\cos^{2}\gamma}=t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Если существует 
+\begin_inset Formula 
+\[
+\lim_{\rho\to0+}\frac{f(M)-f(M_{0})}{\rho}=\frac{\partial f}{\partial e}|_{M_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+то он называется производной 
+\begin_inset Formula $f$
+\end_inset
+
+ в направлении 
+\begin_inset Formula $l$
+\end_inset
+
+ в точке 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Введем функцию 
+\begin_inset Formula $F(t)=f(x_{0}+t\cos\alpha,y_{0}+t\cos\beta,z_{0}+t\cos\gamma)$
+\end_inset
+
+.
+ (Функция вдоль луча превращается в функцию от одной переменной).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial l}|_{M_{0}}=\lim_{\rho\to0+}\frac{f(M)-f(M_{0})}{\rho}=\lim_{t\to0+}\frac{F(t)-F(0)}{t}=F'_{+}(0)=\dfx|_{M_{0}}\cdot\cos\alpha+\dfy|_{M_{0}}\cdot\cos\beta+\dfz|_{M_{0}}\cdot\cos\gamma\Rightarrow\frac{\partial f}{\partial l}|_{M_{0}}=(\vec{\nabla f_{(M_{0})},\vec{l}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Вектор вида 
+\begin_inset Formula $\vec{\nabla}f=\vec{\grad}f=\left(\begin{array}{c}
+\dfx\\
+\dfy\\
+\dfz
+\end{array}\right)$
+\end_inset
+
+ — градиент функции.
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $\vec{l}=\left(\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right)\Rightarrow\frac{\partial f}{\partial l}=\dfx$
+\end_inset
+
+, аналогично для единиц на других местах.
+ 
+\end_layout
+
+\begin_layout Standard
+Производная по направлению 
+\begin_inset Formula $l$
+\end_inset
+
+ характеризует скорость изменения функции в направлении 
+\begin_inset Formula $l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поставим следующую задачу: найти такое направление, вдоль которого поверхность
+ возрастает наискорейшим образом.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dfl=(\vec{\nabla f(M_{0}),\vec{l}})=\underbrace{\left|\vec{\nabla f(M_{0})}\right|}_{\text{не зависит от l}}\cdot\underbrace{\left|\vec{l}\right|}_{1}\cos\Theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dfl\to\max\Leftrightarrow\Theta=0\Rightarrow\vec{e}\uparrow\uparrow\vec{\nabla}f(M_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Таким образом, градиент указывает направление наискорейшего возрастания
+ функции.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $-\vec{\nabla}f(M_{0})$
+\end_inset
+
+ — антиградиент, указывает направление наискорейшего убывания функции.
+\end_layout
+
+\begin_layout Remark
+В 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+: 
+\begin_inset Formula $M_{0}\in\RR^{n},\ \vec{l}=(\cos\alpha_{1},...,\cos\alpha_{n})$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\dfl=(\vec{e},\ \vec{\nabla}f(M_{0}))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\rn}{\RR^{n}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f=x^{2}+y^{2}$
+\end_inset
+
+ (парабалоид).
+ Возьмем 
+\begin_inset Formula $M_{0}=(1,2)$
+\end_inset
+
+ на плоскости 
+\begin_inset Formula $xy$
+\end_inset
+
+.
+ С осью 
+\begin_inset Formula $x$
+\end_inset
+
+ угол 
+\begin_inset Formula $30^{\circ}$
+\end_inset
+
+, с осью 
+\begin_inset Formula $y$
+\end_inset
+
+ — 
+\begin_inset Formula $60^{\circ}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\vec{l}=(\frac{\sqrt{3}}{2},\ \frac{1}{2})$
+\end_inset
+
+ Тогда градиент: 
+\begin_inset Formula $\vec{\nabla}f(M_{0})=\left(\begin{array}{c}
+2x\\
+2y
+\end{array}\right)_{M_{0}}=\left(\begin{array}{c}
+2\\
+4
+\end{array}\right)$
+\end_inset
+
+.
+ И: 
+\begin_inset Formula $\dfl=\frac{\sqrt{3}}{2}\cdot2+\frac{1}{2}\cdot4=2+\sqrt{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Производные и дифференциалы старшего порядка
+\end_layout
+
+\begin_layout Definition
+Пусть задана 
+\begin_inset Formula $f(x_{1},...,x_{n})$
+\end_inset
+
+, определена в 
+\begin_inset Formula $E\subset\rn$
+\end_inset
+
+ и 
+\begin_inset Formula $\exists\frac{\partial f}{\partial x_{i}}$
+\end_inset
+
+ в области 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Если существует 
+\begin_inset Formula $\frac{\partial}{\partial x_{j}}\left(\frac{\partial f}{\partial x_{i}}\right)$
+\end_inset
+
+, то она называется второй смешанной производной по 
+\begin_inset Formula $\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}=f''_{ij}$
+\end_inset
+
+.
+ Аналогично можно ввести понятие старших производных (третьего порядка и
+ выше), и если у нас функция от 
+\begin_inset Formula $n$
+\end_inset
+
+ переменных, то у нее может существовать 
+\begin_inset Formula $n^{k}$
+\end_inset
+
+ производных 
+\begin_inset Formula $k$
+\end_inset
+
+-ого порядка.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f(x,y)=x^{2}y^{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Example
+Первого порядка: 
+\begin_inset Formula $f'_{x}=2xy^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $f'_{y}=3y^{2}x^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Второго порядка: 
+\begin_inset Formula $f''_{x^{2}}=2y^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $f''_{xy}=6xy^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $f''_{yx}=6xy^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $f''_{y^{2}}=6x^{2}y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(о равенстве смешанных производных)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ определена в точке 
+\begin_inset Formula $M_{0}=(x_{0},y_{0})$
+\end_inset
+
+ и в окрестности этой точки существовуют непрерывные 
+\begin_inset Formula $f''_{xy}$
+\end_inset
+
+ и 
+\begin_inset Formula $f''_{yx}$
+\end_inset
+
+ и они равны.
+\end_layout
+
+\begin_layout Proof
+Зададим некоторые приращения аргументов 
+\begin_inset Formula $h,k=\const\neq0$
+\end_inset
+
+.
+ Зададим функцию
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+W=\frac{f(x_{0}+h,y_{0}+k)-f(x_{0}+h,y_{0})-f(x_{0},y_{0}+k)+f(x_{0},y_{0})}{hk}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Рассмотрим функцию 
+\begin_inset Formula 
+\[
+\varphi(x)=\frac{f(x,y_{0}+k)-f(x,y_{0})}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Несложно заметить, что 
+\begin_inset Formula 
+\[
+W=\frac{\varphi(x_{0}+h)-\varphi(x_{0})}{h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+По теореме Лагранжа (одномерной) 
+\begin_inset Formula $\exists c_{1}\in(x_{0},x_{0}+h)$
+\end_inset
+
+ (или 
+\begin_inset Formula $(x_{0}+h,x_{0})$
+\end_inset
+
+, в дальнейшем этот вариант опущен):
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+W=\frac{\varphi(x_{0}+h)-\varphi(x_{0})}{h}=\varphi'(c_{1})=\frac{f'_{x}(c_{1},y_{0}+k)-f'_{x}(c_{1},y_{0})}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Теперь вновь по теореме Лагранжа 
+\begin_inset Formula $\exists c_{2}\in(y_{0},y_{0}+h)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+W=\frac{\varphi(x_{0}+h)-\varphi(x_{0})}{h}=\varphi'(c_{1})=\frac{f'_{x}(c_{1},y_{0}+k)-f'_{x}(c_{1},y_{0})}{k}=f''_{xy}(c_{1},c_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Теперь сделаем это в другом порядке:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\psi(y)=\frac{f(x_{0}+h,y)-f(x_{0},y)}{h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Откуда
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+W=\frac{\psi(y_{0}+k)-\psi(y_{0})}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+По той же самой теореме Лагранжа:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+W=\frac{\psi(y_{0}+k)-\psi(y_{0})}{k}=\psi'(c_{3})=\frac{f'(x_{0}+h,c_{3})-f(x_{0},c_{3})}{h}=f''_{yx}(c_{4},c_{3})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Заметим, что 
+\begin_inset Formula $W$
+\end_inset
+
+ — число.
+ Поэтому 
+\begin_inset Formula $f''_{xy}(c_{1},c_{2})=W=f''(c_{4},c_{3})$
+\end_inset
+
+.
+ При этом 
+\begin_inset Formula $c_{1},c_{2}\in(x_{0},x_{0}+h)$
+\end_inset
+
+, 
+\begin_inset Formula $c_{3},c_{4}\in(y_{0},y_{0}+k)$
+\end_inset
+
+.
+ Так как 
+\begin_inset Formula $h,k\to0$
+\end_inset
+
+, то эти точки стремятся друг к другу.
+ Тогда, с учетом непрерывности этих производных, 
+\begin_inset Formula $f''_{xy}(M_{0})=f''_{yx}(M_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Пусть задана 
+\begin_inset Formula $f(x_{1},...,x_{n})$
+\end_inset
+
+.
+ Пусть у нее существуют непрерывные частные производные до 
+\begin_inset Formula $k$
+\end_inset
+
+-ого порядка включительно.
+ Тогда при вычислении этих производных важно, сколько раз мы дифференцируем
+ по каждой из переменных, но не важно, в каком порядке.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f(x,y,z)=x^{2}e^{yz^{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'_{x}=2xe^{yz^{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{xy}=2xz^{3}e^{yz^{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{xyx}=2z^{3}e^{yz^{3}}=f''_{x^{2}y}=f''_{yx^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введем понятие дифференциала старшего порядка:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+, 
+\begin_inset Formula $\exists$
+\end_inset
+
+ непрерывные частные производные по 
+\begin_inset Formula $x,y$
+\end_inset
+
+.
+ Следовательно, существует первый дифференциал: 
+\begin_inset Formula $df=\dfx dx+\dfy dy$
+\end_inset
+
+.
+ Предположим, что 
+\begin_inset Formula $dx,dy$
+\end_inset
+
+ зафиксированы.
+ Тогда 
+\begin_inset Formula $df$
+\end_inset
+
+ зависит только от 
+\begin_inset Formula $x,y$
+\end_inset
+
+.
+ Тогда, если существует 
+\begin_inset Formula $d(df)=d^{2}f$
+\end_inset
+
+ — второй дифференциал.
+ Аналогично, если существует 
+\begin_inset Formula $d(d^{k}f)=d^{k+1}f$
+\end_inset
+
+.
 \end_layout
 
 \end_body
