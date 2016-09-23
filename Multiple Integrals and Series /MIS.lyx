@@ -93,20 +93,19 @@ algorithm2e
 \newcommand{\RR}{\mathbb{R}}
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset FormulaMacro
 \newcommand{\ZZ}{\mathbb{Z}}
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset FormulaMacro
 \newcommand{\NN}{\mathbb{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\QQ}{\mathbb{Q}}
 \end_inset
 
 
@@ -114,7 +113,25 @@ algorithm2e
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\dfx}{\frac{\partial f}{\partial x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\dfy}{\frac{\partial f}{\partial y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\dfz}{\frac{\partial f}{\partial z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\rn}{\RR^{n}}
 \end_inset
 
 
@@ -2693,24 +2710,6 @@ y=\ln t
 
 \end_layout
 
-\begin_layout Remark
-\begin_inset FormulaMacro
-\newcommand{\dfx}{\frac{\partial f}{\partial x}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\dfy}{\frac{\partial f}{\partial y}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\dfz}{\frac{\partial f}{\partial z}}
-\end_inset
-
-
-\end_layout
-
 \begin_layout Conjecture
 \begin_inset Formula $f(x,y,z)\ \exists f'_{x},f'_{y},f'_{z}$
 \end_inset
@@ -3036,14 +3035,6 @@ height "1pt"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset FormulaMacro
-\newcommand{\rn}{\RR^{n}}
-\end_inset
-
-
 \end_layout
 
 \begin_layout Example
@@ -3476,6 +3467,1286 @@ height "1pt"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Proposition
+Пусть 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ — функция и существуют дифференциалы до второго порядка.
+ Тогда: 
+\begin_inset Formula 
+\begin{multline*}
+d^{2}f(x,y)=d(df)=d\left(\dfx dx+\dfy dy\right)=\frac{\partial}{\partial x}\left(\dfx dx+\dfy dy\right)dx+\frac{\partial}{\partial y}\left(\dfx dx+\dfy dy\right)dy=\\
+=\frac{\partial^{2}f}{\partial x^{2}}dx^{2}+\frac{\partial^{2}f}{\partial y\partial x}dydx+\frac{\partial^{2}f}{\partial x\partial y}dxdy+\frac{\partial^{2}f}{\partial y^{2}}dy^{2}=\frac{\partial^{2}f}{\partial x^{2}}dx^{2}+2\frac{\partial^{2}f}{\partial x\partial y}dxdy+\frac{\partial^{2}f}{\partial y^{2}}dy^{2}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+(
+\begin_inset Formula $dx,dy$
+\end_inset
+
+ — константы).
+ 
+\end_layout
+
+\begin_layout Proposition
+Предположим, что существуют непрерывные частные производные до 3 порядка
+ и вычислим формулу дифференциала третьего порядка:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula 
+\begin{multline*}
+d^{3}f(x,y)=d(d^{2}f)=d\left(\frac{\partial^{2}f}{\partial x^{2}}dx^{2}+2\frac{\partial^{2}f}{\partial x\partial y}dxdy+\frac{\partial^{2}f}{\partial y^{2}}dy^{2}\right)=\frac{\partial}{\partial x}(...)dx+\frac{\partial}{\partial y}(...)dy=\\
+=\frac{\partial^{3}f}{\partial x^{3}}dx^{3}+3\frac{\partial^{3}f}{\partial x^{2}\partial y}dx^{2}dy+3\frac{\partial^{3}f}{\partial x\partial y^{2}}dxdy^{2}+\frac{\partial^{3}f}{\partial y^{3}}dy^{3}\\
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+По идукции: 
+\begin_inset Formula 
+\[
+d^{k}f(x,y)=\sum_{i=0}^{k}\binom{k}{i}\frac{\partial^{k}f}{\partial x^{i}\partial^{k-i}y}dx^{i}dy^{k-i}=\left(\frac{\partial}{\partial x}dx+\frac{\partial}{\partial y}dy\right)^{k}f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Аналогично можно доказать, что если у 
+\begin_inset Formula $f(x_{1},...,x_{n})$
+\end_inset
+
+ сушествуют непрерывные (для приведения подобных слагаемых) частные производные
+ до 
+\begin_inset Formula $k$
+\end_inset
+
+ порядка, то 
+\begin_inset Formula 
+\[
+d^{k}f=d(d^{k-1}f)=\left(\frac{\partial}{\partial x_{1}}dx_{1}+...+\frac{\partial}{\partial x_{n}}dx_{n}\right)^{k}f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Если 
+\begin_inset Formula $M_{0}\in\rn$
+\end_inset
+
+, то 
+\begin_inset Formula $d^{k}f(M_{0})$
+\end_inset
+
+ — однородная форма относительно 
+\begin_inset Formula $dx_{1},...,dx_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Remark
+Можно доказать, что дифференциалы старшего порядка свойством инвариантности
+ формы не обладают.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+(формула Тейлора для многомерного случая)
+\end_layout
+
+\begin_layout Proposition
+Пусть дана 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+, 
+\begin_inset Formula $M_{0}=(x_{0},y_{0})$
+\end_inset
+
+ и в некоторой окрестности 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ существуют непрерывные частные производные до 
+\begin_inset Formula $k$
+\end_inset
+
+-ого порядка.
+ Пусть 
+\begin_inset Formula $M=(x,y)$
+\end_inset
+
+ — некоторая точка из этой окрестности.
+ Выпишем уравнение отрезка 
+\begin_inset Formula $L$
+\end_inset
+
+ соединяющего точки 
+\begin_inset Formula $M$
+\end_inset
+
+ и 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+ Уравнение отрезка будет иметь вид:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $\begin{cases}
+x=x_{0}+t\Delta x\\
+y=y_{0}+t\Delta y & t\in[0,1]
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Обозначим за 
+\begin_inset Formula $F(t)=f(x_{0}+t\Delta x,y_{0}+t\Delta y)$
+\end_inset
+
+.
+ Разложим 
+\begin_inset Formula $F$
+\end_inset
+
+ по известной формуле Тейлора в 
+\begin_inset Formula $t=0$
+\end_inset
+
+ и подставим ее значения:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula 
+\[
+F(t)=F(0)+\frac{F'(0)}{1!}t+\frac{F''(0)}{2!}t^{2}+...+\frac{F^{(k-1)}(0)}{(k-1)!}t^{k-1}+R_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+где 
+\begin_inset Formula $R_{k}=\frac{F^{(k)}(\Theta)}{k!}t^{k},\ \Theta\in(0,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+Подставим вместо нуля другое значение:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula 
+\[
+F(1)=F(0)+...+\frac{F^{(k-1)}(0)}{(k-1)!}+\frac{F^{(k)}(\Theta)}{k!}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Теперь распишем: 
+\begin_inset Formula $F(1)=f(M),\ F(0)=f(M_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+Вычислим: 
+\begin_inset Formula $F'(0)=\dfx(M_{0})\cdot\Delta x+\dfy(M_{0})\cdot\Delta y=df(M_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+Нетрудно показать, что 
+\begin_inset Formula $F_{(0)}^{i}=d^{i}f(M_{0})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proposition
+Распишем 
+\begin_inset Formula 
+\[
+R_{k}=\left(\frac{\partial}{\partial x}\Delta x+\frac{\partial}{\partial y}\Delta y\right)^{k}f(\widetilde{M})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+где 
+\begin_inset Formula $\widetilde{M}=(x_{0}+\Theta\Delta x,y_{0}+\Theta\Delta y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+Теперь запишем полученную формулу Тейлора:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula 
+\[
+t=1\Rightarrow f(M)=f(M_{0})+\frac{1}{1!}df(M_{0})+\frac{1}{2!}d^{2}f(M_{0})+...+\frac{1}{(k+1)!}d^{k-1}f(M_{0})+R_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Аналогичный вид формула Тейлора будет иметь и в 
+\begin_inset Formula $n$
+\end_inset
+
+-мерном случае: 
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $M=(x_{1},...,x_{n}),\ M_{0}=(x_{1}^{(0)},...,x_{n}^{(0)})$
+\end_inset
+
+.
+ Формула Тейлора та же:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+t=1\Rightarrow f(M)=f(M_{0})+\frac{1}{1!}df(M_{0})+\frac{1}{2!}d^{2}f(M_{0})+...+\frac{1}{(k+1)!}d^{k-1}f(M_{0})+R_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Где
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+R_{k}=\left(\frac{\partial}{\partial x_{1}}\Delta x_{1}+...+\frac{\partial}{\partial x_{n}}\Delta x_{n}\right)^{k}f(\widetilde{M})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+где 
+\begin_inset Formula $\widetilde{M}=(x_{1}^{(0)}+\Theta\Delta x_{1},...,x_{n}+\Theta\Delta x_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f(x,y)=\sin(x-y)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $M_{0}(0,0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f(M_{0})=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $df(M_{0})=\dfx(M_{0})\cdot\Delta x+\dfy(M_{0})\Delta y=(*)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\Delta x=x-0=x,\ \Delta y=y-0=y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'_{x}=\cos(x-y),\ f'_{y}=-\cos(x-y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $(*)=x-y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Для второго дифференциала:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{x^{2}}=-\sin(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{xy}=\sin(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{y^{2}}=-\sin(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $d^{2}f(M_{0})=\frac{\partial^{2}f}{\partial x^{2}}(M_{0})\Delta x^{2}+2\frac{\partial^{2}f}{\partial x\partial y}(M_{0})\Delta x\Delta y+\frac{\partial^{2}f}{\partial y^{2}}(M_{0})\Delta y^{2}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Третий:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'''_{x^{3}}=-\cos(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'''_{x^{2}y}=\cos(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'''_{xy^{2}}=-\cos(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'''_{y^{3}}=\cos(x-y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $d^{3}f(M_{0})=\frac{\partial^{3}f}{\partial x^{3}}(M_{0})\Delta x^{3}+3\frac{\partial^{3}f}{\partial x^{2}\partial y}(M_{0})\Delta x^{2}\Delta y+3\frac{\partial^{3}f}{\partial x\partial y^{2}}(M_{0})\Delta x\Delta y=\frac{\partial^{3}f}{\partial y^{3}}(M_{0})\Delta y^{3}=-x^{3}+3x^{2}y-3xy^{2}+y^{3}=-(x-y)^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Тогда формула примет вид: 
+\begin_inset Formula 
+\[
+f(x,y)=\sin(x-y)=(x-y)-\frac{1}{3!}(x-y)^{3}+\frac{1}{5!}(x-y)^{5}-...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Похоже на 
+\begin_inset Formula $\sin z=z-\frac{z^{3}}{3!}+\frac{x^{5}}{5!}-...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+То есть можно было заменить 
+\begin_inset Formula $z=x-y$
+\end_inset
+
+, НО ДЕЛАТЬ ЭТО МОЖНО ЛИШЬ В СЛУЧАЕ, КОГДА 
+\begin_inset Formula $x,y,z$
+\end_inset
+
+ В РАЙОНЕ НУЛЯ.
+\end_layout
+
+\begin_layout Subsection
+Экстремумы функций нескольких переменных
+\end_layout
+
+\begin_layout Standard
+Пусть задана функция 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ в 
+\begin_inset Formula $E\subset\rn$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Точка 
+\begin_inset Formula $a\in E$
+\end_inset
+
+ — точка локального минимума, если 
+\begin_inset Formula $\exists\delta>0:\ \forall x\in U_{\delta}(a)\cap E\Rightarrow f(x)\geq f(a)$
+\end_inset
+
+.
+ Если знак неравенства выполняется в другую сторону, то это точка локального
+ максимума.
+ Эти точки называются локальными экстремумами.
+ Если неравенство строгое, то это собственный экстремум.
+\end_layout
+
+\begin_layout Definition
+Наибольшее и наименьшее значение 
+\begin_inset Formula $f$
+\end_inset
+
+ в области 
+\begin_inset Formula $E$
+\end_inset
+
+, если таковые существуют, называются глобальными экстремумами.
+\end_layout
+
+\begin_layout Standard
+Глобальные экстремумы могут достигаться либо в точках локального экстремума
+ внутри области, либо на границе этой области.
+\end_layout
+
+\begin_layout Standard
+Сформулируем сначала необходимое и достаточное условие локального экстремума:
+\end_layout
+
+\begin_layout Theorem
+(необходимое условие локального экстремума)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $a$
+\end_inset
+
+ — внутренняя точка 
+\begin_inset Formula $E$
+\end_inset
+
+ и она — точка локального экстремума.
+ И в этой точке существуют первые частные производные 
+\begin_inset Formula $f'_{x_{1}},...,f'_{x_{n}}$
+\end_inset
+
+ в некоторой окрестности этой точки.
+ Тогда 
+\begin_inset Formula $f'_{x_{i}}(a)=0,\ i=\overline{1,n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Рассмотрим 
+\begin_inset Formula $F(x_{1})=f(x_{1},a_{2},...,a_{n})$
+\end_inset
+
+ (то есть зафиксированы все переменные, кроме первой).
+ Если 
+\begin_inset Formula $a$
+\end_inset
+
+ — точка локального экстремума 
+\begin_inset Formula $f$
+\end_inset
+
+, то 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+ — точка локального экстремума функции 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Тогда по теореме Ферма 
+\begin_inset Formula $F'(a)=0\Leftrightarrow\frac{\partial f}{\partial x_{1}}(a)=0$
+\end_inset
+
+.
+ Аналогично доказывается, что и остальные частные производные в точке 
+\begin_inset Formula $a$
+\end_inset
+
+ равны нулю.
+\end_layout
+
+\begin_layout Remark
+Если все частные производные в 
+\begin_inset Formula $a$
+\end_inset
+
+ равны нулю, то 
+\begin_inset Formula $a$
+\end_inset
+
+ называется станционарной точкой функции 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Это условие эквивалентно тому, что 
+\begin_inset Formula $df(a)=0$
+\end_inset
+
+ или 
+\begin_inset Formula $\vec{\nabla}f(a)=0$
+\end_inset
+
+.
+ Данное условие представляет собой только необходимое условие экстремума,
+ но не достаточное.
+ Допустим, 
+\begin_inset Formula $f=x_{1}^{3}+x_{2}^{3}$
+\end_inset
+
+ точка 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ является точкой перегиба, но не экстремума.
+ Необходимое условие экстремума помогает найти точки, подозрительные на
+ экстремум, а чтобы убедиться, что это так, нужны достаточные условия.
+\end_layout
+
+\begin_layout Proposition
+(достаточное условие локального экстремума)
+\end_layout
+
+\begin_layout Proposition
+Пусть 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ имеет непрерывные частные производные до второго порядка включительно.
+ Пусть 
+\begin_inset Formula $a\in E$
+\end_inset
+
+, внутренняя и станционарная.
+ Разложим функцию 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ по Тейлору до слагаемых первого порядка малости: 
+\begin_inset Formula 
+\[
+f(x)=f(a)+\underbrace{df(a)}_{=0}+R_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+где 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ — остаточный член.
+ Равенство нулю по необходимому условию экстремума.
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $\Delta f=f(x)-f(a)=R_{2}$
+\end_inset
+
+.
+ Для того, чтобы точка 
+\begin_inset Formula $a$
+\end_inset
+
+ была точкой локального минимума, достаточно, чтобы 
+\begin_inset Formula $\exists\delta>0:\ \forall x\in U_{\delta}(a)\Rightarrow R_{2}\geq0$
+\end_inset
+
+.
+ Аналогично для точки максимума: 
+\begin_inset Formula $R_{2}\leq0$
+\end_inset
+
+.
+ Задача свелась к определению знака 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
+ Оценим:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula 
+\[
+R_{2}=\frac{1}{2!}\left(\frac{\partial}{\partial x_{1}}dx_{1}+...+\frac{\partial}{\partial x_{n}}dx_{n}\right)^{2}f(M)=\frac{1}{2}\sum_{i,j=1}^{n}\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}(M)dx_{i}dx_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+где 
+\begin_inset Formula $dx_{i}=x_{i}-a_{i},\ i=\overline{1,n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $M\in(a,x)$
+\end_inset
+
+.
+ Здесь получили нечто похожее на квадратичную форму, прочтите замечание
+ ниже.
+\end_layout
+
+\begin_layout Proposition
+(читаем замечание)
+\end_layout
+
+\begin_layout Proposition
+Вернемся к нашим баранам.
+ Запишем 
+\begin_inset Formula 
+\[
+R_{2}=\frac{1}{2!}dx^{T}S(M)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+где 
+\begin_inset Formula $S=\left(\begin{array}{ccc}
+\frac{\partial^{2}f}{\partial x_{1}^{2}} & ... & \frac{\partial^{2}f}{\partial x_{1},\partial x_{n}}\\
+\vdots &  & \vdots\\
+\frac{\partial^{2}f}{\partial x_{n}\partial x_{1}} & ... & \frac{\partial^{2}f}{\partial x_{n}^{2}}
+\end{array}\right),\ dx=\left(\begin{array}{c}
+dx_{1}\\
+...\\
+dx_{n}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+По теореме о о равенстве симметричных производных 
+\begin_inset Formula $S$
+\end_inset
+
+ симметрична.
+\end_layout
+
+\begin_deeper
+\begin_layout Remark
+(о квадратичных формах)
+\end_layout
+
+\begin_layout Remark
+Функция вида 
+\begin_inset Formula 
+\[
+f(z_{1},...,z_{n})=\sum_{i,j=1}^{n}a_{ij}z_{i}z_{j}=z^{T}Az
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+где 
+\begin_inset Formula $z=\left(\begin{array}{c}
+z_{1}\\
+...\\
+z_{n}
+\end{array}\right),\ A=\{a_{ij}\}_{i,j=1}^{n}$
+\end_inset
+
+ — симметричная матрица.
+\end_layout
+
+\begin_layout Remark
+Квадратичная форма называется положительно определенной, если 
+\begin_inset Formula $\forall z\neq0\Rightarrow f(z)>0$
+\end_inset
+
+.
+ Аналогично отрицательно определенной, если 
+\begin_inset Formula $\forall z\neq0\Rightarrow f(x)<0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $f(z)$
+\end_inset
+
+ — знакопостоянная неотрицательная форма, если: 
+\begin_inset Formula $\forall z\Rightarrow f(z)\geq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Аналогично знакопостоянная неположительная форма, если: 
+\begin_inset Formula $\forall z\Rightarrow f(z)\leq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Квадратичная форма называется знакопеременной, если она может принимать
+ как положительные, так и отрицательные значения: 
+\begin_inset Formula $\exists z_{1},z_{2}:\ f(z_{1})<0,\ f(z_{2})>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Теорема: (Критерий Сильвестра) (это всё еще замечание)
+\end_layout
+
+\begin_layout Remark
+1) Для того, чтобы квадратичная форма была положительно определенной, необходимо
+ и достаточно, чтобы все левые верхние угловые миноры матрицы 
+\begin_inset Formula $A$
+\end_inset
+
+ были положительны.
+\end_layout
+
+\begin_layout Remark
+2) Для того, чтобы квадратичная форма была отрицательно определенной, необходимо
+ и достаточно, чтобы все левые верхние угловые миноры матрицы 
+\begin_inset Formula $A$
+\end_inset
+
+ чередовали знак, начиная с минуса.
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+(достаточное условие локального экстремума)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $a$
+\end_inset
+
+ — внутренняя точка 
+\begin_inset Formula $E$
+\end_inset
+
+ и она станционарная.
+ И пусть 
+\begin_inset Formula $\exists$
+\end_inset
+
+ непрерывные частные производные до 2 порядка включительно в окрестности
+ точки 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Тогда:
+\end_layout
+
+\begin_layout Theorem
+1) Если 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ положительно определена, то 
+\begin_inset Formula $a$
+\end_inset
+
+ — точка локального минимума.
+\end_layout
+
+\begin_layout Theorem
+2) Если 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ отрицательно определена, то 
+\begin_inset Formula $a$
+\end_inset
+
+ — точка локального максимума.
+\end_layout
+
+\begin_layout Theorem
+3) Если 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ является знакопеременной, то 
+\begin_inset Formula $a$
+\end_inset
+
+ — не точка локального экстремума.
+\end_layout
+
+\begin_layout Theorem
+4) Если 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ — знакопостоянная, но не знакоопределенная, то информации недостаточно.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+1) Предположим, 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ положительно определена.
+ Из непрерывности вторых частных производных следует, что 
+\begin_inset Formula $\exists\delta>0:\ \forall M\in U_{\delta}(a)\Rightarrow S(M)$
+\end_inset
+
+ — положительно определена.
+ Тогда 
+\begin_inset Formula $R_{2}>0$
+\end_inset
+
+, откуда 
+\begin_inset Formula $a$
+\end_inset
+
+ — точка локального минимума
+\end_layout
+
+\begin_layout Proof
+2) Для отрицательной определенности все аналогично.
+\end_layout
+
+\begin_layout Proof
+3) Если 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ знакопеременная, то 
+\begin_inset Formula $\forall\delta>0\ \exists M_{1},M_{2}\in U_{\delta}(a)$
+\end_inset
+
+, такие, что 
+\begin_inset Formula $R_{2}(M_{1})>0,\ R_{2}(M_{2})<0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+4) Приведем пример, являющийся контрпримером к обратному утверждению: 
+\begin_inset Formula $f_{1}(x_{1},x_{2})=x_{1}^{4}+x_{2}^{4}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f_{2}(x_{1},x_{2})=x_{1}^{3}+x_{2}^{3}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ — станционарная точка обеих функций.
+ 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+S(0,0)=\left(\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+— знакопостоянная.
+ 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ — точка локального минимума 
+\begin_inset Formula $f$
+\end_inset
+
+, но не является точкой локального экстремума.
+\end_layout
+
+\begin_layout Remark
+Если 
+\begin_inset Formula $S(a)$
+\end_inset
+
+ знакопостоянная, но не знакоопределенная, то тогда для исследования точки
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ нужно задействовать производные и дифференциалы старшего порядка.
+\end_layout
+
+\begin_layout Remark
+По Тейлору:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\Delta f(x)=f(x)-f(a)=\underbrace{df(a)}_{=0}+\frac{1}{2}d^{2}f(a)+\frac{1}{3!}d^{3}f(a)+...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Исследовать знак старшего дифференциала нужно лишь там, где обнуляются дифференц
+иалы младшего порядка.
+\end_layout
+
+\begin_layout Standard
+Если теперь требуется найти глобальный экстремум, то кроме поиска локальных
+ экстремумов внутри области 
+\begin_inset Formula $E$
+\end_inset
+
+, нужно исследовать поведение этой функции и на ее границе.
+\end_layout
+
+\begin_layout Standard
+Обозначим 
+\begin_inset Formula $\widehat{E}$
+\end_inset
+
+ границу 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Задача поиска экстремума на границе называется задачей поиска условного
+ экстремума.
+ Заметим, что размерность 
+\begin_inset Formula $\widehat{E}$
+\end_inset
+
+ равна размерности 
+\begin_inset Formula $E-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Пусть 
+\begin_inset Formula $f(x,y)=(x-1)^{2}+(y-2)^{2}$
+\end_inset
+
+.
+ Требуется найти экстремум в области 
+\begin_inset Formula $E:\ x^{2}+y^{2}\leq9$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Найдем точки локального экстремума в области 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Необходимость:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'_{x}=2(x-1)=0,\ f'_{y}=2(y-2)=0\Rightarrow(1,2)$
+\end_inset
+
+ — станционарная точка (
+\begin_inset Formula $(1,2)\in E$
+\end_inset
+
+), подозрительная на экстремум точка.
+ Вычислим вторые производные, чтобы проверить, является ли точка экстремумом
+ и каким:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{x^{2}}=2,\ f''_{xy}=0,\ f''_{y^{2}}=2$
+\end_inset
+
+.
+ Тогда матрица вторых производных примет вид: 
+\begin_inset Formula 
+\[
+S=\left(\begin{array}{cc}
+2 & 0\\
+0 & 2
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $S$
+\end_inset
+
+ положительно определена (миноры очевидно положительны).
+ Следовательно, точка 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ является точкой локального минимума.
+\end_layout
+
+\begin_layout Example
+Теперь проверим, что у нас на границе.
+ А на границе тучи ходят хмуро и описывают окружность: 
+\begin_inset Formula $\widehat{E}:\ x^{2}+y^{2}=9$
+\end_inset
+
+.
+ Ищем условный экстремум 
+\begin_inset Formula $\hat{E}$
+\end_inset
+
+.
+ Выразим одну переменную через другую (первый метод поиска):
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $y=\pm\sqrt{9-x^{2}}$
+\end_inset
+
+.
+ Уравнение эллипса теперь является функцией одной переменной.
+ Введем 
+\begin_inset Formula $F(x)=f(x,\pm\sqrt{9-x^{2}})$
+\end_inset
+
+.
+ Поиск экстремума сводится к поиску экстремума для функции одной переменной
+ на отрезке 
+\begin_inset Formula $x\in[-3,3]$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $f(x,y)=xy+\frac{50}{x}+\frac{20}{y}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E:\ \{(x,y)|\ x>0,y>0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Начнем с локальных экстремумов: 
+\end_layout
+
+\begin_layout Example
+Необходимое условие: 
+\begin_inset Formula $f'_{x}=y-\frac{50}{x^{2}}=0\ f'_{y}=x-\frac{20}{y^{2}}=0$
+\end_inset
+
+.
+ Точки, подозрительные на эсктремум:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x-\frac{20}{\frac{50^{2}}{x^{4}}}=0\Leftrightarrow x(1-\frac{x^{3}}{125})=0\Rightarrow\begin{cases}
+x=0 & \text{не интересует}\\
+x=5
+\end{cases}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $y=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Точка, подозрительная на экстремум: 
+\begin_inset Formula $(5,2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Найдем вторые производные:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f''_{x^{2}}=\frac{100}{x^{3}},\ f''_{y^{2}}=\frac{40}{y^{3}},\ f''_{xy}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+S(5,2)=\left(\begin{array}{cc}
+\nicefrac{4}{5} & 1\\
+1 & 5
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Минимальное значение функции достигается в 
+\begin_inset Formula $f(5,2)=30$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\sup_{E}f(x)=+\infty$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Численные методы поиска безусловного экстремума
 \end_layout
 
 \end_body

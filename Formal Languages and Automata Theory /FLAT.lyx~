@@ -4,14 +4,11 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass amsart
+\textclass extarticle
 \begin_preamble
 \usepackage{indentfirst}
 \end_preamble
 \use_default_options true
-\begin_removed_modules
-theorems-ams
-\end_removed_modules
 \begin_modules
 eqs-within-sections
 figs-within-sections
@@ -180,6 +177,10 @@ algorithm2e
 \begin_layout Standard
 Теория формальных языков изучает методы задания, распознавания и обработки
  языков.
+\end_layout
+
+\begin_layout Section
+Детерминированный и недетерминированный конечный автомат
 \end_layout
 
 \begin_layout Definition
@@ -714,8 +715,6 @@ algorithm2e
 \end_inset
 
  называются цепочки...
- ну блин.
- В жопу такие конспекты
 \end_layout
 
 \end_deeper
@@ -761,6 +760,98 @@ algorithm2e
 
 \begin_layout Definition
 Может в каждый момент времени может находиться в нескольких состояниях.
+\end_layout
+
+\begin_layout Section
+Недетерминированный конеченый автомат с 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+-переходами
+\end_layout
+
+\begin_layout Standard
+Составление расширенной функции перехода:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},\varepsilon)=ECLOSE(q_{0})=\{q_{0},q_{1}\}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},5)=ECLOSE(q_{1})\cup ECLOSE(q_{4})=\{q_{1}\}\cup\{q_{4}\}=\{q_{1},q_{4}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},5.)=\{q_{2},q_{3}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},5.6)=\{q_{3}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Язык: 
+\begin_inset Formula $L(E)=\{w|\hat{\delta}(q,w)\cap F\neq0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},5+5)$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},\varepsilon)=\{q_{0},q_{1}\}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},5)=\{q_{1},q_{4}\}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\delta}(q_{0},5+)=\delta(q_{1},+)\cup\delta(q_{4},+)=\{\varnothing\}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+барсукова 
+\end_layout
+
+\begin_layout Standard
+викторова анна
+\end_layout
+
+\begin_layout Standard
+романова анна
+\end_layout
+
+\begin_layout Standard
+тарасенко любовь
 \end_layout
 
 \begin_layout Standard

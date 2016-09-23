@@ -126,5 +126,18 @@ E-mail: s.sevryukov@spbu.ru
 2) Переполнение буфера
 \end_layout
 
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+ДЗ: ознакомиться с CoreOS
+\end_layout
+
+\begin_layout Standard
+С помощью средств виртуализации (KVM) создать виртуальную машину и установить
+ туда CoreOS.
+\end_layout
+
 \end_body
 \end_document
