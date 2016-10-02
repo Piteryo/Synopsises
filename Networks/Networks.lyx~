@@ -742,33 +742,229 @@ IEEE;
 \end_layout
 
 \begin_layout Enumerate
-Физический;
+Физический (Технологии ADSL, ISDN, ATM, RS-x, FDDI, );
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Определяет характеристики сигналов;
 \end_layout
 
 \begin_layout Enumerate
-Канальный;
+Среду передачи данных;
 \end_layout
 
 \begin_layout Enumerate
-Сетевой;
+Физическую топологию среды;
 \end_layout
 
 \begin_layout Enumerate
-Транспортный;
+Спецификацию среды передачи данных;
 \end_layout
 
 \begin_layout Enumerate
-Сеансовый;
+Интерфейсы оборудования;
 \end_layout
 
 \begin_layout Enumerate
-Представительский;
+Напряжение, соответствующее нулю и единице;
 \end_layout
 
 \begin_layout Enumerate
-Прикладной.
+Время длительности бита;
 \end_layout
 
+\begin_layout Enumerate
+Как начинается и заканчивается передача данных;
+\end_layout
+
+\begin_layout Enumerate
+Количество проводов для соединения;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Канальный (Технологии Ethernet, протокол PtPP);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Взаимодействие со средой передачи данных (MAC);
+\end_layout
+
+\begin_layout Enumerate
+Надежная доставка (с использованием контрольных сумм);
+\end_layout
+
+\begin_layout Enumerate
+Управление потоком (управление буфером данных);
+\end_layout
+
+\begin_layout Enumerate
+Функции исправления ошибок (в режимах Дуплекс (передача в обе стороны одновремен
+но)/Полудуплекс (попеременно в обе стороны));
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Сетевой (Протокол IP);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Управление подсетью;
+\end_layout
+
+\begin_layout Enumerate
+Определяет маршруты;
+\end_layout
+
+\begin_layout Enumerate
+Соединяет разнородные сети (шлюз (чаще всего входит в состав маршрутизатора));
+\end_layout
+
+\begin_layout Enumerate
+Передача дейтаграмм;
+\end_layout
+
+\begin_layout Enumerate
+Адресация узлов в текущей подсети;
+\end_layout
+
+\begin_layout Enumerate
+best efford delivery — доставка с максимальной доступной скоростью;
+\end_layout
+
+\begin_layout Enumerate
+На этом уровне работают протоколы (IP (Internet Protocol), ARP (Adress Resolutio
+n Protocol), RARP (Reverse ARP), ICMP (), DHCP (Dynamic Host Control Protocol));
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Транспортный (TCP, UDP);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Надежность передачи данных;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Контроль ошибок:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Искажение данных
+\end_layout
+
+\begin_layout Enumerate
+Потеря данных
+\end_layout
+
+\begin_layout Enumerate
+Дублирование
+\end_layout
+
+\begin_layout Enumerate
+Изменение порядка следования
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Контроль потока данных;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Сегментирование потока данных и его обратная сборка;
+\end_layout
+
+\begin_layout Enumerate
+Обеспечивает совместный доступ к потоку данных;
+\end_layout
+
+\begin_layout Enumerate
+Протоколы: TCP (Transport Control Protocol), UDP (User Datagram Protocol);
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Сеансовый (POP);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Организует сеансы связи;
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Устанавливает;
+\end_layout
+
+\begin_layout Enumerate
+Поддерживает;
+\end_layout
+
+\begin_layout Enumerate
+Разрывает;
+\end_layout
+
+\begin_layout Enumerate
+Обеспечивает синхронизацию передачи данных;
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Представительский (POP/SMTP, SNMP, Telnet, HTTP, FTP, DNS);
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Сопоставление семантики и синтаксиса данных;
+\end_layout
+
+\begin_layout Enumerate
+Преобразование;
+\end_layout
+
+\begin_layout Enumerate
+Кодирование/декодирование данных;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Прикладной (WEB, Email).
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Обеспечение взаимодействия между пользователем и сетью.
+\end_layout
+
+\begin_layout Enumerate
+Предоставляет службы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Электронная почка
+\end_layout
+
+\begin_layout Enumerate
+FTP
+\end_layout
+
+\begin_layout Enumerate
+Telnet
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
 Имеется связь (интерфейс) между соседними уровнями.
  Каждый уровень имеет протокол.
@@ -802,6 +998,11 @@ IEEE;
 \begin_layout Standard
 Порт — идентификатор ID процесса или приложения, для которого предназначается
  этот пакет.
+\end_layout
+
+\begin_layout Standard
+Можно объединить сеансовый и транспортный уровень, прикладной и представительски
+й, канальный и физический.
 \end_layout
 
 \end_body

@@ -139,5 +139,36 @@ E-mail: s.sevryukov@spbu.ru
  туда CoreOS.
 \end_layout
 
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+ДЗ: ознакомиться с проектом MESOS.
+\end_layout
+
+\begin_layout Standard
+Читаем про гибридное ядро
+\end_layout
+
+\begin_layout Standard
+Ближе к второй половине октября на уровне википедии прочитать про POSIX
+\end_layout
+
+\begin_layout Standard
+Собрать инфу о размере ядра windows от версии к версии (в т.ч.
+ Server).
+ Оценить, много или мало для ядра 1 МБ.
+\end_layout
+
+\begin_layout Standard
+Написать программу, которая определяет наиболее ресурсоемкие службы и остановила
+ бы их, если они занесены в черный список (2 недели на задачу).
+\end_layout
+
+\begin_layout Standard
+Почитать про режим nano server в windows server 2016.
+\end_layout
+
 \end_body
 \end_document

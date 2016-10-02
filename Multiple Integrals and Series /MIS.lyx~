@@ -9,6 +9,7 @@
 \usepackage{indentfirst}
 \newcommand{\grad}{\operatorname{grad}}
 \newcommand{\const}{\operatorname{const}}
+\newcommand{\rang}{\operatorname{rang}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -132,6 +133,14 @@ algorithm2e
 \begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\rn}{\RR^{n}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\gr}{\vec{\nabla}}
 \end_inset
 
 
@@ -4747,6 +4756,1301 @@ S(5,2)=\left(\begin{array}{cc}
 \end_deeper
 \begin_layout Subsection
 Численные методы поиска безусловного экстремума
+\end_layout
+
+\begin_layout Problem*
+
+\series bold
+Рассмотрим идею градиентного метода поиска экстремума.
+
+\series default
+ 
+\end_layout
+
+\begin_layout Problem*
+(Градиент указывает в сторону наискорейшего возрастания функции).
+ Пусть требуется найти экстремум функции в области 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Выберем произвольную начальную точку: 
+\begin_inset Formula $\forall x^{(0)}\in E$
+\end_inset
+
+.
+ Зададим некоторое положительное число 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+X=\begin{cases}
+x^{(0)}+h\vec{\nabla}f(x^{(0)}) & \max\\
+x^{(0)}-h\vec{\nabla}f(x^{(1)}) & \min
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+и так далее.
+ В результате получаем последовательность точек 
+\begin_inset Formula $\{x^{(k)}\}$
+\end_inset
+
+, на которой функция приближается к максимуму либо к минимуму.
+\end_layout
+
+\begin_layout Problem*
+Отметим типовые проблемы, которые возникают при применении этого метода:
+\end_layout
+
+\begin_layout Problem*
+1) Выбор шага 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ Если выбрать очень маленкий шаг, то идти до экстремума можно долго (экстремум
+ далеко).
+ А если выбрать очень большим - мы рискуем 
+\begin_inset Quotes fld
+\end_inset
+
+перепрыгнуть
+\begin_inset Quotes frd
+\end_inset
+
+ через экстремум.
+ Поддерживается динамическое изменение шага: обычно сначала делают большие
+ шаги, а по мере приближения к экстремуму (начались 
+\begin_inset Quotes fld
+\end_inset
+
+метания
+\begin_inset Quotes frd
+\end_inset
+
+ и 
+\begin_inset Quotes fld
+\end_inset
+
+перепрыжки
+\begin_inset Quotes frd
+\end_inset
+
+) шаг постепенно уменьшают.
+\end_layout
+
+\begin_layout Problem*
+2) Проблема многоэкстремальности.У функции может быть большое количество
+ локальных экстремумов и двигаясь из точки 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ мы найдем один из этих экстремумов, не факт, что глобальный.
+ Решение: идем из нескольких точек либо изучаем физику функции (применяем
+ некоторую теорию для доказатеотства количества экстремумов либо их расположения
+).
+ Все это повышает вероятность обнаружения глобального экстремума.
+\end_layout
+
+\begin_layout Problem*
+3) 
+\begin_inset Formula $\vec{\nabla}f(x)$
+\end_inset
+
+.
+ Вычисление градиента не всегда возможно.
+ Функция может быть сложной, не заданной явно, вообще не дифференцируемой.
+ Мы можем воспользоваться формулой:
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial x_{i}}=\frac{f(x_{1},...,x_{i}+\Delta x_{i},...,x_{n})-f(x_{1},...,x_{i},...,x_{n})}{\Delta x_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+Если и это не помогает, то мы можем использовать метод случайного спуска:
+\end_layout
+
+\begin_deeper
+\begin_layout Problem*
+На каждом шаге выбираем произвольное направление и в этом направлении делаем
+ некоторый шаг.
+ Если в этом направлении функция изменилась нужным нам образом, то тогда
+ это направление удачное, по нему и движемся.
+ В противном случае выбираем другое направление.
+\end_layout
+
+\end_deeper
+\begin_layout Problem*
+4) Проблема границ.
+ Градиентные методы хороши для поиска экстремума внутри области.
+ Если он расположен на границе, то у нас возникают большие проблемы.
+ В этом случае применяем методы математического программирования (методы
+ поиска экстремума в некоторой области).
+ Это целая теория, нам его будут читать, бла-бла-бла.
+\end_layout
+
+\begin_layout Example
+Пусть 
+\begin_inset Formula $f(x,y)=x^{2}+2y^{2}$
+\end_inset
+
+, требуется найти минимум этой функции.
+ Очевидно, что 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ — точка глобального минимума, но по легенде мы тупые и этого не видим.
+ Возьмем произвольную начальную точку 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+.
+ Посчитаем антиградиент: 
+\begin_inset Formula $-\vec{\nabla}f=\left(\begin{array}{c}
+-2x\\
+-4y
+\end{array}\right)$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $-\vec{\nabla}f(x^{(0)})=\left(\begin{array}{c}
+-2\\
+-8
+\end{array}\right)$
+\end_inset
+
+.
+ По нему идти до конца не надо, нужно сделать какой-то шаг.
+ Выберем большой шаг, затем, если заметим шатания, снизить его.
+ Оказались в точке 
+\begin_inset Formula $(-1,-6)$
+\end_inset
+
+.
+ Пересчитываем антиградиент: 
+\begin_inset Formula $-\gr f(x^{(1)})=\left(\begin{array}{c}
+2\\
+24
+\end{array}\right)$
+\end_inset
+
+.
+ Заметно, что мы начали прыгать, снижаем шаг.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $f(x,y)=x+y$
+\end_inset
+
+.
+ Пусть требуется найти максимум в 
+\begin_inset Formula $E:\ x^{2}+y^{2}\leq1$
+\end_inset
+
+.
+ Воспользуемся теоремой Ферма:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f'_{x}=1$
+\end_inset
+
+, 
+\begin_inset Formula $f'_{y}=1$
+\end_inset
+
+, то есть локальных экстремумов у нас нет, глобальный экстремум располагается
+ где-то на границе.
+ Посчитаем: 
+\begin_inset Formula $\gr f=\left(\begin{array}{c}
+1\\
+1
+\end{array}\right)$
+\end_inset
+
+.
+ Двигаясь по нему, получим максимум в 
+\begin_inset Formula $\left(\frac{1}{\sqrt{2}};\frac{1}{\sqrt{2}}\right)$
+\end_inset
+
+.
+ Но это мы шли их хорошей точки.
+ А вот если с плохой, то мы можем до него и не дойти.
+\end_layout
+
+\begin_layout Example
+Воспользуемся методом математического программирования: Приравняем функцию
+ к константе, получим прямую.
+ Двигаем эту прямую по области определения, пока мы не получим максимальную
+ константу.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Теорема о неявной функции
+\end_layout
+
+\begin_layout Standard
+Пусть задано уравнение 
+\begin_inset Formula $F(x,y)=0\ \ \ \ (1)$
+\end_inset
+
+, где 
+\begin_inset Formula $x,y$
+\end_inset
+
+ — скаляры.
+ Будем говорить, что уравнение задает функцию 
+\begin_inset Formula $y=y(x)\ \ \ \ (2)$
+\end_inset
+
+ неявно, если при подстановке 
+\begin_inset Formula $(2)$
+\end_inset
+
+ в уравнение 
+\begin_inset Formula $(1)$
+\end_inset
+
+ получим тождество.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+, 
+\begin_inset Formula $y=\pm\sqrt{1-x^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+(картинка)
+\end_layout
+
+\begin_layout Standard
+Предположим, существуют 
+\begin_inset Formula $F_{x}',\ F_{y}'$
+\end_inset
+
+, не равные нулю и 
+\begin_inset Formula $F(x,y(x))\equiv0\ \ \ \ (3)$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $\Phi(x)=F(x,y(x))\equiv0$
+\end_inset
+
+ и продифференцируем (Если функция тождественно равна нулю, то все ее производны
+е очевидно тождественны нулю): 
+\begin_inset Formula 
+\[
+0\equiv\Phi'(x)=\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}y'(x)\Rightarrow y'(x)=-\frac{\nicefrac{\partial F}{\partial x}}{\nicefrac{\partial F}{\partial y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если существуют вторые производные, то можем найти вторую производную неявной
+ функции:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+0\equiv\Phi''(x)=\left(\frac{\partial^{2}F}{\partial x^{2}}+\frac{\partial^{2}F}{\partial x\partial y}y'(x)\right)+\left(\frac{\partial^{2}F}{\partial y\partial x}+\frac{\partial^{2}F}{\partial y^{2}}y'(x)\right)y'(x)+\frac{\partial F}{\partial y}y''(x)\Rightarrow\\
+\Rightarrow y''(x)=...
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+.
+ Дифференцируем: 
+\begin_inset Formula $2x+2y\cdot y'=0\Rightarrow y'=\frac{-x}{y}$
+\end_inset
+
+.
+ Найдем вторую производную.
+ Продифференцируем второй раз: 
+\begin_inset Formula $1+y'^{2}+y\cdot y''=0\Rightarrow y''=-\frac{1+y'^{2}}{y}=-\frac{1+\frac{x^{2}}{y^{2}}}{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(о неявной функции).
+ Будем работать с конкретной точкой.
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $M_{0}=(x_{0},y_{0})$
+\end_inset
+
+ удовлетворяет уравнению 
+\begin_inset Formula $F(x_{0},y_{0})=0$
+\end_inset
+
+.
+ Пусть в окрестности 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ существует непрерывная 
+\begin_inset Formula $\frac{\partial F}{\partial y}$
+\end_inset
+
+ и 
+\begin_inset Formula $\frac{\partial F}{\partial y}|_{M_{0}}\neq0$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists\delta>0,\ \exists y(x)$
+\end_inset
+
+, определенная и непрерывная на 
+\begin_inset Formula $[x_{0}-\delta,x_{0}+\delta]$
+\end_inset
+
+, такая, что:
+\end_layout
+
+\begin_layout Theorem
+1) 
+\begin_inset Formula $y(x_{0})=y_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+2) 
+\begin_inset Formula $F(x,y(x))\equiv0$
+\end_inset
+
+ на 
+\begin_inset Formula $[x_{0}-\delta,x_{0}+\delta]$
+\end_inset
+
+ и будет определяться однозначно.
+\end_layout
+
+\begin_layout Theorem
+Если, кроме того, в окрестности 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\exists$
+\end_inset
+
+ непрерывная 
+\begin_inset Formula $\frac{\partial F}{\partial x}$
+\end_inset
+
+, то тогда:
+\end_layout
+
+\begin_layout Theorem
+1) 
+\begin_inset Formula $y(x)$
+\end_inset
+
+ — дифференцируема и
+\end_layout
+
+\begin_layout Theorem
+2) 
+\begin_inset Formula $y'(x)=-\frac{\nicefrac{\partial F}{\partial x}}{\nicefrac{\partial F}{\partial y}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+1) Покажем, что 
+\begin_inset Formula $\exists!$
+\end_inset
+
+ функция 
+\begin_inset Formula $y(x)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{\partial F}{\partial y}|_{M_{0}}\neq0$
+\end_inset
+
+ по условию теоремы.
+ Пусть, для определенности, производная принимает положительные значения
+ (для отрицательных доказательства аналогичны).
+ 
+\begin_inset Formula $\frac{\partial F}{\partial y}$
+\end_inset
+
+ непрерывна в окрестности 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+ Найдется такое 
+\begin_inset Formula $\hat{\delta}>0:\ \frac{\partial F}{\partial y}>0,\ \forall(x,y):\begin{cases}
+|x-x_{0}|<\hat{\delta}\\
+|y-y_{0}|<\hat{\delta}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\frac{\partial F}{\partial y}>0\Rightarrow F\nearrow$
+\end_inset
+
+ по 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Следовательно, 
+\begin_inset Formula $\begin{cases}
+F(x_{0},y_{0}+\hat{\delta})>0\\
+F(x_{0},y_{0}-\hat{\delta})<0
+\end{cases}$
+\end_inset
+
+.
+ Вспомним, что по условию теоремы 
+\begin_inset Formula $F$
+\end_inset
+
+ непрерывна, следовательно, 
+\begin_inset Formula $\tilde{\delta}>0:\ \begin{cases}
+F(x,y_{0}+\hat{\delta})>0\\
+F(x,y_{0}-\hat{\delta})<0
+\end{cases}\ \forall x\in[x_{0}-\tilde{\delta},x_{0}+\tilde{\delta}]$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $\delta=\min\{\hat{\delta},\tilde{\delta}\}>0$
+\end_inset
+
+.
+ Тогда по теореме Больцано-Коши о нуле функции 
+\begin_inset Formula $\forall x\in[x_{0}-\delta,x_{0}+\delta],\ \exists y\in[y_{0}-\hat{\delta},y_{0}+\hat{\delta}]:\ F(x,y)=0$
+\end_inset
+
+, причем 
+\begin_inset Formula $F$
+\end_inset
+
+ непрерывна, следовательно, 
+\begin_inset Formula $y(x)$
+\end_inset
+
+ непрерывна, а так как 
+\begin_inset Formula $F\nearrow$
+\end_inset
+
+ по 
+\begin_inset Formula $y\Rightarrow y(x)$
+\end_inset
+
+ — единственная.
+\end_layout
+
+\begin_layout Proof
+2) Покажем дифференцируемость и найдем производную.
+ Выберем произвольную 
+\begin_inset Formula $x\in[x_{0}-\delta,x_{0}+\delta]$
+\end_inset
+
+, 
+\begin_inset Formula $y=y(x)$
+\end_inset
+
+.
+ Рассмотрим 
+\begin_inset Formula $x+\Delta x\in[x_{0}-\delta,x_{0}+\delta]$
+\end_inset
+
+, 
+\begin_inset Formula $y+\Delta y=y(x+\Delta x)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Delta F=\underbrace{F(x+\Delta x,y+\Delta y)}_{=0}-\underbrace{F(x,y)}_{0}=0$
+\end_inset
+
+.
+ Но 
+\begin_inset Formula $\exists$
+\end_inset
+
+ непрерывные 
+\begin_inset Formula $F'_{x},F_{y}'\Rightarrow F$
+\end_inset
+
+ дифференцируема, следовательно, 
+\begin_inset Formula $0=\Delta F=\underbrace{F(x+\Delta x,y+\Delta y)}_{=0}-\underbrace{F(x,y)}_{0}=\frac{\partial F}{\partial x}\Delta x+\frac{\partial F}{\partial y}\Delta y+o(\rho)\Rightarrow0=\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}\frac{\Delta y}{\Delta x}+\frac{o(\rho)}{\Delta x}\to0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Теорему о неявной функции можно распространить на многомерный случай.
+\end_layout
+
+\begin_layout Definition
+Пусть задана 
+\begin_inset Formula $F(x_{1},...,x_{n},y)=0\ \ \ (3).$
+\end_inset
+
+ Будем говорить, что функция 
+\begin_inset Formula $y=y(x_{1},...,x_{n})$
+\end_inset
+
+ задается уравнением 
+\begin_inset Formula $(3)$
+\end_inset
+
+ неявно, если при подстановке в уравнение 
+\begin_inset Formula $(3)$
+\end_inset
+
+ получим тождество.
+\end_layout
+
+\begin_layout Theorem
+(о неявной функции нескольких переменных)
+\end_layout
+
+\begin_layout Theorem
+Обозначим 
+\begin_inset Formula $x^{(0)}=\left(\begin{array}{c}
+x_{1}^{(0)}\\
+...\\
+x_{n}^{(0)}
+\end{array}\right),\ y^{(0)}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{0}=(x^{(0)},y^{(0)})\in\RR^{n+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $F(M_{0})=0$
+\end_inset
+
+.
+ В окрестности точки 
+\begin_inset Formula $M$
+\end_inset
+
+ функция непрерывна и существует непрерывный 
+\begin_inset Formula $\frac{\partial F}{\partial y}$
+\end_inset
+
+ и 
+\begin_inset Formula $\frac{\partial F}{\partial y}|_{M_{0}}\neq0$
+\end_inset
+
+.
+ Тогда в окрестности точки 
+\begin_inset Formula $x_{0}\ \exists!$
+\end_inset
+
+ непрерывная функция 
+\begin_inset Formula $y=y(x_{1},...,x_{n})$
+\end_inset
+
+, такая, что:
+\end_layout
+
+\begin_layout Theorem
+1) 
+\begin_inset Formula $F(x_{1},...,x_{n},y(x_{1},...,x_{n}))\equiv0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+2) 
+\begin_inset Formula $y(x^{(0)})=y_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+При этом если в окрестности 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\exists$
+\end_inset
+
+ непрерывная 
+\begin_inset Formula $\frac{\partial F}{\partial x_{i}},\ i=\overline{1,n}$
+\end_inset
+
+, то 
+\begin_inset Formula 
+\[
+\exists\frac{\partial y}{\partial x_{i}}=-\frac{\nicefrac{\partial F}{\partial x_{i}}}{\nicefrac{\partial F}{\partial y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+доказательство аналогично одномерному случаю.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x_{1}^{2}+x_{2}+ye^{yx_{1}+x_{2}}=0$
+\end_inset
+
+.
+ Найдем 
+\begin_inset Formula $\frac{\partial y}{\partial x_{1}},\frac{\partial y}{\partial x_{2}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Example
+1) 
+\begin_inset Formula $2x_{1}+\frac{\partial y}{\partial x_{1}}\cdot e^{yx_{1}+x_{2}}+ye^{yx_{1}+x_{2}}\cdot\left(\frac{\partial y}{\partial x_{1}}x_{1}+y\right)=0\Rightarrow\frac{\partial y}{\partial x_{1}}=...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+2) 
+\begin_inset Formula $1+\frac{\partial y}{\partial x_{2}}e^{yx_{1}+x_{2}}+y\cdot e^{yx_{1}+x_{2}}\cdot\left(\frac{\partial y}{\partial x_{2}}x_{1}+1\right)=0\Rightarrow\frac{\partial y}{\partial x_{2}}=...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Системы функций
+\end_layout
+
+\begin_layout Definition
+Пусть задано несколько функций:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\begin{cases}
+y_{1}=y_{1}(x_{1},...,x_{n})\\
+........................... & (1)\\
+y_{m}=y_{m}(x_{1},...,x_{n})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Тогда говорят, что задана система из 
+\begin_inset Formula $m$
+\end_inset
+
+ функций от 
+\begin_inset Formula $n$
+\end_inset
+
+ переменных.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Пусть в 
+\begin_inset Formula $E$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{\partial y_{i}}{\partial x_{j}},\ i=\overline{1,m},\ j=\overline{1,n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Тогда 
+\end_layout
+
+\begin_layout Definition
+\begin_inset FormulaMacro
+\newcommand{\DD}{\mathscr{D}}
+\end_inset
+
+ /*TODO: перенести наверх*/
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\frac{\DD(y_{1},...,y_{m})}{\DD(x_{1},...,x_{n})}=\left(\begin{array}{ccc}
+\frac{\partial y_{1}}{\partial x_{1}} & ... & \frac{\partial y_{1}}{\partial x_{n}}\\
+\vdots &  & \vdots\\
+\frac{\partial y_{m}}{\partial x_{1}} & ... & \frac{\partial y_{m}}{\partial x_{n}}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+— матрица Якоби.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Отметим несколько свойств, связанных с этой матрицей:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{1}=x_{1}(t_{1},...,t_{l})\\
+......................... & (2)\\
+x_{n}=x_{n}(t_{1},...,t_{l})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда (1) и (2) — сложная система функций.
+\end_layout
+
+\begin_layout Standard
+Найдем матрицу Якоби для сложной функции: 
+\begin_inset Formula $\frac{\partial y_{i}}{\partial t_{k}}=\frac{\partial y_{i}}{\partial x_{1}}\frac{\partial x_{1}}{\partial t_{k}}+...+\frac{\partial y_{i}}{\partial x_{n}}\frac{\partial x_{n}}{\partial t_{k}}\ i=\overline{1,m},\ k=\overline{1,l}$
+\end_inset
+
+.
+ Несложно заметить, что это можно записать в матричном виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\DD(y_{1},...,y_{m})}{\DD(t_{1},...,t_{l})}=\frac{\DD(y_{1},...,y_{m})}{\DD(x_{1},...,x_{n})}\frac{\DD(x_{1},...,x_{n})}{\DD(t_{1},...,t_{l})}\ \ \ \ \ (3)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим частный случай, когда 
+\begin_inset Formula $m=n$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\det\frac{\DD(y_{1},...,y_{n})}{\DD(x_{1},...,x_{n})}=\frac{D(y_{1},...,y_{n})}{D(x_{1},...,x_{n})}$
+\end_inset
+
+ — якобиан.
+ Если якобиан в окрестности точки не равен нулю, то тогда система называется
+ не особой (не вырожденной).
+\end_layout
+
+\begin_layout Standard
+Предположим, что иксы удалось выразить через игреки: 
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{1}=x_{1}(y_{1},...,y_{n})\\
+........................... & (4)\\
+x_{n}=x_{n}(y_{1},...,y_{n})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда система 4 обратна к системе 1.
+ Вопрос существования обратной системы будет рассмотрен в следующем параграфе
+ (см.
+ теорему о системе неявных функций).
+\end_layout
+
+\begin_layout Theorem
+(Лапласа)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $m=n$
+\end_inset
+
+ в 
+\begin_inset Formula $(1)$
+\end_inset
+
+ и система 
+\begin_inset Formula $(1)$
+\end_inset
+
+ не особая.
+ Тогда 
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\frac{D(y_{1},...,y_{n})}{D(x_{1},...,x_{n})}\cdot\frac{D(x_{1},...,x_{n})}{D(y_{1},...,y_{n})}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Как следствие — обратная система тоже не особая.
+\end_layout
+
+\begin_layout Proof
+По формуле 
+\begin_inset Formula $(3)$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccc}
+1 &  & 0\\
+ & \ddots\\
+0 &  & 1
+\end{array}\right)=\frac{\DD(y_{1},...,y_{n})}{\DD(x_{1},...,x_{n})}=\frac{\DD(y_{1},...,y_{n})}{\DD(x_{1},...,x_{n})}\frac{\DD(x_{1},...,x_{n})}{\DD(y_{1},...,y_{n})}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(определитель произведения равен произведению определителей).
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{cases}
+y_{1}=x_{1}^{3}\\
+y_{2}=x_{1}+x_{2}
+\end{cases}=\begin{cases}
+x_{1}=\sqrt[3]{y_{1}}\\
+x_{2}=y_{2}-\sqrt[3]{y_{1}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Посчитаем якобиан:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{\DD(y_{1},y_{2})}{\DD(x_{1},x_{2})}=\left(\begin{array}{cc}
+3x^{2} & 0\\
+1 & 1
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{\DD(x_{1},x_{2})}{\DD(y_{1},y_{2})}=\left(\begin{array}{cc}
+\frac{1}{3}y_{1}^{-\nicefrac{2}{3}} & 0\\
+-\frac{1}{3}y_{1}^{-\nicefrac{2}{3}} & 1
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Посчитаем:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{D(y_{1},y_{2})}{D(x_{1},x_{2})}=3x_{1}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{D(x_{1},x_{2})}{D(y_{1},y_{2})}=\frac{1}{3}y^{-\nicefrac{2}{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{D(y_{1},y_{2})}{D(x_{1},x_{2})}\cdot\frac{D(x_{1},x_{2})}{D(y_{1},y_{2})}=x_{1}^{2}y_{1}^{-\nicefrac{2}{3}}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x_{1}\neq0(\Leftrightarrow y_{1}\neq0)\Rightarrow$
+\end_inset
+
+система не особая.
+\end_layout
+
+\begin_layout Standard
+Далее в системе 
+\begin_inset Formula $(1)$
+\end_inset
+
+ рассматриваем произвольные значения 
+\begin_inset Formula $m,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Система функций 
+\begin_inset Formula $(1)$
+\end_inset
+
+ называется независимой или функционально независимой, если 
+\begin_inset Formula $\not\exists F\not\equiv0:\ F(y_{1}(x_{1},...,x_{n}),...,y_{m}(x_{1},...,x_{n}))\equiv0\ \ \ \ (5)$
+\end_inset
+
+ (то есть система независима, если ни одна функция в системе 
+\begin_inset Formula $(1)$
+\end_inset
+
+ не является комбинацией оставшихся).
+\end_layout
+
+\begin_layout Standard
+Сформулируем далее условие зависимости и независимости функций.
+ Продифференцируем тождество 
+\begin_inset Formula $(5)$
+\end_inset
+
+ по каждому из 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\frac{\partial F}{\partial y_{1}}\frac{\partial y_{1}}{\partial x_{i}}+...+\frac{\partial F}{\partial y_{m}}\frac{\partial y_{m}}{\partial_{x_{i}}}\equiv0\ \ \ \ (6)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это тождество можно переписать в виде
+\begin_inset Formula 
+\[
+\left(\frac{\DD(y_{1},...,y_{m})}{\DD(x_{1},...,x_{n})}\right)^{T}\left(\begin{array}{c}
+\frac{\partial F}{\partial y_{1}}\\
+\vdots\\
+\frac{\partial F}{\partial y_{m}}
+\end{array}\right)\equiv0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим 
+\begin_inset Formula $A(x)=\left(\frac{\DD(y_{1},...,y_{m})}{\DD(x_{1},...,x_{n})}\right)^{T},\ h=\left(\begin{array}{c}
+\frac{\partial F}{\partial y_{1}}\\
+\vdots\\
+\frac{\partial F}{\partial y_{m}}
+\end{array}\right)$
+\end_inset
+
+.
+ Запишем однородную систему уравнений:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x)h=0\ \ \ \ (8)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Система (1) будет независимой, если линейная однородная алгебраическая система
+ (8) имеет только нулевое решение или только если 
+\begin_inset Formula $h\equiv0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Рангом функциональной матрицы 
+\begin_inset Formula $A(x)$
+\end_inset
+
+ называется максимальный порядок минора, не равного тождественно нулю.
+ 
+\end_layout
+
+\begin_layout Theorem
+Для того, чтобы система 
+\begin_inset Formula $(1)$
+\end_inset
+
+ являлась независимой в области 
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+, необходимо и достаточно, чтобы 
+\begin_inset Formula 
+\[
+\rang\frac{\DD(y_{1},...,y_{m})}{\DD(x_{1},...,x_{n})}=m
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+в области 
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+1) 
+\begin_inset Formula $m>n\Rightarrow(1)$
+\end_inset
+
+ зависимая.
+\end_layout
+
+\begin_layout Corollary
+2) 
+\begin_inset Formula $m=n:\ (1)$
+\end_inset
+
+ независимая 
+\begin_inset Formula $\Leftrightarrow(1)$
+\end_inset
+
+ не особая.
+\end_layout
+
+\begin_layout Corollary
+3) 
+\begin_inset Formula $\rang A(x)=s<m\Rightarrow$
+\end_inset
+
+ В 
+\begin_inset Formula $(1)$
+\end_inset
+
+ 
+\begin_inset Formula $\exists s$
+\end_inset
+
+ независимых функций.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{cases}
+y_{1}=x_{1}\\
+y_{2}=x_{2}^{2}+x_{3}\\
+y_{y}=x_{1}^{3}(x_{2}^{2}+x_{3})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $y_{3}=y_{1}^{3}y_{2}\Rightarrow$
+\end_inset
+
+ система очевидно зависима.
+ Проверим.
+ Считаем матрицу Якоби:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{\DD(y_{1},y_{2},y_{3})}{\DD(x_{1},x_{2},x_{3})}=\left(\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 2x_{2} & 1\\
+3x_{1}^{2}(x_{2}^{2}+x_{3}) & 2x_{1}^{3}x_{2} & x_{1}^{3}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{D(y_{1},y_{2},y_{3})}{D(x_{1},x_{2},x_{3})}\equiv0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Ранг матрицы равен 2, то есть любые 2 функции в этой системе независимы,
+ а третья выражается через них.
+\end_layout
+
+\begin_layout Subsection
+Теорема о системе неявных функций
 \end_layout
 
 \begin_layout Standard
