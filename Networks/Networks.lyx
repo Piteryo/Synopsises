@@ -1816,5 +1816,197 @@ FIN — завершение соединения.
 Задержки.
 \end_layout
 
+\begin_layout Section
+Служба DNS.
+\end_layout
+
+\begin_layout Standard
+Все компьютеры в сети имеют IP-адреса.
+ Но запомнить IP трудно, поэтому были придуманы доменные имена типа vk.com.
+ Доменные имена обладают своими иерархиями.
+\begin_inset Formula 
+\[
+\underbrace{apmath}_{\text{адрес сайта}}.\underbrace{spbu}_{\text{домен второго уровня}}.\underbrace{ru}_{\text{старш. домен}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DNS — система, занимающаяся сопоставлением доменных имен и IP-адресов.
+ Бывает двух видов:
+\end_layout
+
+\begin_layout Itemize
+Централизованная — единственный сервер, на котором лежит таблица со всем
+ этим добром.
+ Из минусов — нагруженность сервера и ненадежность.
+\end_layout
+
+\begin_layout Itemize
+Распределенная — несколько серверов, которые хранят копии одной таблицы.
+\end_layout
+
+\begin_layout Section
+Аспекты сетевой безопасности.
+\end_layout
+
+\begin_layout Standard
+Аспекты:
+\end_layout
+
+\begin_layout Enumerate
+Конфиденциальность;
+\end_layout
+
+\begin_layout Enumerate
+Целостность данных;
+\end_layout
+
+\begin_layout Enumerate
+Аутентификация;
+\end_layout
+
+\begin_layout Enumerate
+Доступность.
+\end_layout
+
+\begin_layout Standard
+Сетевые угрозы:
+\end_layout
+
+\begin_layout Enumerate
+Сниффинг (
+\begin_inset Quotes fld
+\end_inset
+
+прослушка
+\begin_inset Quotes frd
+\end_inset
+
+ пакетов).
+\end_layout
+
+\begin_layout Enumerate
+Аутентификация:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Перехват пароля/ключа;
+\end_layout
+
+\begin_layout Enumerate
+Подбор пароля (broot force).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Недостаточная аутентификация.
+\end_layout
+
+\begin_layout Enumerate
+MitM — man-in-the-middle.
+\end_layout
+
+\begin_layout Enumerate
+Лавинные атаки.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Недостаточное сопротивление автоматизации (атака ботов — DoS).
+ Борьба — Captcha.
+\end_layout
+
+\begin_layout Enumerate
+Распределенная лавинная атака (DDoS).
+\end_layout
+
+\begin_layout Enumerate
+Флуд.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Вирусы, сетевые черви, трояны.
+\end_layout
+
+\begin_layout Enumerate
+Сетевая разведка.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Скан портов
+\end_layout
+
+\begin_layout Enumerate
+Заметание следов
+\end_layout
+
+\begin_layout Enumerate
+Инъекции SQL, PHP
+\end_layout
+
+\begin_layout Enumerate
+Переполнение буфера
+\end_layout
+
+\begin_layout Enumerate
+Атака на функции форматирования строк
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Выполнение команд операционной системы.
+\end_layout
+
+\begin_layout Standard
+Защита:
+\end_layout
+
+\begin_layout Enumerate
+Сигнатурный (качественный анализ трафика)
+\end_layout
+
+\begin_layout Enumerate
+Статистический
+\end_layout
+
+\begin_layout Enumerate
+Гибридный.
+\end_layout
+
+\begin_layout Standard
+Защита от вирусов:
+\end_layout
+
+\begin_layout Enumerate
+Антивирус.
+\end_layout
+
+\begin_layout Enumerate
+Компьютерная гигиена (мойте компьютер перед выходом в интернет, дети).
+\end_layout
+
+\begin_layout Enumerate
+Виртуальная машина (или любая другая песочница).
+\end_layout
+
+\begin_layout Enumerate
+Не подключаться к сети, залить все порты эпоксидкой и выковырять дисковод
+\end_layout
+
+\begin_layout Enumerate
+Не-windows.
+\end_layout
+
+\begin_layout Enumerate
+Admin/user.
+\end_layout
+
 \end_body
 \end_document

@@ -4,14 +4,11 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass amsart
+\textclass extarticle
 \begin_preamble
 \usepackage{indentfirst}
 \end_preamble
 \use_default_options true
-\begin_removed_modules
-theorems-ams
-\end_removed_modules
 \begin_modules
 eqs-within-sections
 figs-within-sections
@@ -1003,6 +1000,954 @@ Telnet
 \begin_layout Standard
 Можно объединить сеансовый и транспортный уровень, прикладной и представительски
 й, канальный и физический.
+\end_layout
+
+\begin_layout Section
+Электронная почта
+\end_layout
+
+\begin_layout Standard
+Основные компоненты электронной почты:
+\end_layout
+
+\begin_layout Enumerate
+Почтовые клиенты:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Thunderbird;
+\end_layout
+
+\begin_layout Enumerate
+Outlook;
+\end_layout
+
+\begin_layout Enumerate
+The Bat;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Почтовые серверы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Функции:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Хранение
+\end_layout
+
+\begin_layout Enumerate
+Отправка
+\end_layout
+
+\begin_layout Enumerate
+Организация очередей
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Состав: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+MDA (агент проверки доставки сообщений)
+\end_layout
+
+\begin_layout Enumerate
+MTA (агент отправки сообщений)
+\end_layout
+
+\begin_layout Enumerate
+MUA (user-agent);
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Примеры:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+SendMail;
+\end_layout
+
+\begin_layout Enumerate
+qmail;
+\end_layout
+
+\begin_layout Enumerate
+MS Exchange Server;
+\end_layout
+
+\begin_layout Enumerate
+Postfix;
+\end_layout
+
+\begin_layout Enumerate
+Procmail/MailDrop;
+\end_layout
+
+\begin_layout Enumerate
+Exim.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Протоколы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Отправка: SMTP;
+\end_layout
+
+\begin_layout Enumerate
+Перенаправление: POP3;
+\end_layout
+
+\begin_layout Enumerate
+Копирование: IMAP;
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Протоколы получения почты;
+\end_layout
+
+\begin_layout Enumerate
+Протоколы отправки почты;
+\end_layout
+
+\begin_layout Section
+Протокол SMTP
+\end_layout
+
+\begin_layout Standard
+В качестве команд этого протокола используется ASCII-text.
+ Для передачи данных используется протокол TCP.
+ Стандартный порт протокола — 25.
+\end_layout
+
+\begin_layout Standard
+Схема посылки почты состоит из 3-х этапов:
+\end_layout
+
+\begin_layout Standard
+1) Приветствие;
+\end_layout
+
+\begin_layout Standard
+2) Пересылка почты;
+\end_layout
+
+\begin_layout Standard
+3) Закрытие сессии;
+\end_layout
+
+\begin_layout Standard
+В процессе выполняются следующие команды:
+\end_layout
+
+\begin_layout Standard
+MAIL FROM — устанавливает обратный адрес.
+\end_layout
+
+\begin_layout Standard
+RCPT TO — устанавливает получателя данного сообщения.
+\end_layout
+
+\begin_layout Standard
+DATA — для отправки сообщений.
+\end_layout
+
+\begin_layout Standard
+Протокол получения почты: POP3 (Post Office Protocol).
+ Работает на 110 порту.
+ Он скачивает все письма с сервера, удаляя их на нём.
+\end_layout
+
+\begin_layout Standard
+Аналог: IMAP.
+ 143 порт.
+ Аналог тонкого клиента, который скачивает с сервера лишь заголовки, и копии
+ писем.
+\end_layout
+
+\begin_layout Standard
+По протоколу HTTP тоже можно получать почту.
+ Сверхтонкий клиент, предоставляющий веб-морду к серверу.
+\end_layout
+
+\begin_layout Standard
+Разеберем подробно каждый протокол получения почты.
+\end_layout
+
+\begin_layout Subsection
+POP3
+\end_layout
+
+\begin_layout Standard
+Стадии:
+\end_layout
+
+\begin_layout Standard
+1) Авторизация на сервере;
+\end_layout
+
+\begin_layout Standard
+2) Транзакция (скачивание с сервера);
+\end_layout
+
+\begin_layout Standard
+3) Обновление (обмен информацией с сервером).
+\end_layout
+
+\begin_layout Standard
+У него больше команд, чем у SMTP:
+\end_layout
+
+\begin_layout Standard
+USER — идентифицирует пользователя с указанным именем;
+\end_layout
+
+\begin_layout Standard
+PASS — указывает пароль для пары клиент-сервер;
+\end_layout
+
+\begin_layout Standard
+QUIT — закрывает TCP соединение;
+\end_layout
+
+\begin_layout Standard
+STAT — возвращает число писем в на сервере;
+\end_layout
+
+\begin_layout Standard
+LIST — запрашивает список сообщений;
+\end_layout
+
+\begin_layout Standard
+RETR — извлекает сообщение с почтового ящика;
+\end_layout
+
+\begin_layout Standard
+DELE — помечает сообщение на удаление;
+\end_layout
+
+\begin_layout Standard
+NOOP (сам NOOB) — сервер возвращает положительный ответ, но не выполняет
+ действий.
+\end_layout
+
+\begin_layout Standard
+LAST — возвращает наибольший размер сообщения из всех, к которым обращались.
+\end_layout
+
+\begin_layout Standard
+RSET — отменяет DELE.
+\end_layout
+
+\begin_layout Standard
+Дополнительные (не входящие в базовую конфигурацию) команды:
+\end_layout
+
+\begin_layout Standard
+APOP — передача на сервер username and password;
+\end_layout
+
+\begin_layout Standard
+UIDL — перенумеровать все сообщения в рамках текущей сессии;
+\end_layout
+
+\begin_layout Subsection
+IMAP
+\end_layout
+
+\begin_layout Standard
+Исходное соединение и подтверждение соединения с сервером.
+ Состояния сервера:
+\end_layout
+
+\begin_layout Standard
+1) Без аутентификации.
+ Клиент должен предоставить логин и пароль.
+\end_layout
+
+\begin_layout Standard
+2) Аутентификация проведена.
+ Клиент выбирает почтовый ящик.
+ Выбор произведен.
+\end_layout
+
+\begin_layout Standard
+3) Отклонено.
+ Указали причину.
+ Закрыли сессию.
+\end_layout
+
+\begin_layout Standard
+4) Переход от 1 состояния к 2.
+\end_layout
+
+\begin_layout Standard
+5) Переход от аутентификации к выбору ящика.
+\end_layout
+
+\begin_layout Standard
+6) Если выбор не произведен вернуться к аутентификации.
+\end_layout
+
+\begin_layout Standard
+7) Закрытие сессии.
+\end_layout
+
+\begin_layout Section
+Протоколы TCP и UDP
+\end_layout
+
+\begin_layout Subsection
+UDP
+\end_layout
+
+\begin_layout Standard
+Чтобы передать сообщение по протоколу UDP, нужно совершить следующие действия.
+ Допустим, мы хотим передать сообщение.
+ Мы передаем сообщение, если клиент принял сообщение, то все закончилось.
+ Если нет - тоже закончилось.
+\end_layout
+
+\begin_layout Standard
+Плюсы UDP: 
+\end_layout
+
+\begin_layout Itemize
+Минимум действий;
+\end_layout
+
+\begin_layout Itemize
+Быстрая передача данных (минимум задержек);
+\end_layout
+
+\begin_layout Itemize
+Контроль целостности пакета
+\end_layout
+
+\begin_layout Standard
+Минусы:
+\end_layout
+
+\begin_layout Itemize
+Возможны потери
+\end_layout
+
+\begin_layout Standard
+Структура UDP пакета:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0-15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16-31
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Порт отправителя
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Порт получателя
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Длина пакета
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Контрольная сумма
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Данные, данные, данные
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+TCP
+\end_layout
+
+\begin_layout Standard
+Пример.
+ Отправитель запрашивает готовность получателя.
+ Затем они устанавливают соединение.
+ Затем происходит передача данных, причем если пакет не был принят, отправитель
+ отправит его еще раз (и так до 16 раз).
+ Затем сессия закрывается.
+\end_layout
+
+\begin_layout Standard
+Работа:
+\end_layout
+
+\begin_layout Enumerate
+Установка логического соединения (сеанс связи);
+\end_layout
+
+\begin_layout Enumerate
+Пересылка сообщений;
+\end_layout
+
+\begin_layout Enumerate
+Проверки доставки/целостности, повторы недоставленных пакетов;
+\end_layout
+
+\begin_layout Enumerate
+Развыв сеанса.
+\end_layout
+
+\begin_layout Standard
+Структура:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Порт отправителя
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Порт получателя
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Порядковый номер
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Номер подтверждения
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Длина заголовка
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+////////
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Флаги (6 бит)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Окно получателя
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Контрольная сумма
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Указатель срочных данных
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Параметры
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Много данных (1500 Eth, 2272 Wi-Fi, 4500 FDDI)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Флаги:
+\end_layout
+
+\begin_layout Itemize
+IRG — важность.
+\end_layout
+
+\begin_layout Itemize
+ACK — номер подтверждения.
+\end_layout
+
+\begin_layout Itemize
+PSH — сокращение от Push.
+ Протолкнуть данные, накопившиеся в буфере.
+\end_layout
+
+\begin_layout Itemize
+RST — умышленный обрыв соединения/сброс буфера.
+\end_layout
+
+\begin_layout Itemize
+CYN — синхронизация.
+\end_layout
+
+\begin_layout Itemize
+FIN — завершение соединения.
+\end_layout
+
+\begin_layout Standard
+Плюсы:
+\end_layout
+
+\begin_layout Itemize
+Надежность;
+\end_layout
+
+\begin_layout Itemize
+Порядок пакетов.
+\end_layout
+
+\begin_layout Standard
+Минусы:
+\end_layout
+
+\begin_layout Itemize
+Скорость.
+\end_layout
+
+\begin_layout Itemize
+Задержки.
+\end_layout
+
+\begin_layout Section
+Служба DNS.
+\end_layout
+
+\begin_layout Standard
+Все компьютеры в сети имеют IP-адреса.
+ Но запомнить IP трудно, поэтому были придуманы доменные имена типа vk.com.
+ Доменные имена обладают своими иерархиями.
+\begin_inset Formula 
+\[
+\underbrace{apmath}_{\text{адрес сайта}}.\underbrace{spbu}_{\text{домен второго уровня}}.\underbrace{ru}_{\text{старш. домен}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DNS — система, занимающаяся сопоставлением доменных имен и IP-адресов.
+ Бывает двух видов:
+\end_layout
+
+\begin_layout Itemize
+Централизованная — единственный сервер, на котором лежит таблица со всем
+ этим добром.
+ Из минусов — нагруженность сервера и ненадежность.
+\end_layout
+
+\begin_layout Itemize
+Распределенная — несколько серверов, которые хранят копии одной таблицы.
+\end_layout
+
+\begin_layout Section
+Аспекты сетевой безопасности.
+\end_layout
+
+\begin_layout Standard
+Аспекты:
+\end_layout
+
+\begin_layout Enumerate
+Конфиденциальность;
+\end_layout
+
+\begin_layout Enumerate
+Целостность данных;
+\end_layout
+
+\begin_layout Enumerate
+Аутентификация;
+\end_layout
+
+\begin_layout Enumerate
+Доступность.
+\end_layout
+
+\begin_layout Standard
+Сетевые угрозы:
+\end_layout
+
+\begin_layout Enumerate
+Сниффинг (
+\begin_inset Quotes fld
+\end_inset
+
+прослушка
+\begin_inset Quotes frd
+\end_inset
+
+ пакетов).
+\end_layout
+
+\begin_layout Enumerate
+Аутентификация:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Перехват пароля/ключа;
+\end_layout
+
+\begin_layout Enumerate
+Подбор пароля (broot force).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Недостаточная аутентификация.
+\end_layout
+
+\begin_layout Enumerate
+MitM — man-in-the-middle.
+\end_layout
+
+\begin_layout Enumerate
+Лавинные атаки.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Недостаточное сопротивление автоматизации (атака ботов — DoS).
+ Борьба — Capture.
+\end_layout
+
+\begin_layout Enumerate
+Распределенная лавинная атака (DDoS).
+\end_layout
+
+\begin_layout Enumerate
+Флуд.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Вирусы, сетевые черви, трояны.
+\end_layout
+
+\begin_layout Standard
+Защита:
+\end_layout
+
+\begin_layout Enumerate
+Сигнатурный (качественный анализ трафика)
+\end_layout
+
+\begin_layout Enumerate
+Статистический
+\end_layout
+
+\begin_layout Enumerate
+Гибридный.
 \end_layout
 
 \end_body

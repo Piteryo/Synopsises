@@ -109,6 +109,11 @@ algorithm2e
 \newcommand{\QQ}{\mathbb{Q}}
 \end_inset
 
+ 
+\begin_inset FormulaMacro
+\newcommand{\DD}{\mathscr{D}}
+\end_inset
+
 
 \end_layout
 
@@ -135,7 +140,7 @@ algorithm2e
 \newcommand{\rn}{\RR^{n}}
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5523,7 +5528,6 @@ y_{m}=y_{m}(x_{1},...,x_{n})
  переменных.
 \end_layout
 
-\begin_deeper
 \begin_layout Definition
 Пусть в 
 \begin_inset Formula $E$
@@ -5536,16 +5540,13 @@ y_{m}=y_{m}(x_{1},...,x_{n})
 
 \end_layout
 
+\begin_deeper
 \begin_layout Definition
 Тогда 
 \end_layout
 
 \begin_layout Definition
-\begin_inset FormulaMacro
-\newcommand{\DD}{\mathscr{D}}
-\end_inset
-
- /*TODO: перенести наверх*/
+/*TODO: перенести наверх*/
 \end_layout
 
 \begin_layout Definition
@@ -5647,6 +5648,18 @@ x_{n}=x_{n}(y_{1},...,y_{n})
  Вопрос существования обратной системы будет рассмотрен в следующем параграфе
  (см.
  теорему о системе неявных функций).
+\end_layout
+
+\begin_layout Remark
+Здесь 
+\begin_inset Formula $\DD$
+\end_inset
+
+ — матрица Якоби, а 
+\begin_inset Formula $D$
+\end_inset
+
+ — якобиан (то есть определитель данной матрицы).
 \end_layout
 
 \begin_layout Theorem
@@ -6175,7 +6188,7 @@ y_{m}=y_{m}(x_{1},...,x_{n})
 
 \begin_layout Theorem
 1) 
-\begin_inset Formula $F_{i}(x_{1},...,x_{n}y_{1}(x_{1},...,x_{n}),...,y_{m}(x_{1},...,x_{n}))\equiv0$
+\begin_inset Formula $F_{i}(x_{1},...,x_{n}y_{1}(x_{1},...,x_{n}),...,y_{m}(x_{1},...,x_{n}))\equiv0\ \ \ \ \ (1)$
 \end_inset
 
 ;
@@ -6189,5 +6202,1329 @@ y_{m}=y_{m}(x_{1},...,x_{n})
 .
 \end_layout
 
+\begin_layout Proof
+(индукция)
+\end_layout
+
+\begin_layout Proof
+База: 
+\begin_inset Formula $m=1\Rightarrow$
+\end_inset
+
+ одномерная теорема о неявной функции.
+\end_layout
+
+\begin_layout Proof
+ИП: Пусть теорема верна для 
+\begin_inset Formula $m-1$
+\end_inset
+
+.
+ Докажем, что теорема верна для 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Расписываем якобиан нашей системы 
+\begin_inset Formula 
+\[
+0\neq\frac{D(F_{1},...,F_{n})}{D(y_{1},...,y_{m})}|_{M_{0}}=\left|\begin{array}{ccc}
+\frac{\partial F_{1}}{\partial y_{1}} & ... & \frac{\partial F_{1}}{\partial y_{m}}\\
+\vdots &  & \vdots\\
+\frac{\partial F_{m}}{\partial y_{1}} & ... & \frac{\partial F_{m}}{\partial y_{m}}
+\end{array}\right|_{M_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Значит, у матрицы Якоби нет нулевых строк, а значит, в последней строке
+ матрицы есть хотя бы один ненулевой элемент.
+ Пусть, для определенности, 
+\begin_inset Formula $\frac{\partial F_{m}}{\partial y_{m}}|_{M_{0}}\neq0$
+\end_inset
+
+, иначе переобозначим (или воспользуемся перестановкой).
+ Тогда по одномерной теореме о неявной функции из последнего уравнения в
+ системе 
+\begin_inset Formula $(1)$
+\end_inset
+
+ можно выразить 
+\begin_inset Formula $y_{m}$
+\end_inset
+
+.
+ Тогда пусть 
+\begin_inset Formula $y_{m}=f(x_{1},...,x_{n},y_{1},...,y_{m-1})$
+\end_inset
+
+.
+ Подставим теперь эту функцию в систему 
+\begin_inset Formula $(1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\begin{cases}
+\Phi_{1}(x_{1},...,x_{n},y_{1},...,y_{m-1})=F(x_{1},...,x_{n},y_{1},...,y_{m-1},f(x_{1},...,x_{n},y_{1},...,y_{m-1}))=0\\
+................................... & (2)\\
+\Phi_{m-1}(x_{1},...,x_{n},y_{1},...,y_{m-1})=F_{m-1}(x_{1},...,x_{n},y_{1},...,y_{m-1},f(x_{1},...,x_{n},y_{1},...,y_{m-1}))=0\\
+\Phi_{m}(x_{1},...,x_{n},y_{1},...,y_{m-1})=F_{m}(x_{1},...,x_{n},y_{1},...,y_{m-1},f(x_{1},...,x_{n},y_{1},...,y_{m-1}))\equiv0
+\end{cases}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+Теперь докажем, что 
+\begin_inset Formula 
+\[
+\Delta=\frac{D(\Phi_{1},...,\Phi_{m-1})}{D(y_{1},...,y_{m-1})}|_{M_{0}}\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Распишем частную производную 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\begin{array}{c}
+\frac{\partial\Phi_{i}}{\partial y_{k}}=\frac{\partial F_{i}}{\partial y_{k}}+\frac{\partial F_{i}}{\partial y_{m}}\cdot\frac{\partial f}{\partial y_{k}}\ \ \ \ \\
+....\\
+....\\
+\frac{\partial\Phi_{m}}{\partial y_{k}}=\frac{\partial F_{m}}{\partial y_{k}}+\frac{\partial F_{m}}{\partial y_{m}}\cdot\frac{\partial f_{i}}{\partial y_{k}}\equiv0
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+0\neq\left|\begin{array}{ccc}
+\frac{\partial F_{1}}{\partial y_{1}} & ... & \frac{\partial F_{1}}{\partial y_{m}}\\
+\vdots &  & \vdots\\
+\frac{\partial F_{m}}{\partial y_{1}} & ... & \frac{\partial F_{m}}{\partial y_{m}}
+\end{array}\right|_{M_{0}}=\left|\begin{array}{cccc}
+\frac{\partial\Phi_{1}}{\partial y_{1}} & ... & \frac{\partial\Phi_{1}}{\partial y_{m-1}} & \frac{\partial F_{1}}{\partial y_{m}}\\
+\vdots &  & \vdots\\
+\frac{\partial\Phi_{m-1}}{\partial y_{1}} & ... & \frac{\partial\Phi_{m-1}}{\partial y_{m-1}} & \frac{\partial F_{m-1}}{\partial y_{m}}\\
+0 & ... & 0 & \frac{\partial F_{m}}{\partial y_{m}}
+\end{array}\right|_{M_{0}}=\frac{\partial F_{m}}{\partial y_{m}}|_{M_{0}}\cdot\Delta\Rightarrow\Delta\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Умножим последний столбец на 
+\begin_inset Formula $\frac{\partial f}{\partial y_{k}}$
+\end_inset
+
+ и прибавляем к 
+\begin_inset Formula $k$
+\end_inset
+
+-ому столбцу.
+\end_layout
+
+\begin_layout Proof
+Тогда по индуктивному предположению из системы 
+\begin_inset Formula $(2)$
+\end_inset
+
+ можно выразить
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\begin{cases}
+y_{1}=y_{1}(x_{1},...,x_{n})\\
+.....\\
+y_{m-1}=y_{m-1}(x_{1},...,x_{n})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+и 
+\begin_inset Formula $y_{m}=f(x_{1},...,x_{n},y_{1}(x_{1},...x_{n}),...,y_{m-1}(x_{1},...,x_{n}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Если в доказанной теореме предположить, что в окрестности 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ существуют непрерывные 
+\begin_inset Formula $\frac{\partial F_{i}}{\partial x_{k}},\ i=\overline{1,m},\ k=\overline{1,n}$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists\frac{\partial y_{i}}{\partial x_{k}}$
+\end_inset
+
+ в окрестности точки 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ (не факт, что 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+, я чего-то не понял).
+\end_layout
+
+\begin_layout Remark
+Выразим функции 
+\begin_inset Formula $y_{1},...,y_{m}$
+\end_inset
+
+ и подставим все это в систему 
+\begin_inset Formula $(1)$
+\end_inset
+
+.
+ В результате получим тождество:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $F_{i}(x_{1},...,x_{n},y_{1}(x_{1},...x_{n}),...,y_{m}(x_{1},...,x_{n}))\equiv0\ \ \ \ \ (3)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Продифференцируем тождество по 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{\partial F_{1}}{\partial x_{k}}+\frac{\partial F_{1}}{\partial y_{1}}\frac{\partial y_{1}}{\partial x_{k}}+...+\frac{\partial F_{1}}{\partial y_{m}}\frac{\partial y_{m}}{\partial x_{k}}=0\\
+\\
+\frac{\partial F_{m}}{\partial x_{k}}+\frac{\partial F_{m}}{\partial y_{1}}\frac{\partial y_{1}}{\partial x_{k}}+...+\frac{\partial F_{m}}{\partial y_{m}}\frac{\partial y_{m}}{\partial x_{k}}=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Запишем эту систему в матричном виде:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\frac{\partial F_{1}}{\partial x_{k}}\\
+\vdots\\
+\frac{\partial F_{m}}{\partial x_{k}}
+\end{array}\right)+\frac{D(F_{1},...,F_{m})}{D(y_{1},...,y_{m})}\left(\begin{array}{c}
+\frac{\partial y_{1}}{\partial x_{k}}\\
+\vdots\\
+\frac{\partial y_{m}}{\partial x_{k}}
+\end{array}\right)=0\Rightarrow\left(\begin{array}{c}
+\frac{\partial y_{1}}{\partial x_{k}}\\
+\vdots\\
+\frac{\partial y_{m}}{\partial x_{k}}
+\end{array}\right)=-\left(\frac{D(F_{1},...,F_{m})}{D(y_{1},...,y_{m})}\right)^{-1}\left(\begin{array}{c}
+\frac{\partial F_{1}}{\partial x_{k}}\\
+\vdots\\
+\frac{\partial F_{m}}{\partial x_{k}}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+(обратная матрица существует, так как якобиан не равен нулю).
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+x_{1}^{2}+x_{2}^{2}+y_{1}^{2}+y_{2}^{2}=1\\
+x_{1}x_{2}y_{1}+y_{2}\ln y_{1}=0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Найдем производные по 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ По 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ ищутся аналогично:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+2x_{1}+2y_{1}\cdot\frac{\partial y_{1}}{\partial x_{1}}+2y_{2}\cdot\frac{\partial y_{2}}{\partial x_{1}}=0\\
+x_{2}y_{1}+x_{1}x_{2}\cdot\frac{\partial y_{1}}{\partial x_{1}}+\frac{\partial y_{2}}{\partial x_{1}}\ln y_{1}+y_{2}\cdot\frac{1}{y_{1}}\frac{\partial y_{1}}{\partial x_{1}}=0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Получим матрицу Якоби:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\underbrace{\left(\begin{array}{c}
+2x_{1}\\
+x_{2}y_{1}
+\end{array}\right)}_{\left(\begin{array}{c}
+\frac{\partial F_{1}}{\partial x_{1}}\\
+\frac{\partial F_{2}}{\partial x_{1}}
+\end{array}\right)}+\underbrace{\left(\begin{array}{cc}
+2y_{1} & 2y_{2}\\
+x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y
+\end{array}\right)}_{=\frac{D(F_{1}F_{2})}{D(y_{1}y_{2})}}\left(\begin{array}{c}
+\frac{\partial y_{1}}{\partial x_{1}}\\
+\frac{\partial y_{2}}{\partial x_{1}}
+\end{array}\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Рассматриваем точки, где матрица не особая, ищем обратную и выражаем:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\frac{\partial y_{1}}{\partial x_{1}}\\
+\frac{\partial y_{2}}{\partial x_{1}}
+\end{array}\right)=-\left(\begin{array}{cc}
+2y_{1} & 2y_{2}\\
+x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y
+\end{array}\right)^{-1}\left(\begin{array}{c}
+2x_{1}\\
+x_{2}y_{1}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Условный экстремум
+\end_layout
+
+\begin_layout Problem*
+Рассмотрим задачу следующего вида.
+ Пусть дана функция 
+\begin_inset Formula $F(x_{1},...,x_{n+m})$
+\end_inset
+
+, требуется найти экстремум и она связана условием
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\[
+\begin{cases}
+\varphi_{1}(x_{1},...,x_{n+m})=0\\
+................................ & (2)\\
+\varphi_{m}(x_{1},...,x_{n+m})=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+на 
+\begin_inset Formula $E$
+\end_inset
+
+, где 
+\begin_inset Formula $E\subset\RR^{n+m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Точка 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ называется точкой условного минимума в задаче, если 
+\begin_inset Formula $\exists\delta>0:\ \forall x=\left(\begin{array}{c}
+x_{1}\\
+...\\
+x_{n+m}
+\end{array}\right)\in\left(U_{\delta}(x^{(0)})\cap E\right)\Rightarrow F(x)\geq F(x^{(0)})$
+\end_inset
+
+.
+ (и наоборот для точки условного максимума).
+\end_layout
+
+\begin_layout Standard
+Без потери общности будем считать, что в окрестности точки 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ уравнения (2) независимы.
+ Тогда по теореме о независимости 
+\begin_inset Formula $\rang\frac{\DD(\varphi_{1},...,\varphi_{m})}{\DD(x_{1},...,x_{n+m})}=m$
+\end_inset
+
+.
+ То есть какие-то 
+\begin_inset Formula $m$
+\end_inset
+
+ столбцов этой матрицы образуют ненулевой минор.
+ Без потери общности будем считать, что такой ненулевой минор образуется
+ последними 
+\begin_inset Formula $m$
+\end_inset
+
+ столбцами, который является якобианом следующего вида:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{D(\varphi_{1},...,\varphi_{m})}{D(x_{n+1},...,x_{n+m})}|_{x^{(0)}}\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда по теореме о системе неявных функций в окрестности точки 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ из уравнений (2) можно выразить:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{n+1}=f_{1}(x_{1},...,x_{n})\\
+.............................. & (3)\\
+x_{n+m}=f_{m}(x_{1},...,x_{n})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+А теперь функции (3) подставим в (1):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi(x_{1},...,x_{n})=F(x_{1},...,x_{n},f_{1}(x_{1},...,x_{n}),...,f_{m}(x_{1},...,x_{n}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В результате задача поиска условного экстремума (1,2) свелась к задаче поиска
+ безусловного экстремума функции (
+\begin_inset Formula $\Phi$
+\end_inset
+
+).
+ Такой подход называется методом исключения.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $F(x,y)=x^{2}+y^{2}$
+\end_inset
+
+ и 
+\begin_inset Formula $E:\ x+y=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Методом исключений: выразим 
+\begin_inset Formula $y=1-x$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\Phi(x)=F(x_{1},1-x)=x^{2}+(1-x^{2})$
+\end_inset
+
+.
+ Теперь нас интересует безусловный экстремум.
+ Далее применим теорему Ферма: 
+\begin_inset Formula $\Phi'(x)=2x-2(1-x)=4x-2=0\Rightarrow x=\frac{1}{2}$
+\end_inset
+
+ — точка минимума.
+ Откуда 
+\begin_inset Formula $y=\frac{1}{2}$
+\end_inset
+
+.
+ Точка экстремума: 
+\begin_inset Formula $(\frac{1}{2},\frac{1}{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Метод исключений удается применить, если уравнения 
+\begin_inset Formula $(2)$
+\end_inset
+
+ несложные, то есть функции 
+\begin_inset Formula $(3)$
+\end_inset
+
+ удалось записать в явном виде.
+ В противном случае воспользуемся методом множителей Лагранжа.
+\end_layout
+
+\begin_layout Standard
+Построим функцию.
+ Для краткости: 
+\begin_inset Formula $x=\left(\begin{array}{c}
+x_{1}\\
+...\\
+x_{n+m}
+\end{array}\right),\ \lambda=\left(\begin{array}{c}
+\lambda_{1}\\
+\\
+\lambda_{m}
+\end{array}\right)$
+\end_inset
+
+.
+ Функция Лагранжа: 
+\begin_inset Formula $L(x,\lambda)=F(x)+\lambda_{1}\varphi_{1}(x)+...+\lambda_{m}\varphi_{m}(x)$
+\end_inset
+
+, где 
+\begin_inset Formula $\lambda_{1},...,\lambda_{m}$
+\end_inset
+
+— константы
+\end_layout
+
+\begin_layout Theorem
+(Необходимое условие условного экстремума).
+ Пусть 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ — точка условного экстремума в задаче (1,2).
+ Пусть 
+\begin_inset Formula 
+\[
+\frac{D(\varphi_{1},...,\varphi_{m})}{D(x_{n+1},...,x_{n+m})}|_{x^{(0)}}\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Тогда найдутся такие константы 
+\begin_inset Formula $\lambda_{1},...,\lambda_{m}=\const$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial x_{i}}|_{x^{(0)}}=\left(\frac{\partial F}{\partial x_{i}}+\sum_{k=1}^{m}\lambda_{k}\frac{\partial\varphi}{\partial x_{i}}\right)_{x^{(0)}}=0\ \ \ \ \ (4)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $i=\overline{1,n+m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Теорема утверждает, что необходимые условия условного экстремума в задаче
+ (1,2) совпадают с необходимыми условиями безусловного экстремума функции
+ Лагранжа.
+\end_layout
+
+\begin_layout Remark
+Уравнения 
+\begin_inset Formula $(4)$
+\end_inset
+
+ состоит из 
+\begin_inset Formula $m+n$
+\end_inset
+
+ уравнений.
+ Присоединяем к ним условие связи 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ Получаем 
+\begin_inset Formula $n+2m$
+\end_inset
+
+ уравнений с таким же количеством неизвестных.
+ Решаем эту систему и находим точки, подозрительные на условный экстремум.
+\end_layout
+
+\begin_layout Proof
+Подставим уравнения (3) в (1).
+ Получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\Phi(x_{1},...,x_{n})=F(x_{1},...,x_{n},f_{1}(x_{1},...,x_{n}),...,f_{m}(x_{1},...,x_{n}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ будет и точкой безусловного экстремума функции 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+ Отсюда: 
+\begin_inset Formula 
+\[
+d\Phi(x^{(0)})=\left(\frac{\partial F}{\partial x_{1}}dx_{1}+...+\frac{\partial F}{\partial x_{n+m}}dx_{n+m}\right)|_{x^{(0)}}=0\ \ \ \ \ (5)
+\]
+
+\end_inset
+
+.
+ Согласно свойству инвариантности формы первого дифференциала можно не обращать
+ внимания на то, что последние 
+\begin_inset Formula $m$
+\end_inset
+
+ переменных — функции от первых 
+\begin_inset Formula $n$
+\end_inset
+
+ переменных.
+\end_layout
+
+\begin_layout Proof
+Подставим (3) в (2):
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\varphi(x_{1},...,x_{n},f_{1}(x_{1},...,x_{n}),...,f_{m}(x_{1},...,x_{n}))\equiv0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Продифференцируем данные тождества и опять воспользуемся свойством инвариантност
+и формы первого дифференциала: в точке 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\frac{\partial\varphi_{k}}{\partial x_{1}}dx_{1}+...+\frac{\partial\varphi_{k}}{\partial x_{n+m}}dx_{n+m}=0\ \ \ \ \ (6)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $k$
+\end_inset
+
+-ое уравнение в системе 
+\begin_inset Formula $(6)$
+\end_inset
+
+ умножим на 
+\begin_inset Formula $\lambda_{k}(k=\overline{1,n})$
+\end_inset
+
+ и складываем это с уравнением 
+\begin_inset Formula $(5)$
+\end_inset
+
+.
+ В точке 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ будет выполняться условие:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\left(\frac{\partial F}{\partial x_{1}}+\frac{\partial\varphi_{1}}{\partial x_{1}}\lambda_{1}+...+\frac{\partial\varphi_{m}}{\partial x_{1}}\lambda_{m}\right)dx_{1}+...+\left(\frac{\partial F}{\partial x_{n+m}}+\frac{\partial\varphi_{1}}{\partial x_{n+m}}\lambda_{1}+...+\frac{\partial\varphi_{m}}{\partial x_{n+m}}\lambda_{m}\right)dx_{n+m}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Получаем, что в 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ должно выполняться:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n+m}\left(\frac{\partial F}{\partial x_{i}}+\sum_{k=1}^{m}\frac{\partial\varphi_{k}}{\partial x_{i}}\lambda_{k}\right)dx_{i}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Выберем константы 
+\begin_inset Formula $\lambda_{1},...,\lambda_{m}$
+\end_inset
+
+ исходя из условий: 
+\begin_inset Formula $\left(\frac{\partial F}{\partial x_{i}}+\sum_{k=1}^{m}\frac{\partial\varphi_{k}}{\partial x_{i}}\lambda_{i}\right)|_{x^{(0)}}=0,\ i=\overline{n+1,n+m}\ \ \ \ \ (8)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+Система (8) относительно 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ является системой линейнчх уравнений, матрица коэффициентов по условию
+ теоремы не особая, то есть из этой системы все 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ найдутся однозначно (
+\begin_inset Formula $i=\overline{1,m}$
+\end_inset
+
+).
+ Найденные константы 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ подставим в уравнение (
+\begin_inset Formula $7$
+\end_inset
+
+).
+ Тогда из 
+\begin_inset Formula $(7)$
+\end_inset
+
+ останутся только последние 
+\begin_inset Formula $n$
+\end_inset
+
+ слагаемых:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\left(\frac{\partial F}{\partial x_{i}}+\sum_{k=1}^{m}\frac{\partial\varphi_{k}}{\partial x_{i}}\lambda_{k}\right)dx_{i}=0\ \ \ \ \ (9)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ — независимые переменные.
+ Тогда (9) есть линейная форма относительно 
+\begin_inset Formula $dx_{1},...,dx_{n}$
+\end_inset
+
+ и она будет равна нулю при любых 
+\begin_inset Formula $dx_{1},...,dx_{n}$
+\end_inset
+
+.
+ Тогда получается, что коэффициенты 
+\begin_inset Formula $\left(\frac{\partial F}{\partial x_{i}}+\sum_{k=1}^{m}\frac{\partial\varphi_{k}}{\partial x_{i}}\lambda_{k}\right)$
+\end_inset
+
+ должны будут равняться нулю.
+\end_layout
+
+\begin_layout Theorem
+(достаточное условие условного экстремума)
+\end_layout
+
+\begin_layout Theorem
+Пусть в точке 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ выполнены условия предыдущей теоремы.
+ И пусть 
+\begin_inset Formula $F,\varphi_{1},...,\varphi_{m}$
+\end_inset
+
+ имеют непрерывные частные производные до второго порядка включительно в
+ окрестности точки 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+.
+ Тогда если при условиях 
+\begin_inset Formula $(6)$
+\end_inset
+
+ второй дифференциал 
+\begin_inset Formula $d^{2}L(x^{(0)})$
+\end_inset
+
+ является положительно определенной квадратичной формой, то 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ является точкой условного минимума, и наоборот, если квадратичная форма
+ определена отрицательно, то 
+\begin_inset Formula $x^{(0)}$
+\end_inset
+
+ — точка условного максимума (здесь 
+\begin_inset Formula $L(x^{(0)})$
+\end_inset
+
+ — функция Лагранжа).
+\end_layout
+
+\begin_layout Remark
+Достаточные условия условного экстремума в задаче 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ совпали с достаточными условиями безусловного экстремума функции Лагранжа.
+ Для доказательства достаточно показать, что 
+\begin_inset Formula $d^{2}L(x^{(0)})=d^{2}\Phi(x^{(0)})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Remark
+При исследовании знака второго дифференциала соотношение (6) нужно учитывать,
+ так как второй дифференциал свойством инвариантности формы не обладает-с.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $F(x,y)=x^{2}+y^{2}$
+\end_inset
+
+ (экстремум на 
+\begin_inset Formula $E:\ x+y=1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $L=x^{2}+y^{2}+\lambda(x+y-1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+\frac{\partial L}{\partial x}=2x+\lambda=0\\
+\frac{\partial L}{\partial y}=2y+\lambda=0\\
+x+y=1
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Решив систему, получим 
+\begin_inset Formula $x=\frac{1}{2},\ y=\frac{1}{2},\ \lambda=-1$
+\end_inset
+
+.
+ Найдена точка, подозрительная на экстремум.
+ Проверим, действительно ли это так.
+ Найдем вторую производную функции Лагранжа:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x+y=1\Rightarrow dx+dy=0$
+\end_inset
+
+ (условие (6)).
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial^{2}L}{\partial x^{2}}=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial^{2}L}{\partial x\partial y}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial^{2}L}{\partial y^{2}}=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Теперь 
+\begin_inset Formula $d^{2}L=\frac{\partial^{2}L}{\partial x^{2}}dx^{2}+2\frac{\partial^{2}L}{\partial x\partial y}dxdy+\frac{\partial^{2}L}{\partial y^{2}}dy^{2}=2dx^{2}+2dy^{2}\underbrace{=}_{(6)}2dx^{2}+2(dx^{2})=4dx^{2}$
+\end_inset
+
+ — определена положительно, следовательно 
+\begin_inset Formula $\left(\frac{1}{2},\frac{1}{2}\right)$
+\end_inset
+
+ — точка условного минимума.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $F(x,y)=(x-1)^{2}+(y-2)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Условие: 
+\begin_inset Formula $E:\ x^{2}+y^{2}=9$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Сначала ищем безусловные экстремумы внутри области:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial F}{\partial x}=2(x-1)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial F}{\partial y}=2(y-2)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Следовательно, 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ — подозрительная на экстремум точка.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $dF(1,2)=2dx^{2}+2dy^{2}$
+\end_inset
+
+ — положительно определена, значит, 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ — точка условного минимума.
+\end_layout
+
+\begin_layout Example
+Дальше исследуем функцию на границе:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $F(x,y)=(x-1)^{2}+(y-2)^{2}$
+\end_inset
+
+, ищем экстремум на 
+\begin_inset Formula $\overline{E}:\ x^{2}+y^{2}=9.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $L=(x-1)^{2}+(y-2)^{2}+\lambda(x^{2}+y^{2}-9)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+\frac{\partial L}{\partial x}=2(x-1)+2\lambda x=0\\
+\frac{\partial L}{\partial x}=2(y-2)+2\lambda=0\\
+x^{2}+y^{2}=9
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Откуда 
+\begin_inset Formula $x(1+\lambda)=1\Leftrightarrow x=\frac{1}{1+\lambda}$
+\end_inset
+
+, 
+\begin_inset Formula $y(1+\lambda)=2\Leftrightarrow y=\frac{2}{1+\lambda}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\lambda=-1+\frac{\sqrt{5}}{3}\Rightarrow\begin{cases}
+x=\frac{3}{\sqrt{5}}\\
+y=\frac{6}{\sqrt{5}}
+\end{cases}$
+\end_inset
+
+ и 
+\begin_inset Formula $\lambda=-1-\frac{\sqrt{5}}{3}\Rightarrow\begin{cases}
+x=-\frac{3}{\sqrt{5}}\\
+y=-\frac{6}{\sqrt{5}}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Найдем дифференциалы второго порядка:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial^{2}L}{\partial x^{2}}=2+2\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial^{2}L}{\partial x\partial y}=0$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{\partial^{2}L}{\partial y^{2}}=2+2\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+1) 
+\begin_inset Formula $\lambda=-1+\frac{\sqrt{5}}{3}\Rightarrow d^{2}L(M_{1})=\frac{2\sqrt{5}}{3}dx^{2}+\frac{2\sqrt{5}}{3}dy^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Вообще говоря, следует использовать условие 
+\begin_inset Formula $2xdx+2ydy=0$
+\end_inset
+
+, но в данном случае в этом нет необходимости (форма очевидно положительно
+ определена).
+ 
+\end_layout
+
+\begin_layout Example
+1) 
+\begin_inset Formula $\lambda=-1-\frac{\sqrt{5}}{3}\Rightarrow d^{2}L(M_{2})=-\frac{2\sqrt{5}}{3}dx^{2}-\frac{2\sqrt{5}}{3}dy^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ — точка глобального максимума.
+ Итого:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ — точка глобального минимума;
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $(M_{2})$
+\end_inset
+
+ — точка глобального максимума.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $u=xy+yz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Экстремум на 
+\begin_inset Formula $E:\begin{cases}
+x^{2}+y^{2}=2\\
+y+z=2\\
+x>0,y>0,z>0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $n=2$
+\end_inset
+
+ (количество зависимых переменных), 
+\begin_inset Formula $m=1$
+\end_inset
+
+ (количество независимых).
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $L=xy+yz+\lambda_{1}(x^{2}+y^{2}-2)+\lambda_{2}(y+z-2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{\partial L}{\partial x}=y+2\lambda_{1}x=0\\
+\frac{\partial L}{\partial y}=x+z+2\lambda_{1}y+\lambda_{2}=0\\
+\frac{\partial L}{\partial z}=y+\lambda_{_{2}}=0\\
+x^{2}+y^{2}=2\\
+y+z=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Ответ: 
+\begin_inset Formula $M:$
+\end_inset
+
+ 
+\begin_inset Formula $x=y=z=1,\ \lambda_{1}=-\frac{1}{2},\ \lambda_{2}=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Считаем вторые дифференциалы:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $d^{2}L=2\lambda_{1}dx^{2}+2\lambda_{1}dy^{2}+2dxdy+2dydz=-dx^{2}-dy^{2}+2dxdy+2dydz$
+\end_inset
+
+ — эта форма не является знакоопределенной.
+ 
+\end_layout
+
+\begin_layout Example
+Применим условия (6):
+\end_layout
+
+\begin_layout Example
+Дифференцируем уравнения связи: 
+\begin_inset Formula $\begin{cases}
+2xdx+2ydy=0\\
+dy+dz=0
+\end{cases}$
+\end_inset
+
+, откуда, подставив точку 
+\begin_inset Formula $M$
+\end_inset
+
+: 
+\begin_inset Formula $\begin{cases}
+dx+dy=0\\
+dy+dz=0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Выразим: 
+\begin_inset Formula $\begin{cases}
+dx=-dy\\
+dz=-dy
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Подставим полученные условия:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $d^{2}L=-(-dy)^{2}-dy^{2}+2(-dy)dy+2dy(-dy)=-6dy^{2}$
+\end_inset
+
+ — очевидно отрицательно определена, значит, достаточное условие выполнено.
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_body
 \end_document
