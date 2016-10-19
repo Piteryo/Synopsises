@@ -1918,7 +1918,7 @@ MitM — man-in-the-middle.
 \begin_deeper
 \begin_layout Enumerate
 Недостаточное сопротивление автоматизации (атака ботов — DoS).
- Борьба — Capture.
+ Борьба — Captcha.
 \end_layout
 
 \begin_layout Enumerate
@@ -1932,6 +1932,36 @@ MitM — man-in-the-middle.
 \end_deeper
 \begin_layout Enumerate
 Вирусы, сетевые черви, трояны.
+\end_layout
+
+\begin_layout Enumerate
+Сетевая разведка.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Скан портов
+\end_layout
+
+\begin_layout Enumerate
+Заметание следов
+\end_layout
+
+\begin_layout Enumerate
+Инъекции SQL, PHP
+\end_layout
+
+\begin_layout Enumerate
+Переполнение буфера
+\end_layout
+
+\begin_layout Enumerate
+Атака на функции форматирования строк
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Выполнение команд операционной системы.
 \end_layout
 
 \begin_layout Standard
@@ -1948,6 +1978,34 @@ MitM — man-in-the-middle.
 
 \begin_layout Enumerate
 Гибридный.
+\end_layout
+
+\begin_layout Standard
+Защита от вирусов:
+\end_layout
+
+\begin_layout Enumerate
+Антивирус.
+\end_layout
+
+\begin_layout Enumerate
+Компьютерная гигиена (мойте компьютер перед выходом в интернет, дети).
+\end_layout
+
+\begin_layout Enumerate
+Виртуальная машина (или любая другая песочница).
+\end_layout
+
+\begin_layout Enumerate
+Не подключаться к сети, залить все порты эпоксидкой и выковырять дисковод
+\end_layout
+
+\begin_layout Enumerate
+Не-windows.
+\end_layout
+
+\begin_layout Enumerate
+Admin/user.
 \end_layout
 
 \end_body

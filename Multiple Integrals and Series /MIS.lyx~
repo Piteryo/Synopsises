@@ -555,7 +555,11 @@ y_{n}
 
 .
  Раскроем скобки: 
-\begin_inset Formula $\underbrace{t^{2}\sum a_{i}^{2}}_{A}+\underbrace{2t\sum a_{i}b_{i}}_{B}+\underbrace{\sum b_{i}^{2}}_{C}\geq0$
+\begin_inset Formula 
+\[
+\underbrace{t^{2}\sum a_{i}^{2}}_{A}+\underbrace{2t\sum a_{i}b_{i}}_{B}+\underbrace{\sum b_{i}^{2}}_{C}\geq0
+\]
+
 \end_inset
 
 .
@@ -696,17 +700,17 @@ y_{n}
 Очевидно.
 \end_layout
 
-\begin_layout Proof
+\begin_layout Standard
 Из леммы вытекает, что сферическая и параллелепипедальная метрики эквивалентны
  в плане близости.
 \end_layout
 
-\begin_layout Proof
+\begin_layout Standard
 Поэтому далее можно использовать любую из этих метрик и теоремы, доказанные
  в одной метрике, верны и для другой.
 \end_layout
 
-\begin_layout Proof
+\begin_layout Standard
 Далее, если не оговорено противное, под расстоянием в пространстве 
 \begin_inset Formula $\RR^{n}$
 \end_inset
@@ -1111,12 +1115,15 @@ x_{n}
 
 .
  Проведем эту операцию для оставшихся координат.
- В результате приходим к так называемому повторному пределу 
-\begin_inset Formula $\lim_{x_{n}\to a_{n}}...\lim_{x_{1}\to a_{1}}f(x_{1},...,x_{n})$
+ В результате приходим к так называемому повторному пределу: 
+\begin_inset Formula 
+\[
+\lim_{x_{n}\to a_{n}}...\lim_{x_{1}\to a_{1}}f(x_{1},...,x_{n})
+\]
+
 \end_inset
 
-.
- Если перебирать аргументы 
+Если перебирать аргументы 
 \begin_inset Formula $x_{1},...,x_{n}$
 \end_inset
 
@@ -2155,7 +2162,7 @@ x_{n}=x_{n}(t)
 \end_layout
 
 \begin_layout Proof
-Пусть существует непрерывные 
+Пусть существуют непрерывные 
 \begin_inset Formula $\frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z}$
 \end_inset
 
@@ -2163,8 +2170,10 @@ x_{n}=x_{n}(t)
  Рассматриваем полное приращение функции в точке: 
 \begin_inset Formula 
 \begin{multline*}
-\Delta f=f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y,z)=\left[f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y+\Delta y,z+\Delta z)\right]+\left[f(x,y+\Delta y,z+\Delta z)-f(x,y,z+\Delta z)\right]+\\
-+\left[f(x,y,z+\Delta z)-f(x,y,z)\right]=*=\frac{\partial f}{\partial x}(x+\Theta_{1}\Delta x_{1},y+\Delta y,z+\Delta z)\Delta x+\frac{\partial f}{\partial y}(x,y+\Theta_{2}\Delta y,z+\Delta z)\Delta y+\frac{\partial f}{\partial z}(x,y,z+\Theta_{3}\Delta z)\Delta z=\\
+\Delta f=f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y,z)=\\
+\left[f(x+\Delta x,y+\Delta y,z+\Delta z)-f(x,y+\Delta y,z+\Delta z)\right]+\\
+\left[f(x,y+\Delta y,z+\Delta z)-f(x,y,z+\Delta z)\right]+\left[f(x,y,z+\Delta z)-f(x,y,z)\right]=*=\\
+=\frac{\partial f}{\partial x}(x+\Theta_{1}\Delta x_{1},y+\Delta y,z+\Delta z)\Delta x+\frac{\partial f}{\partial y}(x,y+\Theta_{2}\Delta y,z+\Delta z)\Delta y+\frac{\partial f}{\partial z}(x,y,z+\Theta_{3}\Delta z)\Delta z=\\
 =\left(\frac{\partial f}{\partial x}(x,y,z)+\alpha\right)\Delta x+\left(\frac{\partial f}{\partial y}(x,y,z)+\beta\right)\Delta y+\left(\frac{\partial f}{\partial z}(x,y,z)+\gamma\right)\Delta z
 \end{multline*}
 
@@ -2412,9 +2421,10 @@ df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy+\frac{\partia
 
 \begin_layout Example
 \begin_inset Formula 
-\[
-df(1,2)=\frac{\partial f}{\partial x}(1,2)\Delta x+\frac{\partial f}{\partial y}(1,2)\Delta y=\frac{3x^{2}}{2\sqrt{x^{3}+y^{3}}}\cdot0,02+\frac{3y^{2}}{2\sqrt{x^{3}+y^{3}}}\cdot(-0,03)=\frac{1}{2}\cdot0,02+2\cdot(-0,03)=-0,05
-\]
+\begin{multline*}
+df(1,2)=\frac{\partial f}{\partial x}(1,2)\Delta x+\frac{\partial f}{\partial y}(1,2)\Delta y=\frac{3x^{2}}{2\sqrt{x^{3}+y^{3}}}\cdot0,02+\frac{3y^{2}}{2\sqrt{x^{3}+y^{3}}}\cdot(-0,03)=\\
+=\frac{1}{2}\cdot0,02+2\cdot(-0,03)=-0,05
+\end{multline*}
 
 \end_inset
 
@@ -2493,9 +2503,10 @@ z=\chi(u,v)
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\frac{\partial F}{\partial u}=\lim_{\Delta u\to0}\frac{\Delta_{u}F}{\Delta u}=\lim_{\Delta u\to0}\frac{\Delta f}{\Delta u}=\lim_{\Delta u\to0}\frac{f'_{x}\Delta x+f'_{y}\Delta y+f'_{z}\Delta z+o(\rho)}{\Delta u}=\lim_{\Delta u\to0}\left(f'_{x}\frac{\Delta x}{\Delta u}+f'_{y}\frac{\Delta y}{\Delta u}+f'_{z}\frac{\Delta z}{\Delta u}+\underbrace{\frac{o(\rho)}{\rho}}_{\to0}\cdot\frac{\rho}{\Delta u}\right)=\frac{\partial f}{\partial x}\cdot\frac{\partial\varphi}{\partial u}+\frac{\partial f}{\partial y}\cdot\frac{\partial x}{\partial u}+\frac{\partial f}{\partial z}\cdot\frac{\partial x}{\partial u}
-\]
+\begin{multline*}
+\frac{\partial F}{\partial u}=\lim_{\Delta u\to0}\frac{\Delta_{u}F}{\Delta u}=\lim_{\Delta u\to0}\frac{\Delta f}{\Delta u}=\lim_{\Delta u\to0}\frac{f'_{x}\Delta x+f'_{y}\Delta y+f'_{z}\Delta z+o(\rho)}{\Delta u}=\\
+=\lim_{\Delta u\to0}\left(f'_{x}\frac{\Delta x}{\Delta u}+f'_{y}\frac{\Delta y}{\Delta u}+f'_{z}\frac{\Delta z}{\Delta u}+\underbrace{\frac{o(\rho)}{\rho}}_{\to0}\cdot\frac{\rho}{\Delta u}\right)=\frac{\partial f}{\partial x}\cdot\frac{\partial\varphi}{\partial u}+\frac{\partial f}{\partial y}\cdot\frac{\partial x}{\partial u}+\frac{\partial f}{\partial z}\cdot\frac{\partial x}{\partial u}
+\end{multline*}
 
 \end_inset
 
@@ -2942,9 +2953,10 @@ z=z_{0}+t\cos\gamma
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\frac{\partial f}{\partial l}|_{M_{0}}=\lim_{\rho\to0+}\frac{f(M)-f(M_{0})}{\rho}=\lim_{t\to0+}\frac{F(t)-F(0)}{t}=F'_{+}(0)=\dfx|_{M_{0}}\cdot\cos\alpha+\dfy|_{M_{0}}\cdot\cos\beta+\dfz|_{M_{0}}\cdot\cos\gamma\Rightarrow\frac{\partial f}{\partial l}|_{M_{0}}=(\vec{\nabla f_{(M_{0})},\vec{l}})
-\]
+\begin{multline*}
+\frac{\partial f}{\partial l}|_{M_{0}}=\lim_{\rho\to0+}\frac{f(M)-f(M_{0})}{\rho}=\lim_{t\to0+}\frac{F(t)-F(0)}{t}=F'_{+}(0)=\\
+=\dfx|_{M_{0}}\cdot\cos\alpha+\dfy|_{M_{0}}\cdot\cos\beta+\dfz|_{M_{0}}\cdot\cos\gamma\Rightarrow\frac{\partial f}{\partial l}|_{M_{0}}=(\vec{\nabla f_{(M_{0})},\vec{l}})
+\end{multline*}
 
 \end_inset
 
@@ -6307,7 +6319,7 @@ y_{m}=y_{m}(x_{1},...,x_{n})
 \frac{\partial\Phi_{i}}{\partial y_{k}}=\frac{\partial F_{i}}{\partial y_{k}}+\frac{\partial F_{i}}{\partial y_{m}}\cdot\frac{\partial f}{\partial y_{k}}\ \ \ \ \\
 ....\\
 ....\\
-\frac{\partial\Phi_{m}}{\partial y_{k}}=\frac{\partial F_{m}}{\partial y_{k}}+\frac{\partial F_{m}}{\partial y_{m}}\cdot\frac{\partial f_{i}}{\partial y_{k}}\equiv0
+\frac{\partial\Phi_{m}}{\partial y_{k}}=\frac{\partial F_{m}}{\partial y_{k}}+\frac{\partial F_{m}}{\partial y_{m}}\cdot\frac{\partial f}{\partial y_{k}}\equiv0
 \end{array}$
 \end_inset
 
@@ -6456,7 +6468,7 @@ y_{m-1}=y_{m-1}(x_{1},...,x_{n})
 \frac{\partial F_{1}}{\partial x_{k}}\\
 \vdots\\
 \frac{\partial F_{m}}{\partial x_{k}}
-\end{array}\right)+\frac{D(F_{1},...,F_{m})}{D(y_{1},...,y_{m})}\left(\begin{array}{c}
+\end{array}\right)+\frac{\DD(F_{1},...,F_{m})}{\DD(y_{1},...,y_{m})}\left(\begin{array}{c}
 \frac{\partial y_{1}}{\partial x_{k}}\\
 \vdots\\
 \frac{\partial y_{m}}{\partial x_{k}}
@@ -6464,7 +6476,7 @@ y_{m-1}=y_{m-1}(x_{1},...,x_{n})
 \frac{\partial y_{1}}{\partial x_{k}}\\
 \vdots\\
 \frac{\partial y_{m}}{\partial x_{k}}
-\end{array}\right)=-\left(\frac{D(F_{1},...,F_{m})}{D(y_{1},...,y_{m})}\right)^{-1}\left(\begin{array}{c}
+\end{array}\right)=-\left(\frac{\DD(F_{1},...,F_{m})}{\DD(y_{1},...,y_{m})}\right)^{-1}\left(\begin{array}{c}
 \frac{\partial F_{1}}{\partial x_{k}}\\
 \vdots\\
 \frac{\partial F_{m}}{\partial x_{k}}
@@ -6535,7 +6547,7 @@ x_{2}y_{1}
 \frac{\partial F_{2}}{\partial x_{1}}
 \end{array}\right)}+\underbrace{\left(\begin{array}{cc}
 2y_{1} & 2y_{2}\\
-x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y
+x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y_{1}
 \end{array}\right)}_{=\frac{D(F_{1}F_{2})}{D(y_{1}y_{2})}}\left(\begin{array}{c}
 \frac{\partial y_{1}}{\partial x_{1}}\\
 \frac{\partial y_{2}}{\partial x_{1}}
@@ -6559,7 +6571,7 @@ x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y
 \frac{\partial y_{2}}{\partial x_{1}}
 \end{array}\right)=-\left(\begin{array}{cc}
 2y_{1} & 2y_{2}\\
-x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y
+x_{1}x_{2}+\frac{y_{2}}{y_{1}} & \ln y_{1}
 \end{array}\right)^{-1}\left(\begin{array}{c}
 2x_{1}\\
 x_{2}y_{1}
@@ -7428,7 +7440,2313 @@ x>0,y>0,z>0
  (количество независимых).
 \end_layout
 
+\begin_layout Example
+\begin_inset Formula $L=xy+yz+\lambda_{1}(x^{2}+y^{2}-2)+\lambda_{2}(y+z-2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{\partial L}{\partial x}=y+2\lambda_{1}x=0\\
+\frac{\partial L}{\partial y}=x+z+2\lambda_{1}y+\lambda_{2}=0\\
+\frac{\partial L}{\partial z}=y+\lambda_{_{2}}=0\\
+x^{2}+y^{2}=2\\
+y+z=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Ответ: 
+\begin_inset Formula $M:$
+\end_inset
+
+ 
+\begin_inset Formula $x=y=z=1,\ \lambda_{1}=-\frac{1}{2},\ \lambda_{2}=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Считаем вторые дифференциалы:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $d^{2}L=2\lambda_{1}dx^{2}+2\lambda_{1}dy^{2}+2dxdy+2dydz=-dx^{2}-dy^{2}+2dxdy+2dydz$
+\end_inset
+
+ — эта форма не является знакоопределенной.
+ 
+\end_layout
+
+\begin_layout Example
+Применим условия (6):
+\end_layout
+
+\begin_layout Example
+Дифференцируем уравнения связи: 
+\begin_inset Formula $\begin{cases}
+2xdx+2ydy=0\\
+dy+dz=0
+\end{cases}$
+\end_inset
+
+, откуда, подставив точку 
+\begin_inset Formula $M$
+\end_inset
+
+: 
+\begin_inset Formula $\begin{cases}
+dx+dy=0\\
+dy+dz=0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Выразим: 
+\begin_inset Formula $\begin{cases}
+dx=-dy\\
+dz=-dy
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Подставим полученные условия:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $d^{2}L=-(-dy)^{2}-dy^{2}+2(-dy)dy+2dy(-dy)=-6dy^{2}$
+\end_inset
+
+ — очевидно отрицательно определена, значит, достаточное условие выполнено.
+\end_layout
+
 \end_deeper
 \end_deeper
+\begin_layout Subsection
+Геометрические приложения производных в пространстве 
+\begin_inset Formula $\RR^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Касательные и нормали к кривой в 
+\begin_inset Formula $\RR^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Касательная к кривой по-прежнему прямая, а вот нормаль станет плоскостью.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L$
+\end_inset
+
+ — кривая в 
+\begin_inset Formula $\RR^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=\varphi(t)\\
+y=\psi(t)\\
+z=\chi(t)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+и 
+\begin_inset Formula $t\in[\alpha,\beta]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+И пусть 
+\begin_inset Formula $\varphi,\psi,\chi$
+\end_inset
+
+ непрерывно дифференцируемы на 
+\begin_inset Formula $[\alpha,\beta]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $t_{0}\in[\alpha,\beta]$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x_{0}=\varphi(t_{0})\\
+y_{0}=\psi(t_{0})\\
+z_{0}=\chi(t_{0})
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{0}(x_{0},y_{0},z_{0})\in L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Зададим приращение 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\overline{x}=\varphi(t_{0}+\Delta t)\\
+\overline{y}=\psi(t_{0}+\Delta t)\\
+\overline{z}=\chi(t_{0}+\Delta t)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проведем секущую через точки 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ и 
+\begin_inset Formula $\overline{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{M}(\overline{x},\overline{y},\overline{z})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{M_{0}\overline{M}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x-x_{0}}{\varphi(t_{0}+\Delta t)-\varphi(t_{0})}=\frac{y-y_{0}}{\psi(t_{0}+\Delta t)-\psi(t_{0})}=\frac{z-z_{0}}{\chi(t_{0}+\Delta t)-\chi(t_{0})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Домножим всё на 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\frac{x-x_{0}}{\varphi(t_{0}+\Delta t)-\varphi(t_{0})}}{\Delta t}=\frac{\frac{y-y_{0}}{\psi(t_{0}+\Delta t)-\psi(t_{0})}}{\Delta t}=\frac{\frac{z-z_{0}}{\chi(t_{0}+\Delta t)-\chi(t_{0})}}{\Delta t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Устремим 
+\begin_inset Formula $\Delta t\to0\Rightarrow\overline{M}\to M_{0}\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Уравнение касательной в 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x-x_{0}}{\varphi'(t_{0})}=\frac{y-y_{0}}{\psi'(t_{0})}=\frac{z-z_{0}}{\chi(t_{0})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vec{n}=(\varphi'(t_{0}),\psi'(t_{0}),\chi'(t_{0}))$
+\end_inset
+
+ — направляющий вектор касательной.
+\end_layout
+
+\begin_layout Standard
+Нормалью к кривой в точке 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ называется плоскость, перпендикулярная касательной.
+\end_layout
+
+\begin_layout Standard
+Тогда уравнение нормали в точке 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ будет иметь вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi'(t_{0})(x-x_{0})+\psi'(t_{0})(y-y_{0})+\chi'(t_{0})(z-z_{0})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Уравнение касательной и нормали к поверхности в пространстве 
+\begin_inset Formula $\RR^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Касательная — плоскость, нормаль — прямая.
+\end_layout
+
+\begin_layout Standard
+Поверхность в трехмерном пространстве может задаваться следующими стандартными
+ способами:
+\end_layout
+
+\begin_layout Standard
+1) Явное задание: 
+\begin_inset Formula $z=f(x,y),\ (x,y)\in E\subset\RR^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2) Неявное задание: 
+\begin_inset Formula $F(x,y,z)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+3) Параметрическое задание:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=\varphi(u,v)\\
+y=\psi(u,v)\\
+z=\chi(u,v)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $\left(u,v\right)\in\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Эти три способа можно свести один к другому.
+ Действительно, пусть поверхность задана в явном виде.
+ Тогда свести к неявному виду просто - достаточно перенести 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ Сведение к параметрическому из явного:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=u\\
+y=v\\
+z=f(u,v)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Докажем, что возможно из неявного в явный:
+\end_layout
+
+\begin_layout Standard
+Пусть для определенности 
+\begin_inset Formula $\frac{\partial F}{\partial z}\neq0$
+\end_inset
+
+.
+ Тогда по теореме о неявной функии можно выразить 
+\begin_inset Formula $z=f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Аналогично, пусть функция задана в параметрическом виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=\varphi(u,v)\\
+y=\psi(u,v)\\
+z=\chi(u,v)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Предположим, что функции имеют непрерывные частные производные и 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rang\left(\begin{array}{ccc}
+\varphi'_{u} & \psi'_{u} & \chi'_{u}\\
+\varphi'_{v} & \psi_{v}' & \chi'_{v}
+\end{array}\right)=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если ранг меньше 2, то поверхность выродится либо в кривую, либо в точку.
+\end_layout
+
+\begin_layout Standard
+Если ранг равен двум, то матрица имеет ненулевой минор.
+ Пусть, для определенности, его образуют два первые столбца:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\begin{array}{cc}
+\varphi'_{u} & \psi'_{u}\\
+\varphi'_{v} & \psi_{v}'
+\end{array}\right|\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда, по теореме о системе неявных функций из первых двух уравнений параметриче
+ского задания можно выразить:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+u=u(x,y)\\
+v=v(x,y)
+\end{cases}\Rightarrow z=\chi(u(x,y),v(x,y))$
+\end_inset
+
+ — получен явный вид.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выведем уравнение касательной нормали для всех трех способов задания:
+\end_layout
+
+\begin_layout Standard
+Начнем с параметрического задания:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=\varphi(u,v)\\
+y=\psi(u,v)\\
+z=\chi(u,v)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $(u,v)\in\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $L$
+\end_inset
+
+ — поверхность, задаваемая этими уравнениями.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x_{0}=\varphi(u_{0},v_{0})\\
+y_{0}=\psi(u_{0},v_{0})\\
+z_{0}=\chi(u_{0},v_{0})
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{0}(x_{0},y_{0}z_{0})\in L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Зададим структуру
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K_{_{v}}=\begin{cases}
+x=\varphi(u_{0},v)\\
+y=\psi(u_{0},v)\\
+z=\chi(u_{0},v)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— кривая, лежащая на поверхности и проходящая через точку 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Аналогично 
+\begin_inset Formula 
+\[
+K_{u}=\begin{cases}
+x=\varphi(u,v_{0})\\
+y=\psi(u,v_{0})\\
+z=\chi(u,v_{0})
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— другая подобная кривая.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vec{n_{u}}$
+\end_inset
+
+ — направляющий вектор к 
+\begin_inset Formula $K_{u}$
+\end_inset
+
+ в 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ и 
+\begin_inset Formula $\vec{n_{v}}$
+\end_inset
+
+ — направляющий вектор к 
+\begin_inset Formula $K_{v}$
+\end_inset
+
+ в 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+.
+ (Как строить подобное — смотри предыдущий подпараграф).
+\end_layout
+
+\begin_layout Standard
+Теперь:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vec{n_{u}}=\left(\frac{\partial\varphi}{\partial u},\frac{\partial\psi}{\partial u},\frac{\partial\chi}{\partial u}\right)|_{M_{0}},\ \vec{n_{v}}=\left(\frac{\partial\varphi}{\partial v},\frac{\partial\psi}{\partial v},\frac{\partial\chi}{\partial v}\right)|_{M_{0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Обозначим 
+\begin_inset Formula $\vec{n}=\pm\vec{n_{u}}\times\vec{n_{v}}=$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\pm\left|\begin{array}{ccc}
+\vec{i} & \vec{j} & \vec{k}\\
+\frac{\partial\varphi}{\partial u} & \frac{\partial\psi}{\partial u} & \frac{\partial\chi}{\partial u}\\
+\frac{\partial\varphi}{\partial v} & \frac{\partial\psi}{\partial v} & \frac{\partial\chi}{\partial v}
+\end{array}\right|_{M_{0}}=\pm\vec{i}\underbrace{\left|\begin{array}{cc}
+\frac{\partial\psi}{\partial u} & \frac{\partial\chi}{\partial u}\\
+\frac{\partial\psi}{\partial v} & \frac{\partial\chi}{\partial v}
+\end{array}\right|_{M_{0}}}_{A}+\vec{j}\underbrace{\left|\begin{array}{cc}
+\frac{\partial\chi}{\partial u} & \frac{\partial\varphi}{\partial u}\\
+\frac{\partial\chi}{\partial v} & \frac{\partial\varphi}{\partial v}
+\end{array}\right|_{M_{0}}}_{B}+\vec{k}\underbrace{\left|\begin{array}{cc}
+\frac{\partial\varphi}{\partial u} & \frac{\partial\psi}{\partial u}\\
+\frac{\partial\varphi}{\partial v} & \frac{\partial\psi}{\partial v}
+\end{array}\right|_{M_{0}}}_{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=\pm(A,B,C)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Знак 
+\begin_inset Formula $+$
+\end_inset
+
+ или 
+\begin_inset Formula $-$
+\end_inset
+
+ зависит от выбора стороны поверхности.
+\end_layout
+
+\begin_layout Remark
+Поверхность будем называть двусторонней, если она обладает следующим свойством:
+\end_layout
+
+\begin_layout Remark
+Выберем некоторую точку на поверхности.
+ В этой точке построим нормаль в каком-то направлении.
+ И рассмотрим произвольный замкнутый контур, лежащий на поверхности и имеющий
+ начало и конец в этой точке.
+ Сдвигаем нормаль по контуру.
+ Нормаль должна вернуться в исходную точку в том же направлении.
+\end_layout
+
+\begin_layout Remark
+Ежали этого не произошло, то поверхность односторонняя.
+\end_layout
+
+\begin_layout Remark
+Далее под поверхностями будем понимать двустороннюю поверхность.
+\end_layout
+
+\begin_layout Remark
+Под стороной поверхности будем понимать ту сторону, в которую смотрит нормаль.
+\end_layout
+
+\begin_layout Standard
+Выпишем единичную нормаль.
+ 
+\begin_inset Formula $\vec{n_{e}}=(\cos\lambda,\cos\mu,\cos\nu)$
+\end_inset
+
+, где 
+\begin_inset Formula $\lambda=\angle(\vec{n_{e}},Ox),\ \mu=\angle(\vec{n_{e}},Oy),\ \nu=\angle(\vec{n_{e}},Oz)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\lambda=\frac{\pm A}{\sqrt{A^{2}+B^{2}+C^{2}}},\ \cos\lambda=\frac{\pm B}{\sqrt{A^{2}+B^{2}+C^{2}}},\ \cos\lambda=\frac{\pm C}{\sqrt{A^{2}+B^{2}+C^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Уравнение касательной плоскости (
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ те же самые):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x-x_{0})+B(x-x_{0})+C(z-z_{0})=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть теперь поверхность задана в явном виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $z=f(x,y),\ (x,y)\in E$
+\end_inset
+
+, 
+\begin_inset Formula $M_{0}(x_{0},y_{0},z_{0})\in L,\ (x_{0},y_{0})\in E$
+\end_inset
+
+ и 
+\begin_inset Formula $z_{0}=f(x_{0},y_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Сведем к уравнению в параметрическом виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=u\\
+y=v\\
+z=f(u,v)
+\end{cases}$
+\end_inset
+
+ 
+\begin_inset Formula $\begin{array}{c}
+u_{0}=x_{0}\\
+v_{0}=y_{0}
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычисляем по формулам, выведенным для параметрического вида:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\left|\begin{array}{cc}
+0 & \frac{\partial f}{\partial u}\\
+1 & \frac{\partial f}{\partial v}
+\end{array}\right|_{M_{0}}=-\frac{\partial f}{\partial u}|_{M_{0}}=-\frac{\partial f}{\partial x}|_{M_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\left|\begin{array}{cc}
+\frac{\partial f}{\partial u} & 1\\
+\frac{\partial f}{\partial v} & 0
+\end{array}\right|_{M_{0}}=-\frac{\partial f}{\partial v}|_{M_{0}}=-\frac{\partial f}{\partial y}|_{M_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\left|\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right|_{M_{0}}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Неявное задание.
+ Сведем к явному:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(x,y,z)=0\Rightarrow z=f(x,y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По теореме о неявной функции:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=-\frac{\partial f}{\partial x}|_{M_{0}}=-\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}}|_{M_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=-\frac{\partial f}{\partial y}|_{M_{0}}=-\frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}}|_{M_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Касательная плоскость:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}}|_{M_{0}}(x-x_{0})+\frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}}|_{M_{0}}(y-y_{0})-(z-z_{0})=0\Leftrightarrow\\
+\frac{\partial F}{\partial x}|M_{0}(x-x_{0})+\frac{\partial F}{\partial y}|M_{0}(x-x_{0})+\frac{\partial F}{\partial z}|_{M_{0}}(z-z_{0})=0\ \ \ ?
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x^{2}+y^{2}+z^{2}=R^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Попробуем в явном виде: 
+\begin_inset Formula $z=\pm\sqrt{R^{2}-x^{2}-y^{2}}$
+\end_inset
+
+.
+ Нам не нравится.
+\end_layout
+
+\begin_layout Example
+Запишем в параметрическом (сферические координаты):
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $u\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right],\ v\in\left[0,2\pi\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Параметризуем:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+x=R\cos v\cos u\\
+y=R\sin v\cos u\\
+z=R\sin u
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Возьмем 
+\begin_inset Formula $u_{0}=\frac{\pi}{6},\ v_{0}=\frac{\pi}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $M_{0}=\left(\frac{R\sqrt{3}}{4},\frac{3R}{4},\frac{R}{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Выпишем уравнение через неявный вид: (
+\begin_inset Formula $F=x^{2}+y^{2}+z^{2}-R^{2}=0$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+2x_{0}(x-x_{0})+2y_{0}(y-y_{0})+2z(z-z_{0})=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Что вытекает в:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\sqrt{3}\left(x-\frac{R\sqrt{3}}{4}\right)+3\left(y-\frac{3R}{4}\right)+2\left(x-\frac{R}{2}\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Интегральное исчисление функции нескольких переменных
+\end_layout
+
+\begin_layout Subsection
+Двойной интеграл
+\end_layout
+
+\begin_layout Definition
+Пусть задана область 
+\begin_inset Formula $E\subset\RR^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ — простая (
+\begin_inset Formula $E$
+\end_inset
+
+ ограничена простым (т.е.
+ не самопересекающимся) контуром) и связная область.
+ И пусть 
+\begin_inset Formula $E$
+\end_inset
+
+ ограничена.
+ В этой области задана 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+, она еще и ограничена (
+\begin_inset Formula $\exists M=\const:\ |f(x,y)|\leq M\ \forall(x,y)\in E$
+\end_inset
+
+) в этой области.
+ Разбиваем область 
+\begin_inset Formula $E$
+\end_inset
+
+ на 
+\begin_inset Formula $n$
+\end_inset
+
+ произвольных непересекающихся кусочков: 
+\begin_inset Formula $E=\cup_{i=1}^{m}E_{i}$
+\end_inset
+
+.
+ За 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+ обозначим диаметр (супремум максимальной хорды) 
+\begin_inset Formula $i$
+\end_inset
+
+-ого кусочка.
+ 
+\begin_inset Formula $\lambda=\max_{i=\overline{i,n}}d_{i}$
+\end_inset
+
+ — ранг дробления.
+ За 
+\begin_inset Formula $\Delta S_{i}$
+\end_inset
+
+ обозначим площадь этого кусочка.
+ Тогда:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\sigma=\sum_{i=1}^{n}f(\xi_{i},\eta_{i})\cdot\Delta S_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(сумма Римана)
+\end_layout
+
+\begin_layout Definition
+Если существует конечный предел 
+\begin_inset Formula $\lim\sigma$
+\end_inset
+
+ и этот предел не зависит от способа дробления и выбора 
+\begin_inset Formula $\xi_{i},\ \eta_{i}$
+\end_inset
+
+, то он называется двойным римановым интегралом по области 
+\begin_inset Formula $E$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\lim_{\lambda\to0}\sigma=\iint_{E}f(x,y)dS
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Предположим, что 
+\begin_inset Formula $\exists\iint_{E}f(x,y)dS$
+\end_inset
+
+.
+ Тогда предел суммы Римана не зависит от способа дробления области 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Порежем область 
+\begin_inset Formula $E$
+\end_inset
+
+ на кусочки с помощью прямых, параллельных осям координат.
+ Тогда, за исключением погрешности на границе (которая стремится к нулю
+ при ранге дробления, стремящемся к нулю), область 
+\begin_inset Formula $E$
+\end_inset
+
+ разобьется на прямоугольники.
+ Считаем, что 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ — прямоугольник со сторонами 
+\begin_inset Formula $\Delta x_{i},\ \Delta y_{i}$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\Delta S_{i}=\Delta x_{i}\Delta y_{i}$
+\end_inset
+
+.
+ Если устремить ранг дробления к нулю, то 
+\begin_inset Formula $dS=dxdy$
+\end_inset
+
+.
+ Поэтому далее будем обозначать двойной интеграл как 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Свойства двойного интеграла.
+\end_layout
+
+\begin_layout Standard
+1) Пусть 
+\begin_inset Formula $\exists\iint_{E}f(x,y)dxdy=I$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $L$
+\end_inset
+
+ — кривая в области 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ И пусть 
+\begin_inset Formula $f^{*}(x,y)$
+\end_inset
+
+ строится по правилу: 
+\begin_inset Formula $f^{*}(x,y)=f(x,y)\ \forall(x,y)\in E\backslash L$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists\iint_{E}f^{*}(x,y)dxdy=I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2) Если 
+\begin_inset Formula $f(x,y)\equiv0$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+, то 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+3) Если 
+\begin_inset Formula $f(x,y)\equiv1$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+, то 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy=S(E)$
+\end_inset
+
+ (площади области).
+\end_layout
+
+\begin_layout Standard
+4) Если 
+\begin_inset Formula $f(x,y)\geq0$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+, то 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy\geq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+5) Если 
+\begin_inset Formula $S(E)=0$
+\end_inset
+
+, то 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy=0$
+\end_inset
+
+ (
+\begin_inset Formula $\forall f$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+6) 
+\begin_inset Formula $\iint_{E}\left(c_{1}f_{1}(x,y)+c_{2}f_{2}(x,y)\right)dxdy=c_{1}\iint_{E}f_{1}(x,y)dxdy+c_{2}\iint_{E}f_{2}(x,y)dxdy$
+\end_inset
+
+, где 
+\begin_inset Formula $c_{1},c_{2}$
+\end_inset
+
+ — константы.
+\end_layout
+
+\begin_layout Standard
+7) Если 
+\begin_inset Formula $E=E_{1}\cup E_{2}$
+\end_inset
+
+ и 
+\begin_inset Formula $E_{1,}E_{2}$
+\end_inset
+
+удовлетворяют условиям двойного интеграла, то 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy=\iint_{E_{1}}f(x,y)dxdy+\iint_{E_{2}}f(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+8) Если 
+\begin_inset Formula $f(x,y)\leq g(x,y)$
+\end_inset
+
+, то 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy\leq\iint_{E}g(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+9) 
+\begin_inset Formula $m\leq f(x,y)\leq M\ \forall(x,y)\in E\Rightarrow mS(E)\leq\iint_{E}f(x,y)dxdy\leq MS(E)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+10) 
+\begin_inset Formula $\left|\iint_{E}f(x,y)dxdy\right|\leq\iint_{E}\left|f(x,y)\right|dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(о среднем)
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ — непрерывна в области 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\exists(a,b)\in E:\ \iint_{E}f(x,y)dxdy=f(a,b)\cdot S(E)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+По первому свойству без потери общности считаем, что область 
+\begin_inset Formula $E$
+\end_inset
+
+ замкнута.
+ Тогда по теореме Вейерштрасса у этой функции 
+\begin_inset Formula $\exists m=\min_{E}f(x,y),\ \exists M=\max_{E}f(x,y)$
+\end_inset
+
+.
+ Тогда по свойству 9 получаем 
+\begin_inset Formula $mS(E)\leq\iint_{E}f(x,y)dxdy\leq MS(E)$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $S(E)=0$
+\end_inset
+
+, то теорема очевидна.
+ Поэтому предположим, что 
+\begin_inset Formula $S(E)>0$
+\end_inset
+
+.
+ Площадь положительна, поделим неравенство на нее:
+\begin_inset Formula 
+\[
+m\leq\frac{1}{S(E)}\iint_{E}f(x,y)dxdy\leq M
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+По теореме Больцано-Коши 
+\begin_inset Formula $\exists(a,b)\in E:\ f(a,b)=\frac{1}{S(E)}\iint_{E}f(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+(физического приложения двойного интеграла (ненавижу физику))
+\end_layout
+
+\begin_layout Example
+Пусть имеется плоская пластина 
+\begin_inset Formula $E$
+\end_inset
+
+, плотность которой меняется непрерывно.
+ И пусть в некоторой системе координат задана плотность пластины: 
+\begin_inset Formula $\rho(x,y)$
+\end_inset
+
+ в точке 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+.
+ Порежем нашу пластину на множество непересекающихся кусочков: 
+\begin_inset Formula $E=\cup_{i=1}^{n}E_{i}$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ — масса 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $m_{1}\thickapprox\rho(\xi_{i},\eta_{i})\Delta S_{i}$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula 
+\[
+M=\sum_{i=1}^{n}m_{i}\thickapprox\sum_{i=1}^{n}\rho(\xi_{i},\eta_{i})\Delta S_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+(Где 
+\begin_inset Formula $M$
+\end_inset
+
+ — масса пластины).
+ Устремим ранг дробления к нулю и получим 
+\begin_inset Formula 
+\[
+M=\iint_{E}\rho(x,y)dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Условие существования двойного интеграла
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E=\cup_{i=1}^{n}E_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ — простые, связные, непересекающиеся.
+ 
+\begin_inset Formula $\Delta S_{i}$
+\end_inset
+
+ — площать 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ — ранг дробления.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m_{i}=\inf_{E_{i}}f(x,y),\ M_{i}=\sup_{E_{i}}f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s=\sum_{i=1}^{n}m_{i}\Delta S_{i}$
+\end_inset
+
+ — нижняя сумма Дарбу.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S=\sum_{i=1}^{n}M_{i}\Delta S_{i}$
+\end_inset
+
+ — верхняя сумма Дарбу.
+\end_layout
+
+\begin_layout Standard
+Свойства:
+\end_layout
+
+\begin_layout Standard
+1) 
+\begin_inset Formula $s\leq\sigma\leq S$
+\end_inset
+
+ на любом дроблении.
+\end_layout
+
+\begin_layout Standard
+2) Пусть есть два дробления 
+\begin_inset Formula $\tau_{1},\tau_{2}$
+\end_inset
+
+ и пусть дробление 
+\begin_inset Formula $\tau_{2}$
+\end_inset
+
+ получено путем дальнейшего дробления дробления 
+\begin_inset Formula $\tau_{1}$
+\end_inset
+
+ (Больше дроблений богу дроблений!) Тогда дробление 
+\begin_inset Formula $\tau_{2}$
+\end_inset
+
+ мельче дробления 
+\begin_inset Formula $\tau_{1}$
+\end_inset
+
+.
+ Тогда если 
+\begin_inset Formula $s_{1},S_{2}$
+\end_inset
+
+ — суммы Дарбу для 
+\begin_inset Formula $\tau_{1}$
+\end_inset
+
+, а 
+\begin_inset Formula $s_{2},S_{2}$
+\end_inset
+
+ — суммы Дарбу для 
+\begin_inset Formula $\tau_{2}$
+\end_inset
+
+, то 
+\begin_inset Formula $\begin{cases}
+s_{2}\geq s_{1}\\
+S_{2}\leq S_{2}
+\end{cases}$
+\end_inset
+
+.
+ То есть при ранге дробления, стремящемся к нулю, нижняя сумма возрастает,
+ а верхняя — убывает.
+\end_layout
+
+\begin_layout Standard
+3) 
+\begin_inset Formula $\forall s\leq\forall S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(критерий интегрируемости)
+\end_layout
+
+\begin_layout Theorem
+Для существования двойного интеграла 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy$
+\end_inset
+
+ необходимо и достаточно 
+\begin_inset Formula $\exists\lim_{\lambda\to0}(S-s)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Аналогично одномерному случаю.
+\end_layout
+
+\begin_layout Theorem
+(достаточное условие интегрируемости)
+\end_layout
+
+\begin_layout Theorem
+Если функция 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ — непрерывна в области 
+\begin_inset Formula $E$
+\end_inset
+
+, то 
+\begin_inset Formula $\exists\iint_{E}f(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+По 1) свойству без потери общности считаем, что 
+\begin_inset Formula $E$
+\end_inset
+
+ замкнута.
+ По теореме Кантора 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ равномерно непрерывна, то есть 
+\begin_inset Formula $\forall\varepsilon>0\ \exists\delta>0:\ \forall\lambda<\delta\Rightarrow\omega_{i}=M_{i}-m_{i}\leq\varepsilon\ \forall i=\overline{1,n}$
+\end_inset
+
+.
+ Тогда рассмотрим разность сумм Дарбу: 
+\begin_inset Formula 
+\[
+0\leq S-s=\sum_{i=1}^{n}(M_{i}-m_{i})\Delta S_{i}\leq\varepsilon S(E)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Rightarrow\exists\lim_{\lambda\to0}(S-s)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Если функция 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ — кусочно непрерывна в области 
+\begin_inset Formula $E$
+\end_inset
+
+, то 
+\begin_inset Formula $\exists\iint_{E}f(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Геометрический смысл двойного интеграла
+\end_layout
+
+\begin_layout Standard
+Предположим, что функция неотрицательна в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $z=f(x,y)$
+\end_inset
+
+ выше 
+\begin_inset Formula $Oxy$
+\end_inset
+
+.
+ За 
+\begin_inset Formula $T$
+\end_inset
+
+ обозначим трехмерное тело, удовлетворяющее следующему условию: 
+\begin_inset Formula $\begin{cases}
+0\leq z\leq f(x,y)\\
+(x,y)\in E
+\end{cases}$
+\end_inset
+
+.
+ Властью, данной нам матаном нарекаем это тело криволинейным брусом.
+ Разобьем область: 
+\begin_inset Formula $E=\cup_{i=1}^{n}E_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ — простые, связные, непересекающиеся.
+ 
+\begin_inset Formula $\Delta S_{i}$
+\end_inset
+
+ — площать 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ — ранг дробления.
+ Такому дроблению области 
+\begin_inset Formula $E$
+\end_inset
+
+ соответствует дроблению криволинейного бруса: 
+\begin_inset Formula $T=\cup_{i=1}^{n}T_{i}$
+\end_inset
+
+.
+ Обозначим за 
+\begin_inset Formula $\Delta V_{i}$
+\end_inset
+
+ объем 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+, а объем всего бруса — 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Очевидно, что 
+\begin_inset Formula $V=\sum_{i=1}^{n}\Delta V_{i}$
+\end_inset
+
+.
+ Обозначим 
+\begin_inset Formula $m_{i}=\inf_{E_{i}}f(x,y),\ M_{i}=\sup_{E_{i}}f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Тогда 
+\begin_inset Formula $m_{i}\Delta S_{i}\leq\Delta V_{i}\leq M_{i}\Delta S_{i}$
+\end_inset
+
+.
+ Просуммировав неравенство, получим 
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}m_{1}\Delta S_{i}\leq V\leq\sum_{i=1}^{n}M_{i}\Delta S_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По теореме о двух милиционерах при устремлении ранга дробления к нулю 
+\begin_inset Formula $V=\iint_{E}f(x,y)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Если 
+\begin_inset Formula $f(x,y)\leq0$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+, то 
+\begin_inset Formula $V=-\iint_{E}f(x,y)dxdy$
+\end_inset
+
+.
+ Если тело ограничено областями 
+\begin_inset Formula $z=f_{2}(x,y)$
+\end_inset
+
+ и 
+\begin_inset Formula $z=f_{1}(x,y)$
+\end_inset
+
+ сверху и снизу соответственно, то 
+\begin_inset Formula $V(T)=\iint_{E}\left(f_{2}(x,y)-f_{1}(x,y)\right)dxdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\iint_{E}(1-x-y)dxdy$
+\end_inset
+
+.
+ (картинка, 2 шт)
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\iint_{E}(1-x-y)dxdy=V(T)=\frac{1}{3}\cdot S(E)\cdot1=\frac{1}{6}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+В данном параграфе при определении интеграла предполагалось, что 
+\begin_inset Formula $E$
+\end_inset
+
+ ограничена и 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ ограничена в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Если хотя бы одно из этих условий нарушается, то тогда интеграл называется
+ несобственным.
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $\forall E'\subset E:\begin{cases}
+E' & \text{огр.}\\
+f(x,y) & \text{огр в \ensuremath{E}}
+\end{cases}$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\iint_{E}f(x,y)dxdy=\lim_{E'\to E}\iint_{E'}f(x,y)dxdy$
+\end_inset
+
+.
+ Если этот предел существует, конечен и не зависит от выбора 
+\begin_inset Formula $E'$
+\end_inset
+
+, то несобственный интеграл называется сходящимся.
+\end_layout
+
+\begin_layout Subsubsection
+Правила вычисления двойного интеграла
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E:\begin{cases}
+y_{1}(x)\leq y\leq y_{2}(x)\\
+a\leq x\leq b
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(картинка)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iint_{E}f(x,y)dxdy=?$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Предположим, что 
+\begin_inset Formula $f(x,y)\geq0$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Геометрический смысл двойного интеграла — объем криволинейного бруса.
+\end_layout
+
+\begin_layout Standard
+Делаем следующее.
+ Выберем 
+\begin_inset Formula $\forall x\in[a,b]$
+\end_inset
+
+.
+ Разрежем наш брус плоскостью 
+\begin_inset Formula $x=\const$
+\end_inset
+
+.
+ Обозначим за 
+\begin_inset Formula $S(x)$
+\end_inset
+
+ площадь полученного сечения.
+ Воспользуемся прошлогодней формулой:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V(T)=\int_{a}^{b}S(x)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(картинка)
+\end_layout
+
+\begin_layout Standard
+При этом по той же формуле
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S(x)=\int_{y_{1}}^{y_{2}}f(x,y)dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, двойной интеграл свелся к повторному:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\iint_{E}f(x,y)dxdy=\int_{a}^{b}\left(\int_{y_{1}(x)}^{y_{2}(x)}f(x,y)dy\right)dx=\int_{a}^{b}dx\int_{y_{1}(x)}^{y_{2}(x)}f(x,y)dy\ \ \ \ \ (*)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Покажем, что формула 
+\begin_inset Formula $(*)$
+\end_inset
+
+ будет верна и без предположения о неотрицательности функции 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall f(x,y)$
+\end_inset
+
+ — ограничена, следовательно, 
+\begin_inset Formula $\exists m=\const>0:\ m+f(x,y)\geq0$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\iint_{E}f(x,y)dxdy=\iint_{E}\left[\left(f(x,y)+m\right)-m\right]dxdy=\iint_{E}\left(f(x,y)+m\right)dxdy-\underbrace{\iint_{E}mdxdy}_{=m\overline{S}(E)}=\\
+=\int_{a}^{b}dx\int_{y_{1}(x)}^{y_{2}(x)}\left(f(x,y)+m\right)dy-m\overline{S}(E)=\int_{a}^{b}\left(\int_{y_{1}(x)}^{y_{2}(x)}f(x,y)dy+\int_{y_{1}(x)}^{y_{2}(x)}mdy\right)dx-m\overline{S}(E)=\\
+=\int_{a}^{b}dx\int_{y_{1}(x)}^{y_{2}(x)}f(x,y)dxdy+\underbrace{\int_{a}^{b}m(y_{2}(x)-y_{1}(x))dx}_{=m\overline{S}(e)}=\int_{a}^{b}dx\int_{y_{1}(x)}^{y_{2}(x)}f(x,y)dy
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поменяем переменные 
+\begin_inset Formula $x,y$
+\end_inset
+
+ местами.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+c\leq y\leq d\\
+x_{1}(y)\leq x\leq x_{2}(y)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда получим аналогичную формулу, но в другом порядке:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\iint_{E}f(x,y)dxdy=\int_{c}^{d}dy\int_{x_{i}(y)}^{x_{2}(y)}f(x,y)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\iint_{E}f(1-x-y)dxdy$
+\end_inset
+
+ на множестве.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\begin{multline*}
+\iint_{E}f(1-x-y)dxdy=\int_{0}^{1}dx\int_{0}^{1-x}(1-x-y)dy=\int_{0}^{1}(y-xy-\frac{y^{2}}{2})|_{0}^{1-x}dx=\\
+=\int_{0}^{1}\left((1-x)-x(1-x)-\frac{(1-x)^{2}}{2}\right)dx=\nicefrac{1}{6}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Второй способ:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\iint_{E}(1-x-y)dxdy=\int_{0}^{1}dy\int_{0}^{1-y}(1-x-y)dx=\nicefrac{1}{6}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $\iint_{E}f(x,y)dxdy$
+\end_inset
+
+ по области (рисунок)
+\end_layout
+
+\begin_layout Example
+1 способ:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\iint_{E}f(x,y)dxdy=\iint_{E_{1}}f(x,y)dxdy+\iint_{E_{2}}f(x,y)dxdy=\int_{-1}^{0}dx\int_{0}^{x+1}f(x,y)dy+\int_{0}^{1}dx\int_{0}^{1-x}f(x,y)dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+2 способ:
+\begin_inset Formula 
+\[
+\iint_{E}f(x,y)dxdy=\int_{0}^{1}dy\int_{y-1}^{1-y}f(x,y)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $\iint_{E}f(x,y)dxdy$
+\end_inset
+
+ по области 
+\begin_inset Formula $1\leq x^{2}+y^{2}\leq4$
+\end_inset
+
+ (рисунок и разбивка)
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\iint_{E}f(x,y)dxdy=\iint_{E_{1}}+...+\iint_{E_{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Криволинейные интегралы первого рода
+\end_layout
+
+\begin_layout Standard
+Пусть имеется плоскость 
+\begin_inset Formula $xy$
+\end_inset
+
+ и в этой плоскости задана кривая 
+\begin_inset Formula $l\in\RR^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $A$
+\end_inset
+
+ — ее начало, 
+\begin_inset Formula $B$
+\end_inset
+
+ — конец.
+ Пусть 
+\begin_inset Formula $L$
+\end_inset
+
+ — длина 
+\begin_inset Formula $l$
+\end_inset
+
+, и 
+\begin_inset Formula $L<\infty$
+\end_inset
+
+.
+ Пусть на 
+\begin_inset Formula $l$
+\end_inset
+
+ определена и ограничена на 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Разобьем кривую на несколько дуг:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=M_{0}M_{1}...M_{n}=B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+За 
+\begin_inset Formula $\Delta S_{i}$
+\end_inset
+
+ — длина дуги 
+\begin_inset Formula $\breve{M_{i}M_{i+1}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\lambda=\max_{i=\overline{0,n-1}}\Delta D_{i}$
+\end_inset
+
+ — ранг дробления.
+ 
+\begin_inset Formula $\forall(\xi_{i}\eta_{i})\in\breve{M_{i}M_{i+1}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma=\sum_{i=0}^{n-1}f(\xi_{i},\eta_{i})\Delta S_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Если существует конечный предел 
+\begin_inset Formula $\lim_{\lambda\to0}\sigma$
+\end_inset
+
+ и этот предел не зависит от способа дробления кривой 
+\begin_inset Formula $l$
+\end_inset
+
+ и выбора точек 
+\begin_inset Formula $\xi_{i},\eta_{i}$
+\end_inset
+
+, то он называется криволинейным интегралом первого рода.
+ 
+\end_layout
+
+\begin_layout Definition
+Для него верны все свойства интеграла, в частности, 
+\begin_inset Formula $\int_{(l)}dS=L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Криволинейные интегралы первого рода не зависят от ориентации кривой, то
+ есть неважно, считать ли 
+\begin_inset Formula $A$
+\end_inset
+
+ началом кривой, а 
+\begin_inset Formula $B$
+\end_inset
+
+ концом или наоборот.
+\end_layout
+
+\begin_layout Example
+(физическое приложение)
+\end_layout
+
+\begin_layout Example
+Пусть дана плоская изогнутая железяка и 
+\begin_inset Formula $\rho(x,y)$
+\end_inset
+
+ — плостность сего прута.
+ Для простоты считаем, что плотность меняется равномерно.
+ Задача: найти массу этого прутка.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+M=\int_{(l)}\rho(x,y)dS
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+
+\end_layout
+
 \end_body
 \end_document

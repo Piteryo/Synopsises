@@ -2008,5 +2008,295 @@ MitM — man-in-the-middle.
 Admin/user.
 \end_layout
 
+\begin_layout Section
+SPAM
+\end_layout
+
+\begin_layout Standard
+Виды спама:
+\end_layout
+
+\begin_layout Enumerate
+Реклама
+\end_layout
+
+\begin_layout Enumerate
+Вирусы
+\end_layout
+
+\begin_layout Enumerate
+Фишинг
+\end_layout
+
+\begin_layout Enumerate
+Антиреклама (черный пиар)
+\end_layout
+
+\begin_layout Enumerate
+Ниггерские (на самом деле — нигерийские) письма
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+На жалость
+\end_layout
+
+\begin_layout Enumerate
+Богатые больные люди без наследников
+\end_layout
+
+\begin_layout Enumerate
+Лотереи
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Реклама незаконных товаров
+\end_layout
+
+\begin_layout Enumerate
+Реклама спамерских услуг
+\end_layout
+
+\begin_layout Enumerate
+Наука/образование
+\end_layout
+
+\begin_layout Standard
+Борьба со спамом
+\end_layout
+
+\begin_layout Enumerate
+Фильтры
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Статическая фильтрация
+\end_layout
+
+\begin_layout Enumerate
+Адаптивная
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Способы защиты сетей.
+ Брандмауэры
+\end_layout
+
+\begin_layout Standard
+Брандмауэр — защита, которая стоит между глобальной и локальной сетью.
+\end_layout
+
+\begin_layout Standard
+Бывают
+\end_layout
+
+\begin_layout Enumerate
+Аппаратными
+\end_layout
+
+\begin_layout Enumerate
+Программными
+\end_layout
+
+\begin_layout Standard
+Типы:
+\end_layout
+
+\begin_layout Enumerate
+Брандмауэр с фильтрацией пакетов.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Сетевой уровень.
+ Проверяет адрес отправителя и адрес получателя, информацию о приложении
+ или протоколе.
+ Вдобавок следит за портами отправителя и получателя.
+\end_layout
+
+\begin_layout Enumerate
+Плюсы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Недорогой или просто поставляется вместе с антивирусом
+\end_layout
+
+\begin_layout Enumerate
+Неплохая скорость.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Минусы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Слабая защита.
+\end_layout
+
+\begin_layout Enumerate
+Требуется труЪ настройка.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Шлюз сеансового уровня.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Работает на сеансовом уровне.
+ Следит за квинтированием сеанса связи (логикой пакетов).
+\end_layout
+
+\begin_layout Enumerate
+Канальные посредники: pipe proxy.
+\end_layout
+
+\begin_layout Enumerate
+Аппаратные посредники: proxy server.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Плюсы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Надежная защита.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Минусы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Скорость меньше.
+\end_layout
+
+\begin_layout Enumerate
+Стоит дороже.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Шлюз прикладного уровня.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Этот парниша работает на прикладном уровне.
+ Он может смотреть в пакет, а значит, его можно настроить на фильтрацию
+ определенных команд, в частности, фильтрацию в том числе и служебной или
+ полезной информации.
+ Существуют так называемые посредники прикладного уровня, которые работают
+ каждый с определенными службами (разные посредники для Telnet и FTP, к
+ примеру).
+ Также этот шлюз занимается проблемами аутентификации.
+\end_layout
+
+\begin_layout Enumerate
+Плюсы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Надежная защита.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Минусы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Большая стоимость
+\end_layout
+
+\begin_layout Enumerate
+Малая скорость работы
+\end_layout
+
+\begin_layout Enumerate
+Прозрачность.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Брандмауэр экспертного уровня.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+А этот чувак вообще крутой и объединяет функции предыдущих брандмауэров.
+ Работает напрямую с опреационной системой, отслеживает сеансы связи, предоставл
+яет посредников, фильтрует.
+\end_layout
+
+\begin_layout Enumerate
+Плюсы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Максимальная надежность.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Минусы:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Максимальная стоимость.
+\end_layout
+
+\begin_layout Enumerate
+Средняя скорость.
+\end_layout
+
+\begin_layout Enumerate
+Средняя прозрачность.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+Д/З: Найти представителей для всех типов брандмауэров.
+\end_layout
+
+\begin_layout Standard
+Устройства, которые могут выполнять функции брандмауэра (аппаратные): 
+\end_layout
+
+\begin_layout Enumerate
+Отдельно выделенный компьютер (бастион).
+ Ему для работы требуется 2 сетевых интерфейса и в этом случае он называется
+ двудомный шлюз.
+\end_layout
+
+\begin_layout Enumerate
+Маршрутизаторы.
+\end_layout
+
+\begin_layout Enumerate
+Шлюз.
+\end_layout
+
 \end_body
 \end_document
