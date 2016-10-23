@@ -151,6 +151,15 @@ algorithm2e
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Дифференциальное исчисление.
  Функции нескольких переменных
@@ -9332,7 +9341,7 @@ a\leq x\leq b
 \end_layout
 
 \begin_layout Standard
-(картинка)
+(рисунок)
 \end_layout
 
 \begin_layout Standard
@@ -9387,7 +9396,7 @@ V(T)=\int_{a}^{b}S(x)dx
 \end_layout
 
 \begin_layout Standard
-(картинка)
+(рисунок)
 \end_layout
 
 \begin_layout Standard
@@ -9640,7 +9649,7 @@ x_{1}(y)\leq x\leq x_{2}(y)
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A=M_{0}M_{1}...M_{n}=B
+A=M_{0}\breve{}M_{1}\breve{}...\breve{}M_{n}=B
 \]
 
 \end_inset
@@ -10060,10 +10069,884 @@ z=z(t)
 \end_layout
 
 \begin_layout Remark
-\begin_inset Formula $\int_{(l)}f(x,yz)dS=(R)\int_{\alpha}^{\beta}f(x(t),y(t),z(t))\sqrt{x^{2}(t)}$
+\begin_inset Formula $\int_{(l)}f(x,yz)dS=(R)\int_{\alpha}^{\beta}f(x(t),y(t),z(t))\sqrt{x(t)'+y'(t)^{2}+z'(t)^{2}}dt$
 \end_inset
 
- (дописать)
+ 
+\end_layout
+
+\begin_layout Subsection
+Криволинейный интеграл второго рода
+\end_layout
+
+\begin_layout Standard
+Пусть имеется плоскость 
+\begin_inset Formula $xy$
+\end_inset
+
+ и в этой плоскости задана кривая 
+\begin_inset Formula $l\in\RR^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $A$
+\end_inset
+
+ — ее начало, 
+\begin_inset Formula $B$
+\end_inset
+
+ — конец.
+ Пусть 
+\begin_inset Formula $L$
+\end_inset
+
+ — длина 
+\begin_inset Formula $l$
+\end_inset
+
+, и 
+\begin_inset Formula $L<\infty$
+\end_inset
+
+.
+ Пусть на 
+\begin_inset Formula $l$
+\end_inset
+
+ определена и ограничена на 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vec{F}=(P(x,y),Q(x,y))$
+\end_inset
+
+ — определена на 
+\begin_inset Formula $l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(x,y),Q(x,y)$
+\end_inset
+
+ — ограничены на 
+\begin_inset Formula $l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Разобьем кривую на несколько дуг:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=M_{0}\breve{}M_{1}\breve{}...\breve{}M_{n}=B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+За 
+\begin_inset Formula $\Delta S_{i}$
+\end_inset
+
+ — длина дуги 
+\begin_inset Formula $\breve{M_{i}M_{i+1}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $M_{i}=(x_{i},y_{i})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Delta x_{i}=x_{i+1}-x_{i}$
+\end_inset
+
+, аналогично для 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\lambda=\max_{i=\overline{0,n-1}}\Delta D_{i}$
+\end_inset
+
+ — ранг дробления.
+ 
+\begin_inset Formula $\forall(\xi_{i}\eta_{i})\in\breve{M_{i}M_{i+1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma=\sum_{i=0}^{n-1}\left(P(\xi_{i},\eta_{i})\Delta x_{i}+Q(\xi_{i},\eta_{i})\Delta y_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Если существует конечный предел 
+\begin_inset Formula $\lim_{\lambda\to0}=\int_{(l)}P(x,y)dx+Q(x,y)dy$
+\end_inset
+
+ (под интегралом вся сумма)
+\end_layout
+
+\begin_layout Definition
+Для криволинейного интеграла второго рода выполняются все те стандартные
+ свойства интеграла.
+\end_layout
+
+\begin_layout Remark
+Криволинейный интеграл второго рода зависит от ориентации кривой.
+ Т.е.
+ от направления движения по кривой зависит знак.
+ 
+\begin_inset Formula $\int_{(AB)}Pdx+Qdy=-\int_{(BA)}Pdx+Qdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Remark
+Пусть 
+\begin_inset Formula $l:\ y=\const,\ x\in[a,b]$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\int_{(l)}Pdx+Qdy=(R)\int_{a}^{b}P(x,y)dx$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Example
+(физического приложения интеграла второго рода)
+\end_layout
+
+\begin_layout Example
+Пусть под действием силы 
+\begin_inset Formula $F$
+\end_inset
+
+ тело перемещается по кривой 
+\begin_inset Formula $l$
+\end_inset
+
+ от 
+\begin_inset Formula $A$
+\end_inset
+
+ к 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Требуется найти работу, совершенную силой, Пусть 
+\begin_inset Formula $\vec{F}(P(x,y),Q(x,y))$
+\end_inset
+
+.
+ Розобьем кривую на 
+\begin_inset Formula $n$
+\end_inset
+
+ кусочков.
+\end_layout
+
+\begin_layout Example
+Пусть 
+\begin_inset Formula $W_{i}$
+\end_inset
+
+ — работа, совершенная силой на 
+\begin_inset Formula $\breve{M_{i}M_{i+1}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $W$
+\end_inset
+
+ — работа на 
+\begin_inset Formula $l$
+\end_inset
+
+, следовательно, 
+\begin_inset Formula $W=\sum_{i=0}^{n-1}W_{i}$
+\end_inset
+
+.
+ Заменим на малом участке дугу на вектор 
+\begin_inset Formula $\vec{\Delta s}=(\Delta x_{i},\Delta y_{i})$
+\end_inset
+
+.
+ (рисунок).
+ Тогда
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+W_{i}\thickapprox\left|F_{i}(\xi_{i},\eta_{i})\right|\cdot\left|\vec{\Delta s_{i}}\right|\cdot\cos\angle(\vec{F(\xi_{i},\eta_{i}),}\vec{\Delta s}_{i})=\left(F(\xi_{i},\eta_{i}),\vec{\Delta s_{i}}\right)=P(\xi_{i},\eta_{i})\Delta x_{i}+Q(\xi_{i},\eta_{i})\Delta y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+То есть смысл криволинейного интеграла второго рода — работа, совершаемая
+ силой, на перемещение тела по кривой 
+\begin_inset Formula $l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Правила вычисления интеграла второго рода 
+\end_layout
+
+\begin_layout Standard
+Пусть функция задана в явном виде: 
+\begin_inset Formula $l:\ y=y(x),\ x\in[a,b]$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $l$
+\end_inset
+
+ гладкая.
+\end_layout
+
+\begin_layout Standard
+Разбиваем 
+\begin_inset Formula $a=x_{0}<...<x_{n}=b$
+\end_inset
+
+.
+ То есть мы 
+\begin_inset Quotes fld
+\end_inset
+
+порезали
+\begin_inset Quotes frd
+\end_inset
+
+ и область прибытия.
+ Пусть 
+\begin_inset Formula $M_{i}=(x_{i},y(x_{i}))$
+\end_inset
+
+.
+ Обозначим 
+\begin_inset Formula $\Delta x_{i}=x_{i+1}-x_{i},\ \Delta y_{i}=y_{i+1}-y_{i}$
+\end_inset
+
+.
+ Выберем 
+\begin_inset Formula $\xi_{i}\in[x_{i},x_{i+1}]$
+\end_inset
+
+, 
+\begin_inset Formula $\eta_{i}=y(\xi_{i})$
+\end_inset
+
+.
+ Запишем сумму: 
+\begin_inset Formula 
+\[
+\sigma=\sum_{i=0}^{n-1}\left(P(\xi_{i},\eta_{i})\Delta x_{i}+Q(\xi_{i},\eta_{i})\Delta y_{i}\right)=\sum_{i=0}^{n-1}\left(P(\xi_{i},\eta_{i})+Q(\xi_{i},\eta_{i})\frac{\Delta y_{i}}{\Delta x_{i}}\right)\Delta x_{i}=(*)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По теореме Лагранжа найдется 
+\begin_inset Formula $\overline{\xi_{i}}\in[x_{i},x_{i+1}]$
+\end_inset
+
+, такая, что
+\begin_inset Formula 
+\[
+(*)=\sum_{i=0}^{n-1}\left(P(\xi_{i},y(\xi_{i}))+Q(\xi_{i},y(\xi_{i})y'(\overline{\xi_{i}}))\right)\Delta x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда криволинейный интеграл второго рода сведется к риманову:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{(l)}P(x,y)dx+Q(x,y)dy=(R)\int_{a}^{b}\left(P(x,y(x))+Q(x,y(x))y'(x)\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть теперь функция задана параметрически:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=x(t)\\
+y=y(t)
+\end{cases},\ t\in[\alpha,\beta]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Предположим, что 
+\begin_inset Formula $l$
+\end_inset
+
+ гладкая кривая.
+\end_layout
+
+\begin_layout Standard
+Отрезок разбиваем на множество точек: 
+\begin_inset Formula $\alpha=t_{0}<...<t_{n}=\beta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{i}=(x_{i},y_{i})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Delta x_{i}=x(t_{i+1})-x(t_{i})$
+\end_inset
+
+ и 
+\begin_inset Formula $\Delta y_{i}=y(t_{i+1})-y(t_{i})$
+\end_inset
+
+.
+ Выберем промежуточную точку 
+\begin_inset Formula $\tau_{i}\in[t_{i},t_{i+1}]\Rightarrow\begin{cases}
+\xi_{i}=x(\tau_{i})\\
+\eta_{i}=y(\tau_{i})
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Составляем сумму:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma=\sum_{i=0}^{n-1}\left(P(x(\tau_{i}),y(\tau_{i}))\Delta x_{i}+Q(x(\tau_{i}),y(\tau_{i}))\Delta y_{i}\right)=\sum_{i=0}^{n-1}\left(P(x(\tau_{i}),y(\tau_{i}))\frac{\Delta x_{i}}{\Delta t_{i}}+Q(x(\tau_{i}),y(\tau_{i}))\frac{\Delta y_{i}}{\Delta t_{i}}\right)\Delta t_{i}=(*)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По теореме Лагранжа 
+\begin_inset Formula $\exists\overline{\tau_{i}},\hat{\tau_{i}}\in[t_{i},t_{i+1}]$
+\end_inset
+
+, такие, что 
+\begin_inset Formula 
+\[
+(*)=\sum_{i=0}^{n-1}\left(P(x(\tau_{i}),y(\tau_{i}))x'(\overline{\tau_{i}})+Q(x(\tau_{i}),y(\tau_{i}))y'(\hat{\tau_{i}})\right)\Delta t_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если теперь ранг дробления устремить к нулю, то мы получаем следующую формулу:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{(l)}P(x,y)dx+Q(x,y)dy=(R)\int_{\alpha}^{\beta}\left(P(x(t),y(t))x'(t)+Q(x(t),y(t))y'(t)\right)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\int_{(l)}(1+x)dx+ydy=(*)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $l:\ y=\sqrt{1-x^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+(*)=\int_{-1}^{1}\left(1+x+\sqrt{1-x^{2}}\cdot\frac{(-2x)}{2\sqrt{1-x^{2}}}\right)dx=\int_{-1}^{1}dx=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Вторым способом:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $l:\ \begin{cases}
+x=\cos t\\
+y=\sin t
+\end{cases}t\in[0,\pi]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+(*)=\int_{0}^{\pi}\left((1+\cos t)(-\sin t)+\sin t\cdot\cos t\right)dt=-\int_{0}^{\pi}\sin tdt=\cos|_{0}^{\pi}=-1-1=-2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Знак получился разный, так как в этих двух способах движение по кривой происходи
+ло в разные стороны.
+\end_layout
+
+\begin_layout Subsubsection
+Связь между криволинейными интегралами первого и второго рода
+\end_layout
+
+\begin_layout Standard
+Пусть уравнение 
+\begin_inset Formula $l$
+\end_inset
+
+ задано в параметрическом виде и в качестве параметризации выбрана естественная.
+ Обозначим 
+\begin_inset Formula $s$
+\end_inset
+
+ — пройденный путь.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=x(s)\\
+y=y(s)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A=(x(0),y(0)),\ B=(x(L),y(L))$
+\end_inset
+
+, где 
+\begin_inset Formula $L$
+\end_inset
+
+ — длина 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(картинка)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\cos\alpha=\frac{dx}{ds}=x'(s),\ \sin\alpha=\frac{dy}{ds}=y'(s)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим первую компоненту.
+ Сведем интеграл второго рода к риманову, а затем риманов к интегралу первого
+ рода:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\int_{(l)}P(x,y)dx+Q(x,y)dy=(R)\int_{0}^{L}\left(P(x(s),y(s))\underbrace{x'(s)}_{=\cos\alpha}+Q(x(s),y(s))\underbrace{y'(s)}_{\sin\alpha}\right)ds=\\
+\int_{(l)}\left(P(x,y)\cos\alpha+Q(x,y)\sin\alpha\right)ds
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Аналогично понятие криволинейного интеграла второго рода можно ввести в
+ трехмерном пространстве.
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\int_{(l)}P(x,y,z)dx+Q(x,y,z)dy+R(x,y,z)dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Если кривая 
+\begin_inset Formula $l$
+\end_inset
+
+ задана в параметрическом виде:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $\begin{cases}
+x=x(t)\\
+y=y(t)\\
+z=z(t)
+\end{cases}t\in[\alpha,\beta]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $x(t),y(t),z(t)$
+\end_inset
+
+ — непрерывно дифференцирумы на 
+\begin_inset Formula $[\alpha,\beta]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\begin{multline*}
+\int_{(l)}P(x,y,z)dx+Q(x,y,z)dy+R(x,y,z)dz=\\
+=(R)\int_{\alpha}^{\beta}\left(P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t)z(t))z'(t)\right)dt
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Интегралы по замкнутому контуру
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $l$
+\end_inset
+
+ — замкнутая кривая.
+ Без потери общности будем считать, что 
+\begin_inset Formula $l$
+\end_inset
+
+ — простая (без самопересечения) кривая.
+ Если контур не простой, то его можно разбить на простые.
+\end_layout
+
+\begin_layout Standard
+Интеграл по замкнутому контуру будем обозначать 
+\begin_inset Formula $\oint Pdx+Qdy$
+\end_inset
+
+.
+ Поскольку криволинейный интеграл второго рода зависит от направления движения
+ по прямой, введем понятие стандартного направления.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $l$
+\end_inset
+
+ ограничивает область 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Движение по контуру 
+\begin_inset Formula $l$
+\end_inset
+
+ будем считать стандартным, если область 
+\begin_inset Formula $E$
+\end_inset
+
+ находится слева от направления движения.
+ Далее, если не оговорено противное, будем считать, что направление движения
+ стандартное.
+\end_layout
+
+\begin_layout Theorem
+(Грина)
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $E$
+\end_inset
+
+ — область, ограниченная простым контуром 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ И пусть в 
+\begin_inset Formula $E$
+\end_inset
+
+ определены и непрерывны функции 
+\begin_inset Formula $P(x,y)$
+\end_inset
+
+ и 
+\begin_inset Formula $Q(x,y)$
+\end_inset
+
+.
+ И пусть в 
+\begin_inset Formula $E$
+\end_inset
+
+ существуют непрерывные частные производные 
+\begin_inset Formula $\frac{\partial Q}{\partial x},\ \frac{\partial P}{\partial y}$
+\end_inset
+
+.
+ Тогда справелива следующая формула:
+\begin_inset Formula 
+\[
+\oint_{(l)}Pdx+Qdy=\iint_{E}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Эта формула называется формулой Грина.
+\end_layout
+
+\begin_layout Proof
+Без потери общности будем считать, что 
+\begin_inset Formula $E$
+\end_inset
+
+ имеет вид:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\begin{cases}
+a\leq x\leq b\\
+y_{1}(x)\leq y\leq y_{2}(x)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(картинка)
+\end_layout
+
+\begin_layout Proof
+Рассмотрим 
+\begin_inset Formula $\iint_{E}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+\iint_{E}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy=\int_{a}^{b}dx\int_{y_{1}(x)}^{y_{2}(x)}\frac{\partial P}{\partial y}dy=\int_{a}^{b}\left(P(x,y_{2}(x))-(x,y_{1}(x))\right)dx=\\
+-\int_{b}^{a}P(x,y_{2}(x))dx-\int_{a}^{b}P(x,y_{1}(x))dx=-\oint_{(l)}P(x,y)dx
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(на 4 шаге мы меняем направление движения на противополжное, чтобы направление
+ движения соответствовало стандартному движению)
+\end_layout
+
+\begin_layout Proof
+Аналогично доказывается, что 
+\begin_inset Formula $\iint_{E}\frac{\partial Q}{\partial x}dxdy=\oint_{(l)}Q(x,y)dy$
+\end_inset
+
+.
+ Вычитаем из второй формулы первую и получаем формулу Грина.
+ Теорема доказана.
+\end_layout
+
+\begin_layout Remark
+Пусть в формуле Грина 
+\begin_inset Formula $Q=x,\ P\equiv0$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula $\oint_{(l)}xdy=\iint_{E}dxdy=S(E)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+или: 
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $P=-y,\ Q\equiv0\Rightarrow\oint_{(l)}(-y)dx=\iint_{E}dxdy=S(E)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Найти площадь фигуры, ограниченной кривой: 
+\begin_inset Formula $x^{3}+y^{3}=3axy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Параметризуем: 
+\begin_inset Formula $y=tx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $x^{3}+t^{3}x{}^{3}=3atx^{2}\Leftrightarrow x(1+t^{3})=3at\Rightarrow\begin{cases}
+x=\frac{3at}{1+t^{3}}\\
+y=\frac{3at^{2}}{1+t^{3}}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+(рисунок петли).
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+S(E)=\oint_{(l)}xdy=\int_{0}^{+\infty}\frac{3at}{1+t^{3}}\left(\frac{3at^{2}}{1+t^{3}}\right)'dt=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+(Если ответ получится отрицательным, то направление движения не стандартное,
+ и минус нужно убрать).
 \end_layout
 
 \end_body
