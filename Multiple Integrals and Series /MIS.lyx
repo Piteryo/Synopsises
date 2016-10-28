@@ -10183,7 +10183,7 @@ A=M_{0}\breve{}M_{1}\breve{}...\breve{}M_{n}=B
 
 .
  
-\begin_inset Formula $\lambda=\max_{i=\overline{0,n-1}}\Delta D_{i}$
+\begin_inset Formula $\lambda=\max_{i=\overline{0,n-1}}\Delta S_{i}$
 \end_inset
 
  — ранг дробления.
