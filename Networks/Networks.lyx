@@ -3805,5 +3805,490 @@ Data
  Я что-то устал :)
 \end_layout
 
+\begin_layout Section
+Практические аспекты настройки сетей
+\end_layout
+
+\begin_layout Subsection
+Ситуация настройки локальной сети компьютер-компьютер
+\end_layout
+
+\begin_layout Enumerate
+Кабель:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Кросс (crossover)
+\end_layout
+
+\begin_layout Enumerate
+Прямой (патч-корд)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Кабель имеет разъем RJ-45 и 8 проводков по умолчанию.
+ Если порядок:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Тип Б
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Тип А
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+зеленый
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+оранжевый
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-зеленый
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-оранжевый
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+синий
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+синий
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-синий
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-синий
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+оранжевый
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+зеленый
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-оранжевый
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-зеленый
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+коричневый
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+коричневый
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-коричневый
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+бело-коричневый
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(картинка соединения)
+\end_layout
+
+\begin_layout Standard
+Потребуется установить следующие настройки:
+\end_layout
+
+\begin_layout Standard
+1) IP-адрес: (192.168.0.1, 192.168.0.2)
+\end_layout
+
+\begin_layout Standard
+2) Маска: (255.255.255.252 — ровно на два компа), но лучше (255, 255, 255,
+ 0).
+ Маска должна быть одинаковой на обоих компьютерах
+\end_layout
+
+\begin_layout Standard
+3) Шлюз: так как сеть однородна, то мы на обоих компьютерах указываем IP1
+\end_layout
+
+\begin_layout Standard
+4) DNS: в данном случае не нужен.
+\end_layout
+
+\begin_layout Subsection
+Ситуация настройки сети из 4-х компьютеров
+\end_layout
+
+\begin_layout Standard
+Подключаем их к свитчу.
+ Настраиваем аналогично первому случаю.
+ Только маску выделяем уже на 6 компьютеров (так как не сможем выделить
+ на 4 — помним о зарезервированных адресах х.х.х.0 и х.х.х.255).
+\end_layout
+
+\begin_layout Subsection
+32 Компьютера на двадцатипортовых свитчах
+\end_layout
+
+\begin_layout Standard
+Требуется выделить 3 свитча и построить их в виде дерева.
+\end_layout
+
+\begin_layout Subsection
+Если у нас есть роутер, 4 компа и нам нужно выйти в Интернет
+\end_layout
+
+\begin_layout Standard
+IP, маску и шлюз он получит автоматически от провайдера.
+ Все, что вам нужно — поставить галочку напротив DHCP в настройках роутера
+ и поставить в настройках компьютера 
+\begin_inset Quotes fld
+\end_inset
+
+получать настройки сети автоматически
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Если есть 8 компов
+\end_layout
+
+\begin_layout Standard
+То нам понадобится еще и свитч, который мы подключим между компами и роутером.
+\end_layout
+
+\begin_layout Subsection
+Если есть устройство без DHCP
+\end_layout
+
+\begin_layout Standard
+Например, принтер.
+ Ему нужно назначить статический IP-адрес.
+ Вдобавок ему понадобится шлюз — IP маршрутизатора.
+\end_layout
+
+\begin_layout Subsection
+У нас есть 2 компа, один из которых через USB-модем смотрит в Интернет
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0.0.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0.0.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255.255.255.252
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255.255.255.252
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0.0.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0.0.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DNS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DNS провайдера
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DNS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DNS провайдера
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+На 1 компьютере в определенном месте настроек необходимо поставить галочку
+ 
+\begin_inset Quotes fld
+\end_inset
+
+расшарить доступ в интернет
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document

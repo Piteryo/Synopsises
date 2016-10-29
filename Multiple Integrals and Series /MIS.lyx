@@ -229,7 +229,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Definition
-Тогда величина 
+Тогда величину 
 \begin_inset Formula $\rho(x,y)$
 \end_inset
 
@@ -10936,7 +10936,7 @@ y=\frac{3at^{2}}{1+t^{3}}
 \begin_layout Example
 \begin_inset Formula 
 \[
-S(E)=\oint_{(l)}xdy=\int_{0}^{+\infty}\frac{3at}{1+t^{3}}\left(\frac{3at^{2}}{1+t^{3}}\right)'dt=
+S(E)=\oint_{(l)}xdy=\int_{0}^{+\infty}\frac{3at}{1+t^{3}}\left(\frac{3at^{2}}{1+t^{3}}\right)'dt=...
 \]
 
 \end_inset
@@ -10947,6 +10947,1419 @@ S(E)=\oint_{(l)}xdy=\int_{0}^{+\infty}\frac{3at}{1+t^{3}}\left(\frac{3at^{2}}{1+
 \begin_layout Example
 (Если ответ получится отрицательным, то направление движения не стандартное,
  и минус нужно убрать).
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $E\subset\RR^{2}$
+\end_inset
+
+, а 
+\begin_inset Formula $L$
+\end_inset
+
+ — замкнутый контур в этой области.
+ И 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ — область, ограниченная 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Область 
+\begin_inset Formula $E$
+\end_inset
+
+ — односвязное, если 
+\begin_inset Formula $\forall L\subset E\Rightarrow E_{1}\subset E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+(картинка)
+\end_layout
+
+\begin_layout Definition
+Или, не математически, односвязная область — область без дырок.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $E\subset\RR^{2}$
+\end_inset
+
+ и в области 
+\begin_inset Formula $E$
+\end_inset
+
+ определены непрерывные 
+\begin_inset Formula $P(x,y),Q(x,y)$
+\end_inset
+
+ имеющие непрерывные частные производные 
+\begin_inset Formula $\frac{\partial P}{\partial y},\frac{\partial Q}{\partial x}$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Тогда для того, чтобы для любого замкнутого контура 
+\begin_inset Formula $L$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+ выполнялось условие 
+\begin_inset Formula $\oint_{(L)}Pdx+Qdy=0$
+\end_inset
+
+ необходимо, а если область 
+\begin_inset Formula $E$
+\end_inset
+
+ односвязная, то и достаточно, чтобы в области 
+\begin_inset Formula $E$
+\end_inset
+
+ выполнялось условие 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Достаточность:
+\end_layout
+
+\begin_layout Proof
+Пусть 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\forall L$
+\end_inset
+
+ — замнкнутый контур из 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ — область, ограниченная 
+\begin_inset Formula $L$
+\end_inset
+
+, 
+\begin_inset Formula $E$
+\end_inset
+
+ односвязная 
+\begin_inset Formula $\Rightarrow E_{1}\subset E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\oint_{(L)}Pdx+Qdy=(\text{Грин})=\iint_{E_{1}}\left(\underbrace{\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}}_{=0}\right)dxdy=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Необходимость:
+\end_layout
+
+\begin_layout Proof
+Пусть 
+\begin_inset Formula $\exists(\overline{x},\overline{y})$
+\end_inset
+
+ в которой 
+\begin_inset Formula $\frac{\partial Q}{\partial x}|_{(\overline{x},\overline{y})}\neq\frac{\partial P}{\partial y}|_{(\overline{x},\overline{y})}$
+\end_inset
+
+.
+ Без потери общности будем считать, что эта точка внутренняя.
+ Пусть для определенности 
+\begin_inset Formula $\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)|_{(\overline{x},\overline{y})}>0$
+\end_inset
+
+.
+ (Если знак иной, аналогично).
+ Поскольку производные непрерывны, и 
+\begin_inset Formula $(\overline{x},\overline{y})$
+\end_inset
+
+ внутренняя, то 
+\begin_inset Formula $\exists\delta>0:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+1) 
+\begin_inset Formula $V_{\delta}(\overline{x},\overline{y})\subset E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+2) 
+\begin_inset Formula $\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)>0,\ \forall(x,y)\in V_{\delta}(\overline{x},\overline{y})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+То есть если 
+\begin_inset Formula $L$
+\end_inset
+
+ — граница 
+\begin_inset Formula $V_{\delta}(\overline{x},\overline{y})$
+\end_inset
+
+, где 
+\begin_inset Formula $V_{\delta}(\overline{x},\overline{y})$
+\end_inset
+
+ — сферическая окрестность, то по формуле Грина 
+\begin_inset Formula 
+\begin{multline*}
+\oint_{(L)}Pdx+Qdy=\iint_{V_{\delta}(\overline{x},\overline{y})}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy=(\text{теорема о среднем})=\\
+=\underbrace{\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)|_{(\hat{x},\hat{y})}}_{>0}\underbrace{\pi\delta^{2}}_{>0}>0
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Значит, нашелся такой контур, по которому интеграл не равен нулю.
+ Теорема доказана.
+\end_layout
+
+\begin_layout Standard
+(рисунок)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A,B\in E$
+\end_inset
+
+, 
+\begin_inset Formula $l_{1},l_{2}$
+\end_inset
+
+ — кривые, соединяющие 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+, при этом 
+\begin_inset Formula $\left(l_{1},l_{2}\subset E\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+В 
+\begin_inset Formula $E:\ P(x,y),Q(x,y)$
+\end_inset
+
+ — непрерывные, и существуют непрерывные 
+\begin_inset Formula $\frac{\partial P}{\partial y},\frac{\partial Q}{\partial x}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$
+\end_inset
+
+.
+ Тогда
+\begin_inset Formula 
+\begin{multline*}
+0=\int_{(Al_{1}Bl_{2}A)}Pdx+Qdy=\int_{(Al_{1}B)}Pdx+Qdy+\int_{(Bl_{2}A)}Pdx+Qdy=\\
+\int_{(Al_{1}B)}Pdx+Qdy-\int_{(Al_{2}B)}Pdx+Qdy
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Значит, 
+\begin_inset Formula 
+\[
+\int_{(Al_{1}B)}Pdx+Qdy=\int_{(Bl_{2}A)}Pdx+Qdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+То есть если выполняется условие 
+\begin_inset Formula $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$
+\end_inset
+
+, то криволинейный интеграл не зависит от пути, соединающего 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+В результате получается следующая
+\end_layout
+
+\begin_layout Theorem
+Пусть в 
+\begin_inset Formula $E:\ P(x,y),Q(x,y)$
+\end_inset
+
+ — непрерывные, и существуют непрерывные 
+\begin_inset Formula $\frac{\partial P}{\partial y},\frac{\partial Q}{\partial x}$
+\end_inset
+
+.
+ Тогда для того, чтобы 
+\begin_inset Formula $\forall A,B\in E$
+\end_inset
+
+ интеграл, соединяющий эти точки не зависел от кривой, соединяющей 
+\begin_inset Formula $A,B$
+\end_inset
+
+, необходимо, а если область 
+\begin_inset Formula $E$
+\end_inset
+
+ односвязна, то и достаточно, чтобы 
+\begin_inset Formula $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+непосредственно вытекает из той теоремы, что выше.
+\end_layout
+
+\begin_layout Theorem
+Пусть в 
+\begin_inset Formula $E:\ P(x,y),Q(x,y)$
+\end_inset
+
+ — непрерывные, и существуют непрерывные 
+\begin_inset Formula $\frac{\partial P}{\partial y},\frac{\partial Q}{\partial x}$
+\end_inset
+
+.
+ Тогда, для того, чтобы выполнялось 
+\begin_inset Formula $\exists\Phi(x,y):\ d\Phi=Pdx+Qdy$
+\end_inset
+
+ необходимо, а если 
+\begin_inset Formula $E$
+\end_inset
+
+ односвязна, то и достаточно, чтобы 
+\begin_inset Formula $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Необходимость:
+\end_layout
+
+\begin_layout Proof
+Пусть 
+\begin_inset Formula $\exists\Phi(x,y)$
+\end_inset
+
+, такая, что 
+\begin_inset Formula $d\Phi=Pdx+Qdy$
+\end_inset
+
+.
+ Если вспомнить формулу первого дифференциала, то 
+\begin_inset Formula $P=\frac{\partial Q}{\partial x},\ Q=\frac{\partial Q}{\partial y}$
+\end_inset
+
+.
+ Найдем вторую производную: 
+\begin_inset Formula $\frac{\partial^{2}Q}{dxdy}=\frac{\partial P}{\partial y}$
+\end_inset
+
+, и 
+\begin_inset Formula $\frac{\partial^{2}Q}{dydx}=\frac{\partial Q}{\partial x}$
+\end_inset
+
+.
+ По теореме о равенстве смешанных производных, 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Достаточность:
+\end_layout
+
+\begin_layout Proof
+Пусть уже 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$
+\end_inset
+
+ в 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $E$
+\end_inset
+
+ односвязна.
+ Выберем в качестве 
+\begin_inset Formula $\Phi(x,y)=\int_{(x_{0},y_{0})}^{(x,y)}P(x,y)dx+Q(x,y)dy$
+\end_inset
+
+ (интеграл криволинейный по кривой, вид который не требуется по предыдущей
+ теореме).
+ 
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+ — (что-то там, дописать).
+ Покажем, что 
+\begin_inset Formula $\Phi(x,y)$
+\end_inset
+
+ является искомой.
+\end_layout
+
+\begin_layout Proof
+Найдем производную 
+\begin_inset Formula 
+\begin{multline*}
+\frac{\partial\Phi}{\partial x}=\lim_{\Delta x\to0}\frac{\Phi(x+\Delta x,y)-\Phi(x,y)}{\Delta x}=\\
+=\lim_{\Delta x\to0}\frac{1}{\Delta x}\left(\int_{(x_{0},y_{0})}^{(x+\Delta x,y)}P(x,y)dx+Q(x,y)dy-\int_{(x_{0},y_{0})}^{(x,y)}P(x,y)dx+Q(x,y)dy\right)=(*)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(рисунок).
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+(*)=\lim_{\Delta x\to0}\frac{1}{\Delta x}\left(\int_{(x_{0},y_{0})}^{(x,y)}...+\int_{(x,y)}^{(x+\Delta x,y)}...-\int_{(x_{0},y_{0})}^{(x,y)}...\right)=\lim_{\Delta x\to0}\frac{1}{\Delta x}\int_{(x,y)}^{(x+\Delta x,y)}P(x,\underbrace{y}_{\const})dx+Q(x,y)\underbrace{dy}_{=0}=\\
+=\lim_{\Delta x\to0}\frac{1}{\Delta x}\int_{x}^{x+\Delta x}P(x,y)dx=(\text{теорема о среднем}\exists\xi\text{между }x\text{и}(x+\Delta x))=\\
+\lim_{\Delta x\to0}\frac{1}{\Delta x}P(\xi,y)\Delta x=\lim_{\Delta x\to0}P(\xi,y)=P(x,y)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Аналогично, 
+\begin_inset Formula $\frac{\partial\Phi}{\partial y}=Q(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Откуда 
+\begin_inset Formula $d\Phi=\frac{\partial\Phi}{\partial x}dx+\frac{\partial\Phi}{\partial y}dy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Доказательство теоремы содержит способ нахождения функции 
+\begin_inset Formula $\Phi(x,y)=\int_{(x_{0},y_{0})}^{(x,y)}P(x,y)dx+Q(x,y)dy$
+\end_inset
+
+.
+ Ее можно переписать в более простом виде.
+ Если 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$
+\end_inset
+
+, то от кривой ничего не зависит.
+ Тогда возьмем в качестве кривой кривую следующего вида: (рисунок).
+ (угол: сначала движемся параллельно 
+\begin_inset Formula $Oy$
+\end_inset
+
+, затем параллельно 
+\begin_inset Formula $Ox$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Remark
+Тогда 
+\begin_inset Formula 
+\[
+\Phi(x,y)=\int_{x_{0}}^{x}P(x,y)dx+\int_{y_{0}}^{y}Q(x_{0},y)dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+ — 
+\begin_inset Formula $\forall$
+\end_inset
+
+ точки из 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ И в этом случае, если требуется найти 
+\begin_inset Formula 
+\[
+\int_{(AB)}Pdx+Qdy=(if\ \frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y})=\int_{(AB)}d\Phi=\Phi(B)-\Phi(A)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\int_{(AB)}ydx+xdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\frac{\partial Q}{\partial x}=1=\frac{\partial P}{\partial y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Для определенности 
+\begin_inset Formula $A=(0,0),\ B=(1,1)$
+\end_inset
+
+.
+ От вида кривой ничего не зависит, значит, возьмем конкретную кривую:
+\end_layout
+
+\begin_layout Example
+1 способ: 
+\begin_inset Formula $y=x$
+\end_inset
+
+.
+ Кривая задана в явном виде:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\int_{0}^{1}xdx+xdy=2xdx=x^{2}|_{0}^{1}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+2 способ: Пройдем по параболе:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\int_{0}^{1}(x^{2}+2x^{2})dx=\int_{0}^{1}3x^{2}dx=x^{3}|_{0}^{1}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+3 способ: 
+\begin_inset Formula $\forall(x_{0},y_{0})=(5,10)$
+\end_inset
+
+ — любая точка.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\Phi(x,y)=\int_{5}^{x}ydx+\int_{10}^{y}\underbrace{x_{0}}_{5}dy=yx|_{5}^{x}+5y|_{10}^{y}=(yx-5y)+(5y-50)=yx-50.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\int_{(AB)}d\Phi=\Phi(B)-\Phi(A)=(yx-50)|_{(1,1)}-(yx-50)|_{(0,0)}=(1-50)-(0-50)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Пусть задано дифференциальное уравнение следующего вида: 
+\begin_inset Formula $P(x,y)dx+Q(x,y)dy=0$
+\end_inset
+
+.
+ (или, что тоже самое, 
+\begin_inset Formula $y'=\frac{dy}{dx}=-\frac{P(x,y)}{Q(x,y)}$
+\end_inset
+
+).
+ Если выполняются условия, что 
+\begin_inset Formula $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$
+\end_inset
+
+ то такое уравнение называется уравнением полных дифференциалов.
+ Тогда 
+\begin_inset Formula $\exists\Phi:\ d\Phi=Pdx+Qdy=0$
+\end_inset
+
+, следовательно, решение уравнения 
+\begin_inset Formula $\Phi(x,y)=C$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Remark
+(физический смысл доказанных теорем)
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $\vec{F}=(P(x,y),Q(x,y))$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$
+\end_inset
+
+ то тогда такая сила называется потенциальной.
+ В этом случае работа, совершенная силой, 
+\begin_inset Formula $W=\int_{(AB)}Pdx+Qdy=\Phi(B)-\Phi(A)$
+\end_inset
+
+.
+ Тогда функция 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ называется потенциалом, а работа не зависит от траектории, по которой тело
+ перемещалось.
+ Примеры таких сил: сила притяжения, сила кулона.
+ Не потенциальные силы — силы сопротивления.
+\end_layout
+
+\end_deeper
+\begin_layout Example
+Пусть с горки высоты 
+\begin_inset Formula $H$
+\end_inset
+
+ под действием силы тяжести скатывается Шарик массой 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Какая скорость будет у Шарика у конца горки? Трением, сопротивлением воздуха
+ и мнением Матроскина пренебречь.
+\end_layout
+
+\begin_layout Example
+От формы горки ничего не зависит.
+\end_layout
+
+\begin_layout Example
+Пусть 
+\begin_inset Formula $P$
+\end_inset
+
+ — потенциальная энергия, 
+\begin_inset Formula $K$
+\end_inset
+
+ — кинетическая.
+ 
+\begin_inset Formula $\underbrace{P_{A}}_{mgH}+\underbrace{K_{A}}_{0}=\underbrace{P_{B}}_{0}+\underbrace{K_{B}}_{\frac{mv^{2}}{2}}\Rightarrow gH=\frac{v^{2}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Предположим, что 
+\begin_inset Formula $E$
+\end_inset
+
+ не односвязная.
+ Пусть для определенности 
+\begin_inset Formula $\exists$
+\end_inset
+
+ одна точка 
+\begin_inset Formula $M\in E:\ \frac{\partial Q}{\partial x}\neq\frac{\partial P}{\partial y}$
+\end_inset
+
+ или вообще не существуют.
+ Возьмем 
+\begin_inset Formula $L$
+\end_inset
+
+ — произвольный замкнутый контур из 
+\begin_inset Formula $E$
+\end_inset
+
+ и рассмотрим интеграл: 
+\begin_inset Formula $\oint_{(L)}Pdx+Qdy$
+\end_inset
+
+.
+ Если контур не обегает точку 
+\begin_inset Formula $M$
+\end_inset
+
+, то мы 
+\begin_inset Quotes fld
+\end_inset
+
+отрезаем
+\begin_inset Quotes frd
+\end_inset
+
+ остальное и тогда 
+\begin_inset Formula $\oint_{(L)}Pdx+Qdy=0$
+\end_inset
+
+.
+ Если же 
+\begin_inset Formula $M$
+\end_inset
+
+ лежит внутри контура, то тогда интеграл 
+\begin_inset Formula $\oint_{(L)}Pdx+Qdy=\sigma$
+\end_inset
+
+ (
+\begin_inset Formula $\sigma=\const$
+\end_inset
+
+, не обязательно нуль).Но при этом 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ не зависит от вида 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $L$
+\end_inset
+
+ не простой и делает 
+\begin_inset Formula $n$
+\end_inset
+
+ витков вокруг 
+\begin_inset Formula $M$
+\end_inset
+
+, то 
+\begin_inset Formula $\oint_{(L)}Pdx+Qdy=n\sigma$
+\end_inset
+
+.
+ Подробнее см.
+ ТФКП (Теория функций комплексной переменной?).
+\end_layout
+
+\begin_layout Example
+Рассмотрим интеграл 
+\begin_inset Formula $\oint_{(L)}\frac{-y}{x^{2}+y^{2}}dx+\frac{x}{x^{2}+y^{2}}dy$
+\end_inset
+
+, и 
+\begin_inset Formula $L:\ x^{2}+y^{2}=1$
+\end_inset
+
+.
+ Пусть движение происходит по часовой стрелке.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{\partial Q}{\partial x}=\frac{(x^{2}+y^{2})-2x^{2}}{(x^{2}+y^{2})^{2}}=\frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{\partial P}{\partial y}=\frac{-(x^{2}+y^{2})-2y(-y)}{(x^{2}+y^{2})^{2}}=\frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Все хорошо? Нет, у нас есть точка 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ в которой эти производные не существуют.
+ Поэтому утверждать, что в данном случае интеграл по контуру не обязательно
+ будет равен нулю.
+ Поэтому вычислим по определению:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+x=\cos t\\
+y=\sin t
+\end{cases},t\in[0,2\pi]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\oint_{(L)}\frac{-y}{x^{2}+y^{2}}dx+\frac{x}{x^{2}+y^{2}}dy=\int_{0}^{2\pi}(-\sin t)^{2}dt+(\cos t)^{2}dt=\int_{0}^{2\pi}dt=2\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Пусть 
+\begin_inset Formula $E\subset\RR^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $E$
+\end_inset
+
+ — односвязная (без дырок, которые теперь пузыри).
+ Пусть в этой области существуют непрерывные функции 
+\begin_inset Formula $P(x,y,z),Q(x,y,z),R(x,y,z)$
+\end_inset
+
+, у которых существуют непрерывные частные производные в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Тогда следующие условия эквивалентны друг другу:
+\end_layout
+
+\begin_layout Remark
+1) 
+\begin_inset Formula $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y},\ \frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y},\ \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+2) 
+\begin_inset Formula $\oint_{(L)}Pdx+Qdy+Rdz=0\ \forall$
+\end_inset
+
+ замкнутого 
+\begin_inset Formula $L$
+\end_inset
+
+ из 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+3) 
+\begin_inset Formula $\int_{(AB)}Pdx+Qdy+Rdz$
+\end_inset
+
+ не зависит от кривой, соединяющей 
+\begin_inset Formula $A,B\in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+4) 
+\begin_inset Formula $\exists\Phi(x,y,z):\ d\Phi=Pdx+Qdy+Rdz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Доказательство этого неочевидного факта следует из формулы Стокса (см.
+ далее).
+\end_layout
+
+\begin_layout Remark
+Если эти условия выполняются, то 
+\begin_inset Formula 
+\[
+\Phi(x,y,z)=\int_{x_{0}}^{x}P(x,y,z)dx+\int_{y_{0}}^{y}Q(x_{0},y,z)dy+\int_{z_{0}}^{z}R(x_{0},y_{0},z)dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+где 
+\begin_inset Formula $\left(x_{0},y_{0},z_{0}\right)$
+\end_inset
+
+ — любая точка из 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Следовательно, мы можем вычислить 
+\begin_inset Formula 
+\[
+\int_{(AB)}Pdx+Qdy+Rdz=\int_{(AB)}d\Phi=\Phi(B)-\Phi(A)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Замена переменных в многомерном интеграле
+\end_layout
+
+\begin_layout Standard
+Пусть на плоскости 
+\begin_inset Formula $xy$
+\end_inset
+
+ задана область 
+\begin_inset Formula $E$
+\end_inset
+
+, ограниченная контуром 
+\begin_inset Formula $l$
+\end_inset
+
+, который является кусочно-гладким (конечное число изломов).
+ Теперь рассмотрим координаты 
+\begin_inset Formula $\eta\xi$
+\end_inset
+
+, в которых задана область 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, ограниченная контуром 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+.
+ И пусть между ними существует биекция и граничные точки переходят в граничные.
+ И пусть эта биекция задается зависимостью 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=x(\xi,\eta)\\
+y=y(\xi,\eta)
+\end{cases}$
+\end_inset
+
+ и обратно 
+\begin_inset Formula $\begin{cases}
+\xi=\xi(x,y)\\
+\eta=\eta(x,y)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $x(\xi,\eta)$
+\end_inset
+
+ 
+\begin_inset Formula $y(\xi,\eta)$
+\end_inset
+
+ задавали биекцию, необходимо, чтобы 
+\begin_inset Formula $\frac{D(x,y)}{D(\xi,\eta)}\neq0$
+\end_inset
+
+ или, что то же самое, 
+\begin_inset Formula $\frac{D(\xi,\eta)}{D(x,y)}\neq0$
+\end_inset
+
+ в 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ (см.
+ теорему о системе неявных функций и теорему Лапласа).
+\end_layout
+
+\begin_layout Standard
+Пусть в 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ задана некоторая кривая 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\xi=\xi(t)\\
+\eta=\eta(t)
+\end{cases},t\in[t_{1},t_{2}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha\subset\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь кривую 
+\begin_inset Formula $\beta\subset E$
+\end_inset
+
+, которая получается по следующему правилу:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+x=x(t)=x(\xi(t),\eta(t))\\
+y=y(t)=y(\xi(t),\eta(t))
+\end{cases},t\in[t_{1},t_{2}]$
+\end_inset
+
+, то есть 
+\begin_inset Formula $\alpha\leftrightarrow\beta$
+\end_inset
+
+.
+ Очевидно, что 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ — замкнута 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\beta$
+\end_inset
+
+ — замкнута.
+\end_layout
+
+\begin_layout Standard
+Если по 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ движение было стандартным, то движение по 
+\begin_inset Formula $\beta$
+\end_inset
+
+ может быть как стандартным, так и не очень.
+\end_layout
+
+\begin_layout Standard
+Зафиксируем в формуле один из параметров:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{\xi}\begin{cases}
+x=x(\xi,\eta_{0})\\
+y=y(\xi,\eta_{0})
+\end{cases}$
+\end_inset
+
+ и 
+\begin_inset Formula $K_{\eta}\begin{cases}
+x=x(\xi_{0},\eta)\\
+y=y(\xi_{0},\eta)
+\end{cases}$
+\end_inset
+
+ — кривые, проходящие через точку 
+\begin_inset Formula $(x_{0},y_{0})\ \begin{cases}
+x_{0}=x(\xi_{0},\eta_{0})\\
+y_{0}=y(\xi_{0},\eta_{0})
+\end{cases}$
+\end_inset
+
+ и лежащие в 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ 
+\begin_inset Formula $K_{\xi},K_{\eta}$
+\end_inset
+
+ — координатные линии, 
+\end_layout
+
+\begin_layout Standard
+Через каждую точку области пройдет ровно одна координатная линия 
+\begin_inset Formula $K_{\xi},K_{\eta}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(рисунок).
+\end_layout
+
+\begin_layout Example
+Полярные координаты:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\begin{cases}
+x=\xi\cos\eta\\
+y=\xi\sin\eta
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\xi$
+\end_inset
+
+ — полярный радиус, 
+\begin_inset Formula $\eta$
+\end_inset
+
+ — полярный угол.
+\end_layout
+
+\begin_layout Example
+(рисунок 2 штуки)
+\end_layout
+
+\begin_layout Example
+(текст тоже какой-то)
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{D(x,y)}{D(\xi,\eta)}=\left|\begin{array}{cc}
+\cos\eta & \sin\eta\\
+-\xi\sin\eta & \xi\cos\eta
+\end{array}\right|=\xi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Если 
+\begin_inset Formula $\xi$
+\end_inset
+
+ равно нулю, то однозначность теряется.
+\end_layout
+
+\begin_layout Example
+Если мы возьмем область 
+\begin_inset Formula $\Delta:\ \begin{cases}
+0\leq\xi\leq\xi_{2}\\
+0\leq\eta\leq2\pi
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Эта область не очень хорошая, так как точка 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ не дает односвязности.
+\end_layout
+
+\begin_layout Example
+Тогда мы преобразуем нашу область к виду:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\Delta_{P}:\begin{cases}
+0<\xi_{1}\leq\xi\leq\xi_{2}\\
+0\leq\eta\leq\eta_{2}<2\pi
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Если перейти к пределу: 
+\begin_inset Formula $\begin{cases}
+\xi_{1}\to0\\
+\eta_{2}\to2\pi
+\end{cases},\ \begin{cases}
+\Delta_{1}\to\Delta\\
+E_{1}\to E
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+При этом 
+\begin_inset Formula $\Delta_{1}\leftrightarrow E_{1}$
+\end_inset
+
+, но 
+\begin_inset Formula $\Delta\not\leftrightarrow E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Поэтому, теоремы сформулированные далее для биекций, можно применять и для
+ не биекций, к примеру, в полярных координатах.
+\end_layout
+
+\begin_layout Standard
+Вспомним, что 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ — контур 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, 
+\begin_inset Formula $l$
+\end_inset
+
+ — контур 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Lambda:\begin{cases}
+\xi=\xi(t)\\
+\eta=\eta(t)
+\end{cases},\ t\in[t_{1},t_{2}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+l:\begin{cases}
+x=x(t)=x(\xi(t),\eta(t))\\
+y=y(t)=y(\xi(x),\eta(t))
+\end{cases},t\in[t_{1},t_{2}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть в 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ у функций 
+\begin_inset Formula $x,y$
+\end_inset
+
+ существуют непрерывные частные производные второго порядка.
+\end_layout
+
+\begin_layout Standard
+Найдем 
+\begin_inset Formula $S(E)$
+\end_inset
+
+ — площадь 
+\begin_inset Formula $E$
+\end_inset
+
+ и 
+\begin_inset Formula $S(\Delta)$
+\end_inset
+
+, понятно, что это.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+S(E)=\iint_{E}dxdy=\oint_{(l)}xdy=(R)\int_{t_{1}}^{t_{2}}x(t)dy(t)=\\
+=(R)\int_{t_{1}}^{t_{2}}x(\xi(t),\eta(t))\cdot\left(\frac{\partial y}{\partial\xi}\xi'(t)+\frac{\partial y}{\partial\eta}\eta'(t)\right)dt=\int_{(\Lambda)}x(\xi,\eta)\left(\frac{\partial y}{\partial\xi}d\xi+\frac{\partial y}{\partial\eta}d\eta\right)=(1)\\
+=\pm\iint_{\Delta}\left[\frac{\partial}{\partial\xi}\left(x\frac{\partial y}{\partial\eta}\right)-\frac{\partial}{\partial\eta}\left(x\frac{\partial y}{\partial\xi}\right)\right]d\xi d\eta=\pm\iint_{\Delta}\left[\frac{\partial x}{\partial\xi}\frac{\partial y}{\partial\eta}+x\frac{\partial^{2}y}{\partial\eta\partial\xi}-\frac{\partial x}{\partial\eta}\frac{\partial y}{\partial\xi}-x\frac{\partial^{2}y}{\partial\xi\partial\eta}\right]d\xi d\eta=\\
+=\pm\iint_{\Delta}\left|\begin{array}{cc}
+x'_{\xi} & y'_{\xi}\\
+x'_{\eta} & y'_{\eta}
+\end{array}\right|=(2)=\pm\iint_{\Delta}\frac{D(x,y)}{D(\xi,\eta)}d\xi d\eta
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(1) выбор знака 
+\begin_inset Formula $\pm$
+\end_inset
+
+ зависит от того, сохранится ли по контуру 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ стандартное направление движения или нет.
+ В следующем выражении мы применяем формулу Грина.
+\end_layout
+
+\begin_layout Standard
+(2) поскольку мы вычисляем площадь и якобиан не обращается в ноль, то формулу
+ нужно взять с плюсом, если он положительный, и с минусом, если он отрицательный.
+\end_layout
+
+\begin_layout Standard
+Вывод: 
+\begin_inset Formula $S(E)=\iint_{\Delta}\left|I(\xi,\eta)\right|d\xi d\eta=\underbrace{\left|I(\overline{\xi},\overline{\eta})\right|}_{\aleph}S(\Delta)$
+\end_inset
+
+ (по теореме о среднем)
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $I(\xi,\eta)$
+\end_inset
+
+ — якобиан, 
+\begin_inset Formula $\aleph$
+\end_inset
+
+ — коэффициент сжатия (обозначение не алгебраическое, дал от балды, чтобы
+ не растягивать текстом формулу).
 \end_layout
 
 \end_body
